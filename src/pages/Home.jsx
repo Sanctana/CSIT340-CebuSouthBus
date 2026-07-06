@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   // State for a simple counter or dynamic content
@@ -14,10 +15,7 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <header className="home-header">
-        <h1>Welcome to My React App</h1>
-        <p>This is the home page of your React project.</p>
-      </header>
+      <Navbar />
 
       <main className="home-main">
         <section className="home-section">
