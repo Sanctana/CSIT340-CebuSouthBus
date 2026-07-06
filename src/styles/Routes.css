@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+}
+
+.routes-page {
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.routes-page h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.routes-page p {
+    margin-top: 30px;
+    text-align: center;
+    color: #666;
+}
+
+.search-container {
+    margin: 40px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.count {
+    text-align: left !important;
+    margin-bottom: 20px;
+}
+
+.route-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.route-card:hover {
+    box-shadow: 0 4px 12px rgba(81, 161, 236, 0.8);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title h2 {
+    margin: 0;
+}
+
+.info {
+    margin-top: 12px;
+    display: flex;
+    gap: 25px;
+    color: #666;
+}
+
+.right {
+    text-align: right;
+}
+
+.right p {
+    margin: 0;
+    text-align: right;
+}
+
+.right h3 {
+    margin: 5px 0 15px;
+}
+
+.fare {
+    color: black;
+}
