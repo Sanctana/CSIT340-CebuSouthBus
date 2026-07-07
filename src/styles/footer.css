@@ -1,0 +1,37 @@
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    background: #070e23;
+    min-height: 30vh;
+    align-items: flex-start;        /* align columns at the top */
+    padding: 15px 130px;
+}
+
+.nav-list{
+    margin: 0 10rem;
+    width: 250px;
+}
+
+.nav-list h3{
+    color: white;
+}
+.nav-list a{
+    text-decoration: none;
+    color: #6071b1;
+}
+
+.nav-list ul{
+    list-style: none;
+}
+
+.nav-list li{
+    margin-bottom: 10px;
+    color: #6071b1;
+}
+
+
+.logo{
+    height: 40px;
+    width: 40px;
+    padding: 15px;
+}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/Routes.css";
+import "../styles/routes.css";
 
 function Routes() {
   const routesData = [

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+import BusForm from "../components/BusForm";
 
 export default function Home() {
   // State for a simple counter or dynamic content
@@ -13,31 +16,10 @@ export default function Home() {
     setItems(mockItems);
   }, []);
 
-  return (
-    <div className="home-container">
+  return (<>
       <Navbar />
-
-      <main className="home-main">
-        <section className="home-section">
-          <h2>Interactive Counter</h2>
-          <p>You clicked {count} times</p>
-          <button onClick={() => setCount(count + 1)}>Click me</button>
-          <button onClick={() => setCount(0)}>Reset</button>
-        </section>
-
-        <section className="home-section">
-          <h2>Frameworks List</h2>
-          <ul>
-            {items.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </section>
-      </main>
-
-      <footer className="home-footer">
-        <p>&copy; 2026 My React App</p>
-      </footer>
-    </div>
+        <Hero />
+      <Footer />
+    </>
   );
 }
