@@ -1,32 +1,31 @@
-.booking-form{
-    background-color: yellow;
-    border-radius: 10px;
-    width: 500px;
-
+.booking-form {
+  background-color: yellow;
+  border-radius: 10px;
+  width: 500px;
 }
 
-.field{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
+.field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
 }
 
-.child-field{
-    display: flex;
-    flex-direction: column;
+.child-field {
+  display: flex;
+  flex-direction: column;
 }
 
-.child-field label{
-    margin: 2px;
+.child-field label {
+  margin: 2px;
 }
 
-.inline-input{
-    display: flex;
-    gap: 30px;
+.inline-input {
+  display: flex;
+  gap: 30px;
 }
 
-.form-logo{
-    height: 33px !important;
-    width: 33px !important;
+.form-logo {
+  height: 33px !important;
+  width: 33px !important;
 }

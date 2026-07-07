@@ -1,48 +1,55 @@
-import '../styles/globalstyles.css';
-import '../styles/footer.css';
-import '/src/assets/ic_buslogo.png';
+import "../styles/globalstyles.css";
+import "../styles/footer.css";
+import "/src/assets/ic_buslogo.png";
 
 export default function Footer() {
-    return (
+  return (
+    <div>
+      <footer className="footer-container">
         <div>
-            <footer className="footer-container">
-
-                    <div>
-                        <img src="/src/assets/ic_buslogo.png" alt="logo" className="logo"/>
-                    </div>
-
-                    <div className="nav-list">
-                        <h3>Quick Links</h3>
-                            <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/routes">Routes</a></li>
-                                <li><a href="/aboutus">About Us</a></li>
-                                <li><a href="/support">Support</a></li>
-                            </ul>
-                    </div>
-
-                    <div className="nav-list">
-                        <h3>Top Destinations</h3>
-                           <ul>
-                                <li>Oslob</li>
-                                <li>Moalboal</li>
-                                <li>Badian</li>
-                                <li>Dalaguete</li>
-                                <li>Barili</li>
-                                <li>Santander</li>
-                           </ul>
-                    </div>
-
-                    <div className="nav-list">
-                        <h3>Contact Us</h3>
-                            <ul>
-                                <li>N. Bacalso Ave., Cebu City, Philippines</li>
-                                <li>(054) 645-6557</li>
-                                <li>southbus@csbt.gov.ph</li>
-                                <li>Open daily, 4:00AM - 10:OOPM</li>
-                            </ul>
-                    </div>
-            </footer>
+          <img src="/src/assets/ic_buslogo.png" alt="logo" className="logo" />
         </div>
-    )
+
+        <div className="nav-list">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/routes">Routes</a>
+            </li>
+            <li>
+              <a href="/aboutus">About Us</a>
+            </li>
+            <li>
+              <a href="/support">Support</a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="nav-list">
+          <h3>Top Destinations</h3>
+          <ul>
+            <li>Oslob</li>
+            <li>Moalboal</li>
+            <li>Badian</li>
+            <li>Dalaguete</li>
+            <li>Barili</li>
+            <li>Santander</li>
+          </ul>
+        </div>
+
+        <div className="nav-list">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>N. Bacalso Ave., Cebu City, Philippines</li>
+            <li>(054) 645-6557</li>
+            <li>southbus@csbt.gov.ph</li>
+            <li>Open daily, 4:00AM - 10:OOPM</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  );
 }

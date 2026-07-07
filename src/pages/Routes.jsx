@@ -68,7 +68,7 @@ function Routes() {
   const [search, setSearch] = useState("");
 
   const filteredRoutes = routesData.filter((route) =>
-    route.destination.toLowerCase().includes(search.toLowerCase())
+    route.destination.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
@@ -85,9 +85,7 @@ function Routes() {
         />
       </div>
 
-      <p className="count">
-        Showing {filteredRoutes.length} route(s)
-      </p>
+      <p className="count">Showing {filteredRoutes.length} route(s)</p>
 
       {filteredRoutes.map((route) => (
         <div className="route-card" key={route.id}>
@@ -104,10 +102,14 @@ function Routes() {
           </div>
 
           <div className="right">
-            <p><strong>Distance</strong></p>
+            <p>
+              <strong>Distance</strong>
+            </p>
             <h3>{route.distance}</h3>
 
-            <p><strong>Fare</strong></p>
+            <p>
+              <strong>Fare</strong>
+            </p>
             <h3 className="fare">{route.fare}</h3>
           </div>
         </div>
