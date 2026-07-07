@@ -1,5 +1,6 @@
 import "/src/assets/ic_buslogo.png";
 import "../styles/navbar.css";
+import { NavLink } from "react-router";
 
 export default function Navbar() {
   return (
@@ -18,16 +19,24 @@ export default function Navbar() {
         </div>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <NavLink to="/" >
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href="/routes">Routes</a>
+            <NavLink to="/routes">
+              Routes
+            </NavLink>
           </li>
           <li>
-            <a href="/aboutus">About Us</a>
+            <NavLink to="/aboutus">
+              About Us
+            </NavLink>
           </li>
           <li>
-            <a href="/support">Support</a>
+            <NavLink to="/support">
+              Support
+            </NavLink>
           </li>
         </ul>
       </nav>
