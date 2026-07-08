@@ -1,8 +1,8 @@
 .support-page {
-  --sup-primary: #0f6b4c;
+  --sup-primary: #f5f7fb;
   --sup-primary-dark: #0b4f38;
   --sup-accent: #f2994a;
-  --sup-bg: #f7f5ef;
+  --sup-bg: #f5f7fb;
   --sup-card-bg: #ffffff;
   --sup-text: #1f2a24;
   --sup-muted: #6b7a72;
@@ -16,7 +16,7 @@
 
 .support-hero {
   background: var(--sup-primary);
-  color: #fff;
+  color: #254cd7;;
   padding: 56px 8% 40px;
   text-align: center;
 }
@@ -29,7 +29,7 @@
 .support-hero p {
   margin: 0 auto;
   max-width: 520px;
-  color: rgba(255, 255, 255, 0.88);
+  color: #666;
 }
 
 .support-content {
@@ -40,7 +40,7 @@
 }
 
 .supportLocation{
-  margin-top:20px;
+  margin-top:1px;
   text-align:center; 
 }
 
@@ -90,7 +90,7 @@
 /* FAQ */
 .faq-section h2 {
   margin-bottom: 18px;
-  color: var(--sup-primary-dark);
+  /*color: var(--sup-primary-dark);*/
 }
 
 .faq-list {
@@ -104,6 +104,10 @@
   border: 1px solid var(--sup-border);
   border-radius: 10px;
   overflow: hidden;
+}
+
+.faq-item:hover{
+  box-shadow: 0 4px 12px rgba(81, 161, 236, 0.8);
 }
 
 .faq-item.open {
