@@ -4,6 +4,8 @@ import BusSchedule from "../pages/BusSchedule";
 import Home from "../pages/Home";
 import RoutePage from "../pages/Routes";
 import Support from "../pages/Support";
+import AboutUs from "../pages/AboutUs"; 
+
 
 export default function MainContent() {
   return (
@@ -13,6 +15,7 @@ export default function MainContent() {
         <Route path="routes" element={<RoutePage />} />
         <Route path="support" element={<Support />} />
         <Route path="schedule" element={<BusSchedule />} />
+        <Route path="aboutus" element={<AboutUs />} />
       </Route>
     </Routes>
   );
