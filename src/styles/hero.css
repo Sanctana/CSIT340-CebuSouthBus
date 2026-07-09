@@ -6,12 +6,7 @@
   min-height: 75vh;
   padding: 60px 8%;
 
-  background: linear-gradient(
-          135deg,
-          #1a2a8a 0%,
-          #3450BE 50%,
-          #2540a8 100%
-  );
+  background: linear-gradient(135deg, #1a2a8a 0%, #3450be 50%, #2540a8 100%);
 }
 
 .hero-right {
@@ -39,11 +34,11 @@
   margin: 0;
 }
 
-.white-header{
+.white-header {
   color: #ffffff;
 }
 
-.yellow-header{
+.yellow-header {
   color: #ffc107;
 }
 
@@ -69,12 +64,12 @@
 }
 
 .search-button {
-  width:100%;
-  padding:18px;
-  border:none;
-  border-radius:18px;
-  background:#3454d1;
-  color:white;
-  font-size:22px;
-  font-weight:bold;
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 18px;
+  background: #3454d1;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
 }

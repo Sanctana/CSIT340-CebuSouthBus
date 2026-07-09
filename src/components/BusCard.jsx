@@ -1,4 +1,4 @@
-import "../styles/schedule.css";
+import "../styles/busschedule.css";
 
 export default function BusCard({ bus }) {
   const {

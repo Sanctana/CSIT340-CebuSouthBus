@@ -1,8 +1,11 @@
 import "../styles/busform.css";
 import "../styles/hero.css";
 import "/src/assets/ic_buslogo.png";
+import { useNavigate } from "react-router";
 
 export default function BusForm() {
+  const navigate = useNavigate();
+
   return (
     <div className="booking-form">
       <h3>Plan Your Trip</h3>
@@ -79,7 +82,9 @@ export default function BusForm() {
       </div>
 
       <div>
-        <button className="search-button">Search Available Busses</button>
+        <button className="search-button" onClick={() => navigate("/schedule")}>
+          Search Available Busses
+        </button>
       </div>
     </div>
   );
