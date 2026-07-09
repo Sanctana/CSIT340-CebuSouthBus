@@ -200,7 +200,9 @@ export default function BusSchedule() {
 
       <div className="filter-bar">
         <button
-          className={filterType === "all" ? "filter-pill active" : "filter-pill"}
+          className={
+            filterType === "all" ? "filter-pill active" : "filter-pill"
+          }
           onClick={() => setFilterType("all")}
         >
           All Buses ({busesData.length})
@@ -234,9 +236,7 @@ export default function BusSchedule() {
         ) : (
           <div className="empty-state">
             <p>No buses match this filter right now.</p>
-            <button onClick={() => setFilterType("all")}>
-              Clear filters
-            </button>
+            <button onClick={() => setFilterType("all")}>Clear filters</button>
           </div>
         )}
       </div>

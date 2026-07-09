@@ -85,15 +85,22 @@ export default function Support() {
       </div>
 
       <div className="supportLocation">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.6702160121667!2d123.86465899999997!3d10.2881334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99957cb4f718f%3A0x742eae4436a7e14f!2sNatalio%20B.%20Bacalso%20Ave%2C%20Cebu!5e0!3m2!1sen!2sph!4v1783526246036!5m2!1sen!2sph" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-  width="1840"
-  height="600"
-  style={{ border: 0 }}
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="strict-origin-when-cross-origin"
-  title="Cebu South Bus Location"
-></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.6702160121667!2d123.86465899999997!3d10.2881334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99957cb4f718f%3A0x742eae4436a7e14f!2sNatalio%20B.%20Bacalso%20Ave%2C%20Cebu!5e0!3m2!1sen!2sph!4v1783526246036!5m2!1sen!2sph"
+          width="900"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          width="1840"
+          height="600"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+          title="Cebu South Bus Location"
+        ></iframe>
       </div>
 
       <div className="support-content">
@@ -139,7 +146,6 @@ export default function Support() {
             })}
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -19,24 +19,16 @@ export default function Navbar() {
         </div>
         <ul>
           <li>
-            <NavLink to="/" >
-              Home
-            </NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/routes">
-              Routes
-            </NavLink>
+            <NavLink to="/routes">Routes</NavLink>
           </li>
           <li>
-            <NavLink to="/aboutus">
-              About Us
-            </NavLink>
+            <NavLink to="/aboutus">About Us</NavLink>
           </li>
           <li>
-            <NavLink to="/support">
-              Support
-            </NavLink>
+            <NavLink to="/support">Support</NavLink>
           </li>
         </ul>
       </nav>
