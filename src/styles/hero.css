@@ -1,5 +1,80 @@
 .hero-section {
-  padding: 15px 130px;
-  min-height: 80vh;
-  background: #1f3db1;
+  position: relative;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 2rem;
+  min-height: 75vh;
+  padding: 60px 8%;
+
+  background: linear-gradient(
+          135deg,
+          #1a2a8a 0%,
+          #3450BE 50%,
+          #2540a8 100%
+  );
+}
+
+.hero-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgb(227 205 82 / 0.2);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  border: 1px rgb(197 168 0 / 0.98) solid;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.white-header{
+  color: #ffffff;
+}
+
+.yellow-header{
+  color: #ffc107;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bus-form {
+  position: absolute;
+  top: 350px;
+  left: 0;
+  width: min(650px, 100%);
+  z-index: 5;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.search-button {
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  background:#3454d1;
+  color:white;
+  font-size:22px;
+  font-weight:bold;
 }

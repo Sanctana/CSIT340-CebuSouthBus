@@ -78,8 +78,8 @@ export default function BusForm() {
         </div>
       </div>
 
-      <div className="search-button">
-        <button>Search Available Busses </button>
+      <div>
+        <button className="search-button">Search Available Busses</button>
       </div>
     </div>
   );

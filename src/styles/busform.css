@@ -1,31 +1,123 @@
 .booking-form {
-  background-color: yellow;
-  border-radius: 10px;
-  width: 500px;
+  width: 600px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.booking-form h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.booking-form > p {
+  margin: -10px 0 0;
+  color: #777;
+  font-size: 15px;
+}
+
+.trip-type {
+  width: fit-content;
+  padding: 8px 18px;
+  background: #162b8f;
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.trip-type p {
+  margin: 0;
+}
+
+.inline-input {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .field {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+
   background: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  padding: 18px;
+}
+
+.form-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .child-field {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .child-field label {
-  margin: 2px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #3454d1;
+  letter-spacing: 1px;
 }
 
-.inline-input {
+.child-field input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+}
+
+.child-field input::placeholder {
+  color: #b6b6b6;
+}
+
+.swap-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #3454d1;
+
   display: flex;
-  gap: 30px;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
 }
 
-.form-logo {
-  height: 33px !important;
-  width: 33px !important;
+.swap-icon .form-logo {
+  width: 22px;
+  height: 22px;
+}
+
+.search-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 15px;
+
+  background: #3454d1;
+  color: white;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-button:hover {
+  background: #2945b8;
 }
