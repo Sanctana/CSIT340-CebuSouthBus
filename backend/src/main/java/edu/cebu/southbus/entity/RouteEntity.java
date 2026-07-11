@@ -38,6 +38,10 @@ public class RouteEntity {
     @NotNull
     private Integer maxFare;
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getDestination() {
         return destination;
     }

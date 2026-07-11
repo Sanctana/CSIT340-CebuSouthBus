@@ -1,73 +1,20 @@
 import { useState } from "react";
 import "../styles/routes.css";
+import { getRoutes } from "../api/route";
+import {formatMinutes} from "../utils/utilities"
+import { useEffect } from "react";
 
 function Routes() {
-  const routesData = [
-    {
-      id: 1,
-      destination: "Oslob",
-      terminal: "South Bus Terminal",
-      region: "South",
-      distance: "117 km",
-      duration: "3-4 hrs",
-      schedule: "Every 30 mins",
-      fare: "₱180-220",
-    },
-    {
-      id: 2,
-      destination: "Moalboal",
-      terminal: "South Bus Terminal",
-      region: "South",
-      distance: "89 km",
-      duration: "2.5-3 hrs",
-      schedule: "Every 20 mins",
-      fare: "₱150-180",
-    },
-    {
-      id: 3,
-      destination: "Carcar",
-      terminal: "South Bus Terminal",
-      region: "South",
-      distance: "40 km",
-      duration: "1 hr",
-      schedule: "Every 15 mins",
-      fare: "₱60-80",
-    },
-    {
-      id: 4,
-      destination: "Dalaguete",
-      terminal: "South Bus Terminal",
-      region: "South",
-      distance: "84 km",
-      duration: "2 hrs",
-      schedule: "Every 30 mins",
-      fare: "₱120-150",
-    },
-    {
-      id: 5,
-      destination: "Bato",
-      terminal: "South Bus Terminal",
-      region: "South",
-      distance: "140 km",
-      duration: "4 hrs",
-      schedule: "Every 1 hr",
-      fare: "₱180-210",
-    },
-    {
-      id: 6,
-      destination: "Santander",
-      terminal: "South Bus Terminal",
-      region: "South",
-      distance: "145 km",
-      duration: "4 hrs",
-      schedule: "Every 1 hr",
-      fare: "₱200-250",
-    },
-  ];
-
   const [search, setSearch] = useState("");
+  const [routes, setRoutes] = useState([]);
 
-  const filteredRoutes = routesData.filter((route) =>
+  useEffect(() => {
+      getRoutes().then(setRoutes).catch((error) => {
+          console.error("Error fetching routes:", error);
+      });
+  }, []);
+
+  const filteredRoutes = routes.filter((route) =>
     route.destination.toLowerCase().includes(search.toLowerCase()),
   );
 
@@ -95,9 +42,9 @@ function Routes() {
             </div>
 
             <div className="info">
-              <span>📍 {route.terminal}</span>
-              <span>🕒 {route.duration}</span>
-              <span>🚌 {route.schedule}</span>
+              <span>📍 South Bus Terminal</span>
+              <span>🕒 {route.minDuration == route.maxDuration ? route.minDuration : `${route.minDuration} - ${route.maxDuration}`}</span>
+              <span>🚌 Every {formatMinutes(route.schedule)}</span>
             </div>
           </div>
 
@@ -110,7 +57,7 @@ function Routes() {
             <p>
               <strong>Fare</strong>
             </p>
-            <h3 className="fare">{route.fare}</h3>
+            <h3 className="fare">₱{route.minFare} - {route.maxFare}</h3>
           </div>
         </div>
       ))}

@@ -5,7 +5,8 @@ import edu.cebu.southbus.entity.RouteEntity;
 
 public class RouteMapper {
 	public static RouteDTO toDTO(RouteEntity routeEntity) {
-		return new RouteDTO(routeEntity.getDestination(), routeEntity.getDistance(), routeEntity.getMinDuration(),
+		return new RouteDTO(routeEntity.getId(), routeEntity.getDestination(), routeEntity.getDistance(),
+				routeEntity.getMinDuration(),
 				routeEntity.getMaxDuration(), routeEntity.getSchedule(), routeEntity.getMinFare(),
 				routeEntity.getMaxFare());
 	}
