@@ -1,146 +1,145 @@
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:white;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
 }
 
-.aboutusInnerContainer{
-    width:90%; 
-    margin:auto; 
+.aboutusInnerContainer {
+  width: 90%;
+  margin: auto;
 }
-.aboutTop{
-    display:flex; 
-    justify-content: space-between;
-    align-items: center;
-    gap:50px;
+.aboutTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
 }
-.aboutBottom{
-    display:flex; 
-    justify-content: space-between;
-    gap:30px; 
-    margin:0 4px 50px;
-}
-
-.aboutusOuterContainer1{
-    padding-top:20px;
-    height:800px;
-    width:45%;
-}
-.aboutusOuterContainer1 h1{
-    color:#1a2a8a;
-    font-size:60px;
-}
-.aboutusOuterContainer1 p{
-    font-size:40px;
-}
-.pContainer{
-    border:2px solid black;
-    border-radius:15px;
-    padding:10px;
-    width:90%;
-    height:71%;
-    color:white;
-    text-align:center;
-
-    background: linear-gradient(135deg, #1a2a8a 0%, #3450be 50%, #2540a8 100%);
-}
-.aboutRight{
-    width:50%; 
-    display:flex; 
-    justify-content: center;
-}
-.aboutRight img{
-    width:110%; 
-    height:50%;
-    border-radius:2px;
-    margin-right:160px;
-}
-.mission{
-    border:2px solid #DCE9FF;
-    border-radius:15px;
-    padding:10px;
-    width:50%;
-    background: #F3F8FF; 
-}
-.mission h2{
-    color:navy;
-    font-size:50px;
-    margin-left:40px;
-    
-}
-.pMission{
-    text-align:center;
-    font-size:35px; 
-}
-.vision{
-    border:2px solid #FFE7A8;
-    border-radius:15px;
-    padding:10px;
-    width:50%;
-    background: #FFF9EA;
-}
-.vision h2{
-    color:navy;
-    font-size:50px;
-    margin-left:40px;
-}
-.pVision{
-    text-align:center;
-    font-size:35px; 
+.aboutBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 0 4px 50px;
 }
 
-.aboutusInnerContainer h2{
-    color:navy;
-    font-size:50px;
-    margin-left:40px;
-    text-align:center;
+.aboutusOuterContainer1 {
+  padding-top: 20px;
+  height: 800px;
+  width: 45%;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin:0 4px 50px;
-    width: 100%;
+.aboutusOuterContainer1 h1 {
+  color: #1a2a8a;
+  font-size: 60px;
+}
+.aboutusOuterContainer1 p {
+  font-size: 40px;
+}
+.pContainer {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  width: 90%;
+  height: 71%;
+  color: white;
+  text-align: center;
+
+  background: linear-gradient(135deg, #1a2a8a 0%, #3450be 50%, #2540a8 100%);
+}
+.aboutRight {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.aboutRight img {
+  width: 110%;
+  height: 50%;
+  border-radius: 2px;
+  margin-right: 160px;
+}
+.mission {
+  border: 2px solid #dce9ff;
+  border-radius: 15px;
+  padding: 10px;
+  width: 50%;
+  background: #f3f8ff;
+}
+.mission h2 {
+  color: navy;
+  font-size: 50px;
+  margin-left: 40px;
+}
+.pMission {
+  text-align: center;
+  font-size: 35px;
+}
+.vision {
+  border: 2px solid #ffe7a8;
+  border-radius: 15px;
+  padding: 10px;
+  width: 50%;
+  background: #fff9ea;
+}
+.vision h2 {
+  color: navy;
+  font-size: 50px;
+  margin-left: 40px;
+}
+.pVision {
+  text-align: center;
+  font-size: 35px;
+}
+
+.aboutusInnerContainer h2 {
+  color: navy;
+  font-size: 50px;
+  margin-left: 40px;
+  text-align: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 0 4px 50px;
+  width: 100%;
 }
 .aboutusRoutes,
 .aboutusSchedules,
 .aboutusBooking,
-.aboutusSafe{
-    width: 15%;
-    background: linear-gradient(135deg, #1a2a8a 0%, #3450be 50%, #2540a8 100%);
-    border:5px solid navy;
-    border-radius: 18px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: 0.3s;
+.aboutusSafe {
+  width: 15%;
+  background: linear-gradient(135deg, #1a2a8a 0%, #3450be 50%, #2540a8 100%);
+  border: 5px solid navy;
+  border-radius: 18px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
 }
 
 .aboutusRoutes:hover,
 .aboutusSchedules:hover,
 .aboutusBooking:hover,
-.aboutusSafe:hover{
-    transform: translateY(-6px);
-    box-shadow: lightblue;
+.aboutusSafe:hover {
+  transform: translateY(-6px);
+  box-shadow: lightblue;
 }
 
 .aboutusRoutes h3,
 .aboutusSchedules h3,
 .aboutusBooking h3,
-.aboutusSafe h3{
-    color: gold;
-    font-size: 30px;
-    margin-bottom: 15px;
-    font-weight: bold;
+.aboutusSafe h3 {
+  color: gold;
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .aboutusRoutes p,
 .aboutusSchedules p,
 .aboutusBooking p,
-.aboutusSafe p{
-    color:white;
-    font-size: 25px;
-    line-height: 1.6;
-    margin: 0;
+.aboutusSafe p {
+  color: white;
+  font-size: 25px;
+  line-height: 1.6;
+  margin: 0;
 }

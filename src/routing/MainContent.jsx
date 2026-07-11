@@ -1,11 +1,10 @@
 import { Route, Routes } from "react-router";
 import HomeLayout from "../layouts/HomeLayout";
+import AboutUs from "../pages/AboutUs";
 import BusSchedule from "../pages/BusSchedule";
 import Home from "../pages/Home";
 import RoutePage from "../pages/Routes";
 import Support from "../pages/Support";
-import AboutUs from "../pages/AboutUs"; 
-
 
 export default function MainContent() {
   return (
