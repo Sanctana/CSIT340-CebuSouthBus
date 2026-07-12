@@ -1,5 +1,5 @@
-import { api } from './client';
+import { api } from "./client";
 
 export const getRoutes = async () => {
-	return api.get('/route');
-}
+  return api.get("/route");
+};

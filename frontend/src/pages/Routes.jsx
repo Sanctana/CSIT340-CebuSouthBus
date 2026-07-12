@@ -1,16 +1,18 @@
 import { useState } from "react";
 import "../styles/routes.css";
-import { getRoutes } from "../api/route";
-import {formatMinutes} from "../utils/utilities"
 import { useEffect } from "react";
+import { getRoutes } from "../api/route";
+import { formatMinutes } from "../utils/utilities";
 
 function Routes() {
   const [search, setSearch] = useState("");
   const [routes, setRoutes] = useState([]);
 
   useEffect(() => {
-      getRoutes().then(setRoutes).catch((error) => {
-          console.error("Error fetching routes:", error);
+    getRoutes()
+      .then(setRoutes)
+      .catch((error) => {
+        console.error("Error fetching routes:", error);
       });
   }, []);
 
@@ -43,7 +45,12 @@ function Routes() {
 
             <div className="info">
               <span>📍 South Bus Terminal</span>
-              <span>🕒 {route.minDuration == route.maxDuration ? route.minDuration : `${route.minDuration} - ${route.maxDuration}`}</span>
+              <span>
+                🕒{" "}
+                {route.minDuration == route.maxDuration
+                  ? route.minDuration
+                  : `${route.minDuration} - ${route.maxDuration}`}
+              </span>
               <span>🚌 Every {formatMinutes(route.schedule)}</span>
             </div>
           </div>
@@ -57,7 +64,9 @@ function Routes() {
             <p>
               <strong>Fare</strong>
             </p>
-            <h3 className="fare">₱{route.minFare} - {route.maxFare}</h3>
+            <h3 className="fare">
+              ₱{route.minFare} - {route.maxFare}
+            </h3>
           </div>
         </div>
       ))}

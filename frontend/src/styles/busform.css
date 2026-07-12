@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .booking-form h3 {
