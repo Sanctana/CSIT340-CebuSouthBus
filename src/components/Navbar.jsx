@@ -12,10 +12,6 @@ export default function Navbar() {
             className="logo"
             alt="Bus Logo"
           />
-          <div className="logo-text">
-            <p className="title">CSBT</p>
-            <p className="subtitle">Cebu Southern Bus Terminal</p>
-          </div>
         </div>
         <ul>
           <li>
