@@ -1,5 +1,5 @@
 import "../../styles/busform.css";
-import ManageBooking from "../ManageBooking";
+import ManageBooking from "./ManageBooking.jsx";
 import Book from "./Book";
 import "/src/assets/ic_buslogo.png";
 import { useState } from "react";
