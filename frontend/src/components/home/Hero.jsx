@@ -1,7 +1,7 @@
-import "../styles/globalstyles.css";
+import "../../styles/globalstyles.css";
 import BusForm from "./BusForm";
 import "/src/assets/hero_photo.jpg";
-import "../styles/hero.css";
+import "../../styles/hero.css";
 
 export default function Hero() {
   return (
