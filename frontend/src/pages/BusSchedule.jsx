@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import BusCard from "../components/BusCard";
 import "../styles/busschedule.css";
+import { useSearchParams } from "react-router";
 
 //Sample data
 const busesData = [
@@ -143,8 +144,15 @@ const sortOptions = [
 ];
 
 export default function BusSchedule() {
+  const [searchParams, _] = useSearchParams();
   const [sortBy, setSortBy] = useState("relevance");
   const [filterType, setFilterType] = useState("all");
+
+  const destination = searchParams.get("destination");
+  const date = searchParams.get("date");
+  const passenger = searchParams.get("passenger");
+
+  console.log("Search Params:", { destination, date, passenger });
 
   const filteredBuses = useMemo(() => {
     if (filterType === "all") return busesData;
@@ -180,7 +188,7 @@ export default function BusSchedule() {
         <div className="schedule-heading">
           <h1>Available Buses</h1>
           <p>
-            Cebu City → Southern Cebu • Today,{" "}
+            Cebu City → {destination || "Southern Cebu"} • Today,{" "}
             {new Date().toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
