@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 import { getRoutes } from "../../api/route";
 
@@ -11,15 +11,27 @@ export default function Book() {
   const [date, setDate] = useState("");
   const [passenger, setPassenger] = useState(1);
 
+  const searchAvailableBuses = () => {
+    const searchParams = new URLSearchParams({
+      destination,
+      date,
+      passenger,
+    });
+
+    navigate(`/schedule?${searchParams.toString()}`);
+  };
+
   useEffect(() => {
     getRoutes().then((data) =>
       setDestinations(data.map((route) => route.destination)),
     );
   }, []);
 
-  const filteredDestinations = destinations.filter((place) =>
-    place.toLowerCase().includes(destination.toLowerCase()),
-  );
+  const filteredDestinations = useMemo(() => {
+    return destinations.filter((place) =>
+      place.toLowerCase().includes(destination.toLowerCase()),
+    );
+  });
 
   return (
     <>
@@ -111,7 +123,7 @@ export default function Book() {
         </div>
       </div>
 
-      <button className="search-button" onClick={() => navigate("/schedule")}>
+      <button className="search-button" onClick={searchAvailableBuses}>
         Search Available Buses
       </button>
     </>

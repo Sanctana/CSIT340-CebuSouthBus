@@ -11,13 +11,12 @@ import edu.cebu.southbus.service.RouteService;
 import edu.cebu.southbus.dto.RouteDTO;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/route")
 public class RouteController {
-
 	@Autowired
 	private RouteService routeService;
 
-	@GetMapping("/route")
+	@GetMapping
 	public List<RouteDTO> getAllRoute() {
 		return routeService.getAllRoutes();
 	}

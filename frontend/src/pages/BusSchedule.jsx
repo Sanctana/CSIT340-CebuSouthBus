@@ -179,7 +179,14 @@ export default function BusSchedule() {
       <div className="schedule-header">
         <div className="schedule-heading">
           <h1>Available Buses</h1>
-          <p>Cebu City → Southern Cebu • Today, July 10, 2025</p>
+          <p>
+            Cebu City → Southern Cebu • Today,{" "}
+            {new Date().toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </p>
         </div>
 
         <div className="sort-container">

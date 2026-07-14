@@ -76,7 +76,6 @@ function Routes() {
   const [currentPage, setCurrentPage] = useState(1);
   const routesPerPage = 3;
 
-
   const filteredRoutes = routesData.filter((route) => {
     const matchesSearch = route.destination
       .toLowerCase()
@@ -84,7 +83,6 @@ function Routes() {
     const matchesType = filterType === "All" || route.type === filterType;
     return matchesSearch && matchesType;
   });
-
 
   const totalPages = Math.ceil(filteredRoutes.length / routesPerPage);
   const startIndex = (currentPage - 1) * routesPerPage;
@@ -176,17 +174,15 @@ function Routes() {
       {totalPages > 1 && (
         <div className="pagination">
           <div className="page-numbers">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-              (page) => (
-                <button
-                  key={page}
-                  className={currentPage === page ? "active" : ""}
-                  onClick={() => setCurrentPage(page)}
-                >
-                  {page}
-                </button>
-              ),
-            )}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                className={currentPage === page ? "active" : ""}
+                onClick={() => setCurrentPage(page)}
+              >
+                {page}
+              </button>
+            ))}
           </div>
 
           <div className="page-nav">

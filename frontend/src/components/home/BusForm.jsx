@@ -1,6 +1,6 @@
 import "../../styles/busform.css";
-import ManageBooking from "./ManageBooking.jsx";
 import Book from "./Book";
+import ManageBooking from "./ManageBooking.jsx";
 import "/src/assets/ic_buslogo.png";
 import { useState } from "react";
 import { useNavigate } from "react-router";
@@ -13,6 +13,7 @@ export default function BusForm() {
       <div className="tabs">
         <button
           className={activeTab === "book" ? "active" : "inactive"}
+          disabled={activeTab === "book"}
           onClick={() => setActiveTab("book")}
         >
           Book a Ticket
@@ -20,6 +21,7 @@ export default function BusForm() {
 
         <button
           className={activeTab === "manage" ? "active" : "inactive"}
+          disabled={activeTab === "manage"}
           onClick={() => setActiveTab("manage")}
         >
           Manage Booking
