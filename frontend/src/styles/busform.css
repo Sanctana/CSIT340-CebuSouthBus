@@ -1,0 +1,217 @@
+.booking-form {
+  width: 600px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.booking-form h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.booking-form > p {
+  margin: -10px 0 0;
+  color: #777;
+  font-size: 15px;
+}
+
+.tabs {
+  display: flex;
+  background: #f1f1f1;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: #3454d1;
+  color: white;
+}
+
+.tabs button.inactive {
+  background: #b9c6ff;
+  color: #3454d1;
+}
+
+.trip-type {
+  width: fit-content;
+  padding: 8px 18px;
+  background: #254cd7;
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inline-input {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  padding: 18px;
+}
+
+.form-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.child-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.child-field label {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #3454d1;
+  letter-spacing: 1px;
+}
+
+.child-field input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+}
+
+.child-field input::placeholder {
+  color: #b6b6b6;
+}
+
+.destination-field {
+  position: relative;
+}
+
+.destination-list {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  z-index: 10;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.destination-list p {
+  margin: 0;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.destination-list p:hover {
+  background: #f0f3ff;
+}
+
+.swap-icon {
+  width: 45px;
+  height: 45px;
+  background: #3454d1;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.counter button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #3454d1;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.search-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 15px;
+  background: #3454d1;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background: #2945b8;
+}
+
+.ticket-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 15px;
+  background: #d9d9d9;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ticket-button.active {
+  background: #ffc107;
+  color: black;
+  cursor: pointer;
+}
+
+.booking-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.booking-footer button {
+  border: none;
+  background: none;
+  color: #3454d1;
+  cursor: pointer;
+}

@@ -1,0 +1,35 @@
+import { useState } from "react";
+
+export default function ManageBooking() {
+  const [confirmation, setConfirmation] = useState("");
+  return (
+    <>
+      <h3>Manage Booking</h3>
+
+      <p>Enter your confirmation code to view your ticket.</p>
+
+      <div className="field">
+        <div className="child-field">
+          <label>CONFIRMATION CODE</label>
+
+          <input
+            type="text"
+            maxLength="6"
+            placeholder="ABC123"
+            value={confirmation}
+            onChange={(e) => setConfirmation(e.target.value.toUpperCase())}
+          />
+        </div>
+      </div>
+
+      <button
+        className={
+          confirmation.length === 6 ? "ticket-button active" : "ticket-button"
+        }
+        disabled={confirmation.length !== 6}
+      >
+        View My Ticket
+      </button>
+    </>
+  );
+}

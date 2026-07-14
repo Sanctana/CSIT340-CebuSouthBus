@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 09, 2026 at 02:10 PM
+-- Host: localhost
+-- Generation Time: Jul 11, 2026 at 09:33 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -97,7 +97,8 @@ CREATE TABLE `tblpassenger` (
   `date_of_birth` date NOT NULL,
   `is_female` tinyint(1) NOT NULL,
   `phone_number` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -112,7 +113,7 @@ CREATE TABLE `tblroute` (
   `distance` int(11) NOT NULL,
   `min_duration` int(11) NOT NULL,
   `max_duration` int(11) NOT NULL,
-  `shedule` int(11) NOT NULL,
+  `schedule` int(11) NOT NULL,
   `min_fare` int(11) NOT NULL,
   `max_fare` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -121,7 +122,7 @@ CREATE TABLE `tblroute` (
 -- Dumping data for table `tblroute`
 --
 
-INSERT INTO `tblroute` (`id`, `destination`, `distance`, `min_duration`, `max_duration`, `shedule`, `min_fare`, `max_fare`) VALUES
+INSERT INTO `tblroute` (`id`, `destination`, `distance`, `min_duration`, `max_duration`, `schedule`, `min_fare`, `max_fare`) VALUES
 (1, 'San Fernando', 0, 65, 85, 60, 42, 55),
 (2, 'Carcar', 0, 95, 125, 60, 55, 75),
 (3, 'Sibonga', 0, 115, 150, 90, 72, 95),
@@ -161,6 +162,7 @@ ALTER TABLE `tblbus`
 -- Indexes for table `tblpassenger`
 --
 ALTER TABLE `tblpassenger`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fk_passenger_ticket_uid_ticket` (`ticket_uid`);
 
 --
@@ -179,6 +181,18 @@ ALTER TABLE `tblticket`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tblbus`
+--
+ALTER TABLE `tblbus`
+  MODIFY `bus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `tblpassenger`
+--
+ALTER TABLE `tblpassenger`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tblroute`
