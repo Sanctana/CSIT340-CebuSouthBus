@@ -111,9 +111,13 @@ function Routes() {
 
   return (
     <div className="routes-page">
-      <h1>Bus Routes</h1>
-      <p>Find your South Bus route across Cebu.</p>
+      <div className="routes-hero">
+        <h1>Bus Routes</h1>
+        <p>Find your South Bus route across Cebu.</p>
+      </div>
+    
 
+      <div className="routes-gap">
       <div className="search-container">
         <input
           type="text"
@@ -138,6 +142,7 @@ function Routes() {
         </div>
           
       </div>
+      
 
       <p className="count">Showing {filteredRoutes.length} route(s)</p>
 
@@ -191,6 +196,7 @@ function Routes() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
