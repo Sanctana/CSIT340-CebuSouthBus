@@ -40,29 +40,31 @@ body {
 
 .filter-container {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-.filter-container button {
-  padding: 15px 20px;
+.filter-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-dropdown {
+  padding: 8px 14px;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  background: white;
-  font-size: 16px;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 15px;
   cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s ease;
+  outline: none;
+  transition: border-color 0.2s ease;
 }
 
-.filter-container button:hover {
-  border-color: #254cd7;
+.filter-dropdown:focus {
+  border-color: #007bff;
 }
 
-.filter-container button.active {
-  background: #254cd7;
-  color: white;
-  border-color: #254cd7;
-}
+
 
 .count {
   text-align: left !important;

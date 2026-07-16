@@ -122,25 +122,21 @@ function Routes() {
           onChange={handleSearchChange}
         />
         <div className="filter-container">
-          <button
-            className={filterType === "All" ? "active" : ""}
-            onClick={() => handleFilterChange("All")}
+          <label htmlFor="busFilter" className="filter-label"> Filter: </label>
+          
+          <select
+          id="busFilter"
+          className="filter-dropdown"
+          value={filterType}
+          onChange={(e) => handleFilterChange(e.target.value)}
           >
-            All
-          </button>
-          <button
-            className={filterType === "Aircon" ? "active" : ""}
-            onClick={() => handleFilterChange("Aircon")}
-          >
-            Aircon
-          </button>
-          <button
-            className={filterType === "Non-Aircon" ? "active" : ""}
-            onClick={() => handleFilterChange("Non-Aircon")}
-          >
-            Non-Aircon
-          </button>
+            
+            <option value="All">All</option>
+            <option value="Aircon">Aircon</option>
+            <option value="Non-Aircon">Non-Aircon</option>
+          </select>
         </div>
+          
       </div>
 
       <p className="count">Showing {filteredRoutes.length} route(s)</p>
