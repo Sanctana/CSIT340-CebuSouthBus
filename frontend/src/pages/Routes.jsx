@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/routes.css";
-import RouteCard from "../components/RouteCard";
 import Pagination from "../components/Pagination";
+import RouteCard from "../components/RouteCard";
 
 function Routes() {
   const routesData = [
@@ -84,37 +84,29 @@ function Routes() {
       .toLowerCase()
       .includes(search.toLowerCase());
 
-    const typeMatch =
-      filterType === "All" || route.type === filterType;
+    const typeMatch = filterType === "All" || route.type === filterType;
 
     return searchMatch && typeMatch;
   });
 
+  const totalPages = Math.ceil(filteredRoutes.length / routesPerPage);
 
-  const totalPages = Math.ceil(
-    filteredRoutes.length / routesPerPage
-  );
-
-  const startIndex =
-    (currentPage - 1) * routesPerPage;
+  const startIndex = (currentPage - 1) * routesPerPage;
 
   const currentRoutes = filteredRoutes.slice(
     startIndex,
-    startIndex + routesPerPage
+    startIndex + routesPerPage,
   );
-
 
   const handleFilterChange = (type) => {
     setFilterType(type);
     setCurrentPage(1);
   };
 
-
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
     setCurrentPage(1);
   };
-
 
   const goToPrevious = () => {
     if (currentPage > 1) {
@@ -122,27 +114,21 @@ function Routes() {
     }
   };
 
-
   const goToNext = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
   };
 
-
   return (
     <div className="routes-page">
-
       <div className="routes-hero">
         <h1>Bus Routes</h1>
         <p>Find your South Bus route across Cebu.</p>
       </div>
 
-
       <div className="routes-gap">
-
         <div className="search-container">
-
           <input
             type="text"
             placeholder="Search destination..."
@@ -150,61 +136,33 @@ function Routes() {
             onChange={handleSearchChange}
           />
 
-
           <div className="filter-container">
-
-            <label
-              htmlFor="busFilter"
-              className="filter-label"
-            >
+            <label htmlFor="busFilter" className="filter-label">
               Filter:
             </label>
-
 
             <select
               id="busFilter"
               className="filter-dropdown"
               value={filterType}
-              onChange={(e) =>
-                handleFilterChange(e.target.value)
-              }
+              onChange={(e) => handleFilterChange(e.target.value)}
             >
+              <option value="All">All</option>
 
-              <option value="All">
-                All
-              </option>
+              <option value="Aircon">Aircon</option>
 
-              <option value="Aircon">
-                Aircon
-              </option>
-
-              <option value="Non-Aircon">
-                Non-Aircon
-              </option>
-
+              <option value="Non-Aircon">Non-Aircon</option>
             </select>
-
           </div>
-
         </div>
 
-
-        <p className="count">
-          Showing {filteredRoutes.length} route(s)
-        </p>
-
+        <p className="count">Showing {filteredRoutes.length} route(s)</p>
 
         <div className="route-list">
-
           {currentRoutes.map((route) => (
-            <RouteCard
-              key={route.id}
-              route={route}
-            />
+            <RouteCard key={route.id} route={route} />
           ))}
-
         </div>
-
 
         {totalPages > 1 && (
           <Pagination
@@ -215,9 +173,7 @@ function Routes() {
             goToNext={goToNext}
           />
         )}
-
       </div>
-
     </div>
   );
 }

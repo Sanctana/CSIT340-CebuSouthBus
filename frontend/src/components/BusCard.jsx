@@ -1,5 +1,5 @@
 import "../styles/busschedule.css";
-import { formatTime, formatMinutes } from "../utils/utilities";
+import { formatMinutes, formatTime } from "../utils/utilities";
 
 export default function BusCard({ bus, onSelect }) {
   const {

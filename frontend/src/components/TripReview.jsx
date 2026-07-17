@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function TripReview({ booking = {} }) {
   const { route, date, time, seats, passenger } = booking;
@@ -10,32 +10,32 @@ export default function TripReview({ booking = {} }) {
       <div className="row">
         <div>
           <strong>Route:</strong>
-          <div className="muted">{route || '—'}</div>
+          <div className="muted">{route || "—"}</div>
         </div>
         <div>
           <strong>Date:</strong>
-          <div className="muted">{date || '—'}</div>
+          <div className="muted">{date || "—"}</div>
         </div>
         <div>
           <strong>Time:</strong>
-          <div className="muted">{time || '—'}</div>
+          <div className="muted">{time || "—"}</div>
         </div>
       </div>
 
       <div className="row">
         <div>
           <strong>Passenger:</strong>
-          <div className="muted">{(passenger && passenger.name) || '—'}</div>
+          <div className="muted">{(passenger && passenger.name) || "—"}</div>
         </div>
         <div>
           <strong>Contact:</strong>
-          <div className="muted">{(passenger && passenger.contact) || '—'}</div>
+          <div className="muted">{(passenger && passenger.contact) || "—"}</div>
         </div>
       </div>
 
       <div className="seats">
         <strong>Seats:</strong>
-        <div className="muted">{(seats && seats.join(', ')) || '—'}</div>
+        <div className="muted">{(seats && seats.join(", ")) || "—"}</div>
       </div>
     </section>
   );

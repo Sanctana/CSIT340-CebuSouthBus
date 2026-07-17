@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-export default function ReviewActions({ onConfirm = () => {}, onEdit = () => {} }) {
+export default function ReviewActions({ onConfirm, onEdit }) {
   return (
     <div className="review-actions">
       <button className="btn btn-outline" onClick={onEdit}>

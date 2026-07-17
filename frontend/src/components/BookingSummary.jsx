@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function BookingSummary({ booking = {} }) {
   const { seats = [], farePerSeat = 0 } = booking;
@@ -37,4 +37,3 @@ export default function BookingSummary({ booking = {} }) {
     </aside>
   );
 }
-  

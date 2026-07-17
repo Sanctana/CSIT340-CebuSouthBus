@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 .routes-page,
 .routes-page * {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
-
 
 :root {
   --brand-navy: #2b3a8f;
@@ -17,11 +16,9 @@
   --card-shadow: 0 8px 24px rgba(43, 58, 143, 0.08);
 }
 
-
 * {
   box-sizing: border-box;
 }
-
 
 .routes-page {
   min-height: 100vh;
@@ -29,22 +26,15 @@
   padding-bottom: 60px;
 }
 
-
-
 /* HERO */
 
 .routes-hero {
-  background: linear-gradient(
-    135deg,
-    var(--brand-navy),
-    var(--brand-blue)
-  );
+  background: linear-gradient(135deg, var(--brand-navy), var(--brand-blue));
 
   padding: 90px 24px 110px;
   text-align: center;
   color: white;
 }
-
 
 .routes-hero h1 {
   font-size: 3rem;
@@ -52,15 +42,12 @@
   margin-bottom: 14px;
 }
 
-
 .routes-hero p {
   font-size: 1.1rem;
   color: #dbe4ff;
   max-width: 560px;
   margin: auto;
 }
-
-
 
 /* MAIN CONTAINER */
 
@@ -75,8 +62,6 @@
 
   position: relative;
 }
-
-
 
 /* SEARCH */
 
@@ -95,9 +80,7 @@
   flex-wrap: wrap;
 }
 
-
 .search-container input {
-
   flex: 1;
   min-width: 220px;
 
@@ -112,12 +95,9 @@
   color: var(--text-dark);
 }
 
-
 .search-container input:focus {
   border-color: var(--brand-blue);
 }
-
-
 
 /* FILTER */
 
@@ -127,16 +107,13 @@
   gap: 8px;
 }
 
-
 .filter-label {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-muted);
 }
 
-
 .filter-dropdown {
-
   padding: 10px 14px;
 
   border-radius: 12px;
@@ -149,12 +126,9 @@
   color: var(--text-dark);
 }
 
-
-
 /* COUNT */
 
 .count {
-
   margin: 4px;
 
   color: var(--brand-blue);
@@ -165,27 +139,21 @@
 
   text-transform: uppercase;
 
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
 }
-
-
 
 /* ROUTE LIST */
 
 .route-list {
-
   display: flex;
   flex-direction: column;
 
   gap: 20px;
 }
 
-
-
 /* ROUTE CARD */
 
 .route-card {
-
   background: white;
 
   padding: 26px 28px;
@@ -202,31 +170,20 @@
 
   gap: 20px;
 
-  transition: .2s ease;
-
+  transition: 0.2s ease;
 }
-
 
 .route-card:hover {
-
   transform: translateY(-3px);
 
-  box-shadow: 0 12px 28px rgba(43,58,143,.14);
-
+  box-shadow: 0 12px 28px rgba(43, 58, 143, 0.14);
 }
-
-
 
 .route-card .left {
-
   flex: 1;
-
 }
 
-
-
 .route-card .title h2 {
-
   margin: 0 0 12px;
 
   font-size: 1.4rem;
@@ -234,26 +191,19 @@
   font-weight: 800;
 
   color: var(--text-dark);
-
 }
-
-
 
 /* INFO WITH LOGOS */
 
 .route-card .info {
-
   display: flex;
 
   flex-wrap: wrap;
 
   gap: 12px 18px;
-
 }
 
-
 .route-card .info span {
-
   display: flex;
 
   align-items: center;
@@ -262,72 +212,52 @@
 
   color: var(--text-muted);
 
-  font-size: .88rem;
-
+  font-size: 0.88rem;
 }
 
-
 .route-card .info img {
-
   width: 20px;
 
   height: 20px;
 
   object-fit: contain;
-
 }
-
-
 
 /* RIGHT SIDE */
 
 .route-card .right {
-
   min-width: 130px;
 
   text-align: right;
-
 }
 
-
 .route-card .right p {
-
   margin: 0;
 
   color: var(--text-muted);
 
-  font-size: .72rem;
+  font-size: 0.72rem;
 
   font-weight: 700;
 
   text-transform: uppercase;
-
 }
 
-
 .route-card .right h3 {
-
   margin: 3px 0 10px;
 
   font-size: 1.15rem;
 
   font-weight: 800;
-
 }
-
 
 .route-card .right .fare {
-
   color: var(--brand-blue);
-
 }
-
-
 
 /* PAGINATION */
 
 .pagination {
-
   display: flex;
 
   justify-content: space-between;
@@ -337,21 +267,15 @@
   flex-wrap: wrap;
 
   gap: 14px;
-
 }
 
-
 .page-numbers {
-
   display: flex;
 
   gap: 8px;
-
 }
 
-
 .page-numbers button {
-
   width: 38px;
 
   height: 38px;
@@ -365,32 +289,23 @@
   cursor: pointer;
 
   font-weight: 700;
-
 }
 
-
 .page-numbers button.active {
-
   background: var(--brand-blue);
 
   color: white;
 
   border-color: var(--brand-blue);
-
 }
 
-
 .page-nav {
-
   display: flex;
 
   gap: 10px;
-
 }
 
-
 .page-nav button {
-
   padding: 10px 20px;
 
   border-radius: 999px;
@@ -404,62 +319,42 @@
   font-weight: 700;
 
   cursor: pointer;
-
 }
-
 
 .page-nav button:hover:not(:disabled) {
-
   background: var(--brand-blue);
 
-  color:white;
-
+  color: white;
 }
-
 
 .page-nav button:disabled {
+  opacity: 0.4;
 
-  opacity:.4;
-
-  cursor:not-allowed;
-
+  cursor: not-allowed;
 }
-
-
 
 /* MOBILE */
 
-@media(max-width:640px){
-
-  .routes-hero h1{
-    font-size:2.2rem;
+@media (max-width: 640px) {
+  .routes-hero h1 {
+    font-size: 2.2rem;
   }
 
+  .route-card {
+    flex-direction: column;
 
-  .route-card{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
+    align-items: flex-start;
   }
 
+  .route-card .right {
+    width: 100%;
 
-  .route-card .right{
-
-    width:100%;
-
-    text-align:left;
-
+    text-align: left;
   }
 
+  .pagination {
+    flex-direction: column;
 
-  .pagination{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
+    align-items: flex-start;
   }
-
 }
