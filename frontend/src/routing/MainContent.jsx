@@ -19,18 +19,11 @@ export default function MainContent() {
         <Route path="support" element={<Support />} />
         <Route path="schedule" element={<BusSchedule />} />
         <Route path="aboutus" element={<AboutUs />} />
-<<<<<<< HEAD
-        <Route path="passenger-details" element={<PassengerDetails />} />
-        <Route path="review" element={<Review />} />
-        <Route path="confirmation" element={<Confirmation />} />
-        <Route path="ticket" element={<TicketView />} />
-=======
 
         <Route path="passenger-details" element={<PassengerDetails />} />
         <Route path="review" element={<Review />} />
         <Route path="confirmation" element={<Confirmation />} />
         <Route path="ticket" element={<TicketView />} />
->>>>>>> b51b2b35148f19386d49c9b2d3550a38a9316ba4
       </Route>
     </Routes>
   );
