@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.cebu.southbus.entity.BusSchedule;
+import edu.cebu.southbus.dto.BusScheduleDTO;
 import edu.cebu.southbus.service.BusScheduleService;
 
 @RestController
@@ -20,7 +20,7 @@ public class BusScheduleController {
 	private BusScheduleService busScheduleService;
 
 	@GetMapping
-	public List<BusSchedule> getBusSchedule(@RequestParam String destination,
+	public List<BusScheduleDTO> getBusSchedule(@RequestParam String destination,
 			@RequestParam Integer passengerCount,
 			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
 		return busScheduleService.getBusSchedules(destination, passengerCount);

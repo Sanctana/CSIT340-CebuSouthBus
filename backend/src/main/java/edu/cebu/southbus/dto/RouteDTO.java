@@ -3,7 +3,7 @@ package edu.cebu.southbus.dto;
 import lombok.Getter;
 
 @Getter
-public class RouteAirconInfo {
+public class RouteDTO {
     private Integer id;
     private String destination;
     private Integer distance;
@@ -15,7 +15,7 @@ public class RouteAirconInfo {
     private boolean hasAircon; // 1 if at least one aircon bus exists, else 0
     private boolean hasNonAircon; // 1 if at least one non‑aircon bus exists, else 0
 
-    public RouteAirconInfo(Integer id, String destination, Integer distance,
+    public RouteDTO(Integer id, String destination, Integer distance,
             Integer minDuration, Integer maxDuration,
             Integer schedule, Integer minFare, Integer maxFare,
             Integer hasAircon, Integer hasNonAircon) {
