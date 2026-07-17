@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import BusCard from "../components/BusCard";
 import "../styles/busschedule.css";
-import { useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import { getSchedules } from "../api/schedule";
 
 const sortOptions = [
@@ -13,21 +13,22 @@ const sortOptions = [
 ];
 
 export default function BusSchedule() {
+  const [searchParams] = useSearchParams();
   const [busesData, setBusesData] = useState([]);
-  const [searchParams, _] = useSearchParams();
+  const navigate = useNavigate();
   const [sortBy, setSortBy] = useState("relevance");
   const [filterType, setFilterType] = useState("all");
 
   const destination = searchParams.get("destination");
   const date = searchParams.get("date");
-  const passenger = searchParams.get("passenger");
+  const passengerCount = Number(searchParams.get("passenger")) || 1;
 
   useEffect(() => {
-    if (!destination || !passenger) {
+    if (!destination || !passengerCount) {
       return;
     }
     const fetchSchedules = async () => {
-      getSchedules(destination, date, passenger)
+      getSchedules(destination, date, passengerCount)
         .then(setBusesData)
         .catch((error) => {
           console.error("Error fetching schedules:", error);
@@ -35,7 +36,12 @@ export default function BusSchedule() {
     };
 
     fetchSchedules();
-  }, [destination, date, passenger]);
+  }, [destination, date, passengerCount]);
+  const handleSelectBus = (bus) => {
+    navigate("/passenger-details", {
+      state: { bus, date, passengerCount },
+    });
+  };
 
   const filteredBuses = useMemo(() => {
     return busesData.filter((bus) => {
@@ -137,7 +143,9 @@ export default function BusSchedule() {
 
       <div className="bus-list">
         {sortedBuses.length > 0 ? (
-          sortedBuses.map((bus) => <BusCard key={bus.id} bus={bus} />)
+          sortedBuses.map((bus) => (
+            <BusCard key={bus.id} bus={bus} onSelect={handleSelectBus} />
+          ))
         ) : (
           <div className="empty-state">
             <p>No buses match this filter right now.</p>

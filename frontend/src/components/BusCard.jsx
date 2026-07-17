@@ -1,7 +1,7 @@
 import "../styles/busschedule.css";
 import { formatTime } from "../utils/utilities";
 
-export default function BusCard({ bus }) {
+export default function BusCard({ bus, onSelect }) {
   const {
     busOperator,
     busNumber,
@@ -23,15 +23,19 @@ export default function BusCard({ bus }) {
           <h3>{busOperator}</h3>
           <span className="bus-number">Bus {busNumber}</span>
         </div>
-        <span className={`type-badge ${isAircon ? "aircon" : "non-aircon"}`}>
-          {isAircon ? "❄️ Aircon" : "🌬️ Non-Aircon"}
+        <span
+          className={`type-badge ${
+            isAircon === "Aircon" ? "aircon" : "non-aircon"
+          }`}
+        >
+          {isAircon === "Aircon" ? "❄️ Aircon" : "🌬️ Non-Aircon"}
         </span>
       </div>
 
       <div className="bus-card-route">
         <div className="stop">
-          <p className="time">{formatTime(departureTime)}</p>
-          <p className="place">Cebu City</p>
+          <p className="time">{departureTime}</p>
+          <p className="place">{origin}</p>
         </div>
 
         <div className="route-line">
@@ -61,7 +65,9 @@ export default function BusCard({ bus }) {
             <span className="price-label">Fare</span>
             <p className="price">₱{isAircon ? route.maxFare : route.minFare}</p>
           </div>
-          <button className="select-btn">Select Bus</button>
+          <button className="select-btn" onClick={() => onSelect?.(bus)}>
+            Select Bus
+          </button>
         </div>
       </div>
     </div>
