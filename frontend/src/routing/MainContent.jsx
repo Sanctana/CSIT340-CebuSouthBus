@@ -6,6 +6,12 @@ import Home from "../pages/Home";
 import RoutePage from "../pages/Routes";
 import Support from "../pages/Support";
 
+
+import PassengerDetails from "../pages/PassengerDetails";
+import Review from "../pages/Review";
+import Confirmation from "../pages/Confirmation";
+import TicketView from "../pages/TicketView";
+
 export default function MainContent() {
   return (
     <Routes>
@@ -15,6 +21,12 @@ export default function MainContent() {
         <Route path="support" element={<Support />} />
         <Route path="schedule" element={<BusSchedule />} />
         <Route path="aboutus" element={<AboutUs />} />
+
+
+          <Route path="passenger-details" element={<PassengerDetails />} />
+          <Route path="review" element={<Review />} />
+          <Route path="confirmation" element={<Confirmation />} />
+          <Route path="ticket" element={<TicketView />} />
       </Route>
     </Routes>
   );

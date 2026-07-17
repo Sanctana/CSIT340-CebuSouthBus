@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import BusCard from "../components/BusCard";
 import "../styles/busschedule.css";
-import { useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 
 //Sample data
 const busesData = [
@@ -144,15 +144,20 @@ const sortOptions = [
 ];
 
 export default function BusSchedule() {
-  const [searchParams, _] = useSearchParams();
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [sortBy, setSortBy] = useState("relevance");
   const [filterType, setFilterType] = useState("all");
 
   const destination = searchParams.get("destination");
   const date = searchParams.get("date");
-  const passenger = searchParams.get("passenger");
+  const passengerCount = Number(searchParams.get("passenger")) || 1;
 
-  console.log("Search Params:", { destination, date, passenger });
+  const handleSelectBus = (bus) => {
+    navigate("/passenger-details", {
+      state: { bus, date, passengerCount },
+    });
+  };
 
   const filteredBuses = useMemo(() => {
     if (filterType === "all") return busesData;
@@ -179,82 +184,84 @@ export default function BusSchedule() {
 
   const airconCount = busesData.filter((b) => b.acType === "Aircon").length;
   const nonAirconCount = busesData.filter(
-    (b) => b.acType === "Non-Aircon",
+      (b) => b.acType === "Non-Aircon",
   ).length;
 
   return (
-    <div className="schedule-page">
-      <div className="schedule-header">
-        <div className="schedule-heading">
-          <h1>Available Buses</h1>
-          <p>
-            Cebu City → {destination || "Southern Cebu"} • Today,{" "}
-            {new Date().toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
-        </div>
-
-        <div className="sort-container">
-          <label htmlFor="sort-select">Sort by</label>
-          <select
-            id="sort-select"
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-          >
-            {sortOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <div className="filter-bar">
-        <button
-          className={
-            filterType === "all" ? "filter-pill active" : "filter-pill"
-          }
-          onClick={() => setFilterType("all")}
-        >
-          All Buses ({busesData.length})
-        </button>
-        <button
-          className={
-            filterType === "Aircon" ? "filter-pill active" : "filter-pill"
-          }
-          onClick={() => setFilterType("Aircon")}
-        >
-          ❄️ Aircon ({airconCount})
-        </button>
-        <button
-          className={
-            filterType === "Non-Aircon" ? "filter-pill active" : "filter-pill"
-          }
-          onClick={() => setFilterType("Non-Aircon")}
-        >
-          🌬️ Non-Aircon ({nonAirconCount})
-        </button>
-      </div>
-
-      <p className="results-count">
-        Showing {sortedBuses.length} of {busesData.length} bus
-        {busesData.length === 1 ? "" : "es"}
-      </p>
-
-      <div className="bus-list">
-        {sortedBuses.length > 0 ? (
-          sortedBuses.map((bus) => <BusCard key={bus.id} bus={bus} />)
-        ) : (
-          <div className="empty-state">
-            <p>No buses match this filter right now.</p>
-            <button onClick={() => setFilterType("all")}>Clear filters</button>
+      <div className="schedule-page">
+        <div className="schedule-header">
+          <div className="schedule-heading">
+            <h1>Available Buses</h1>
+            <p>
+              Cebu City → {destination || "Southern Cebu"} • Today,{" "}
+              {new Date().toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
           </div>
-        )}
+
+          <div className="sort-container">
+            <label htmlFor="sort-select">Sort by</label>
+            <select
+                id="sort-select"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+            >
+              {sortOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <div className="filter-bar">
+          <button
+              className={
+                filterType === "all" ? "filter-pill active" : "filter-pill"
+              }
+              onClick={() => setFilterType("all")}
+          >
+            All Buses ({busesData.length})
+          </button>
+          <button
+              className={
+                filterType === "Aircon" ? "filter-pill active" : "filter-pill"
+              }
+              onClick={() => setFilterType("Aircon")}
+          >
+            ❄️ Aircon ({airconCount})
+          </button>
+          <button
+              className={
+                filterType === "Non-Aircon" ? "filter-pill active" : "filter-pill"
+              }
+              onClick={() => setFilterType("Non-Aircon")}
+          >
+            🌬️ Non-Aircon ({nonAirconCount})
+          </button>
+        </div>
+
+        <p className="results-count">
+          Showing {sortedBuses.length} of {busesData.length} bus
+          {busesData.length === 1 ? "" : "es"}
+        </p>
+
+        <div className="bus-list">
+          {sortedBuses.length > 0 ? (
+              sortedBuses.map((bus) => (
+                  <BusCard key={bus.id} bus={bus} onSelect={handleSelectBus} />
+              ))
+          ) : (
+              <div className="empty-state">
+                <p>No buses match this filter right now.</p>
+                <button onClick={() => setFilterType("all")}>Clear filters</button>
+              </div>
+          )}
+        </div>
       </div>
-    </div>
   );
 }
