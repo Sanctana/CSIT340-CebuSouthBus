@@ -1,14 +1,14 @@
 import "../styles/globalstyles.css";
 import "../styles/footer.css";
-import "/src/assets/ic_buslogo.png";
 import { NavLink } from "react-router";
+import busLogo from "../assets/ic_buslogo.png";
 
 export default function Footer() {
   return (
     <div>
       <footer className="footer-container">
         <div>
-          <img src="/src/assets/ic_buslogo.png" alt="logo" className="logo" />
+          <img src={busLogo} alt="logo" className="logo" />
         </div>
 
         <div className="nav-list">

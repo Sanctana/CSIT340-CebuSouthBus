@@ -1,0 +1,129 @@
+.confirmation-page {
+  --navy: #16233f;
+  --gold: #f4b400;
+
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.confirmation-hero {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+
+.success-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #16a34a;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.confirmation-hero h1 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 1.9rem;
+}
+
+.confirmation-hero p {
+  margin: 0 0 20px;
+  color: #6b7280;
+}
+
+.confirmation-code-box {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: #fff8e6;
+  border: 1.5px dashed var(--gold);
+  border-radius: 14px;
+  padding: 14px 32px;
+}
+
+.code-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+
+.code-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--navy);
+}
+
+.confirmation-main {
+  width: 100%;
+}
+
+.confirmation-notes {
+  background: #fff;
+  border: 1px solid #eef0f4;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 18px rgba(22, 35, 63, 0.06);
+}
+
+.confirmation-notes h3 {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.confirmation-notes ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.confirmation-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.confirmation-empty {
+  max-width: 480px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.confirmation-empty h1 {
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.confirmation-empty p {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 560px) {
+  .confirmation-actions {
+    flex-direction: column-reverse;
+    gap: 12px;
+    align-items: stretch;
+  }
+}
+
+@media print {
+  .confirmation-actions {
+    display: none;
+  }
+}

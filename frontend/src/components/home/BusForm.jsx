@@ -3,7 +3,6 @@ import Book from "./Book";
 import ManageBooking from "./ManageBooking.jsx";
 import "/src/assets/ic_buslogo.png";
 import { useState } from "react";
-import { useNavigate } from "react-router";
 
 export default function BusForm() {
   const [activeTab, setActiveTab] = useState("book");
