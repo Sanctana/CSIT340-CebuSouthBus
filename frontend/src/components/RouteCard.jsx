@@ -2,6 +2,7 @@ import busLogo from "../assets/bus_logo.png";
 import clockLogo from "../assets/clock_logo.png";
 import pinLogo from "../assets/pin_logo.png";
 import snowflakeLogo from "../assets/snowflake_logo.png";
+import { formatMinutes } from "../utils/utilities";
 
 function RouteCard({ route }) {
   return (
@@ -14,23 +15,32 @@ function RouteCard({ route }) {
         <div className="info">
           <span>
             <img src={pinLogo} alt="pin" />
-            {route.terminal}
+            South Bus Terminal
           </span>
 
           <span>
             <img src={clockLogo} alt="clock" />
-            {route.duration}
+            {formatMinutes(route.minDuration)} -{" "}
+            {formatMinutes(route.maxDuration)}
           </span>
 
           <span>
             <img src={busLogo} alt="bus" />
-            {route.schedule}
+            Every {formatMinutes(route.schedule)}
           </span>
 
-          <span>
-            <img src={snowflakeLogo} alt="type" />
-            {route.type}
-          </span>
+          {route.hasAircon && (
+            <span>
+              <img src={snowflakeLogo} alt="type" />
+              Aircon
+            </span>
+          )}
+          {route.hasNonAircon && (
+            <span>
+              <img src={snowflakeLogo} alt="type" />
+              Non-Aircon
+            </span>
+          )}
         </div>
       </div>
 
@@ -45,7 +55,9 @@ function RouteCard({ route }) {
           <strong>Fare</strong>
         </p>
 
-        <h3 className="fare">{route.fare}</h3>
+        <h3 className="fare">
+          ₱ {route.minFare} - {route.maxFare}
+        </h3>
       </div>
     </div>
   );

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.cebu.southbus.dto.RouteAirconInfo;
 import edu.cebu.southbus.service.RouteService;
-import edu.cebu.southbus.dto.RouteDTO;
 
 @RestController
 @RequestMapping("/route")
@@ -17,7 +17,7 @@ public class RouteController {
 	private RouteService routeService;
 
 	@GetMapping
-	public List<RouteDTO> getAllRoute() {
+	public List<RouteAirconInfo> getAllRoute() {
 		return routeService.getAllRoutes();
 	}
 }

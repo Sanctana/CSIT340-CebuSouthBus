@@ -1,92 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/routes.css";
+import { getRoutes } from "../api/route";
 import Pagination from "../components/Pagination";
 import RouteCard from "../components/RouteCard";
 
+/**
+ * WARNING: Since all destinations has aircon and non-aircon buses in the database,
+ * there is no need to filter the routes by type. Doing so will not work since all
+ * destinations will always have both types of buses.
+ *
+ * If you want to filter the routes by type, you will need to modify the database
+ * such that some destinations only have aircon buses and some only have non-aircon buses.
+ */
 function Routes() {
-  const routesData = [
-    {
-      id: 1,
-      destination: "Oslob",
-      terminal: "South Bus Terminal",
-      region: "South",
-      type: "Aircon",
-      distance: "117 km",
-      duration: "3-4 hrs",
-      schedule: "Every 30 mins",
-      fare: "₱180-220",
-    },
-    {
-      id: 2,
-      destination: "Moalboal",
-      terminal: "South Bus Terminal",
-      region: "South",
-      type: "Non-Aircon",
-      distance: "89 km",
-      duration: "2.5-3 hrs",
-      schedule: "Every 20 mins",
-      fare: "₱150-180",
-    },
-    {
-      id: 3,
-      destination: "Carcar",
-      terminal: "South Bus Terminal",
-      region: "South",
-      type: "Non-Aircon",
-      distance: "40 km",
-      duration: "1 hr",
-      schedule: "Every 15 mins",
-      fare: "₱60-80",
-    },
-    {
-      id: 4,
-      destination: "Dalaguete",
-      terminal: "South Bus Terminal",
-      region: "South",
-      type: "Aircon",
-      distance: "84 km",
-      duration: "2 hrs",
-      schedule: "Every 30 mins",
-      fare: "₱120-150",
-    },
-    {
-      id: 5,
-      destination: "Bato",
-      terminal: "South Bus Terminal",
-      region: "South",
-      type: "Non-Aircon",
-      distance: "140 km",
-      duration: "4 hrs",
-      schedule: "Every 1 hr",
-      fare: "₱180-210",
-    },
-    {
-      id: 6,
-      destination: "Santander",
-      terminal: "South Bus Terminal",
-      region: "South",
-      type: "Aircon",
-      distance: "145 km",
-      duration: "4 hrs",
-      schedule: "Every 1 hr",
-      fare: "₱200-250",
-    },
-  ];
+  const [routesData, setRoutesData] = useState([]);
 
   const [search, setSearch] = useState("");
   const [filterType, setFilterType] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
 
+  useEffect(() => {
+    const fetchRoutes = async () => {
+      getRoutes()
+        .then(setRoutesData)
+        .catch((error) => {
+          console.error("Error fetching routes:", error);
+        });
+    };
+
+    fetchRoutes();
+  }, []);
+
   const routesPerPage = 3;
 
   const filteredRoutes = routesData.filter((route) => {
-    const searchMatch = route.destination
-      .toLowerCase()
-      .includes(search.toLowerCase());
-
-    const typeMatch = filterType === "All" || route.type === filterType;
-
-    return searchMatch && typeMatch;
+    return (
+      route.destination.toLowerCase().includes(search.toLowerCase()) &&
+      (filterType === "All" ||
+        (filterType === "Aircon" && route.hasAircon) ||
+        (filterType === "Non-Aircon" && route.hasNonAircon))
+    );
   });
 
   const totalPages = Math.ceil(filteredRoutes.length / routesPerPage);

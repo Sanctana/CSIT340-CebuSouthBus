@@ -1,10 +1,13 @@
 package edu.cebu.southbus.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -48,4 +51,7 @@ public class Route {
     @Column(name = "max_fare", nullable = false)
     @NotNull
     private Integer maxFare;
+
+    @OneToMany(mappedBy = "route")
+    private List<BusSchedule> buses;
 }

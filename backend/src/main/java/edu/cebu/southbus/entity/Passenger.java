@@ -1,6 +1,5 @@
 package edu.cebu.southbus.entity;
 
-
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
