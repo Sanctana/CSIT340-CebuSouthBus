@@ -1,0 +1,25 @@
+# Node
+node_modules/
+frontend/node_modules/
+
+# Build
+/build/
+/dist/
+frontend/dist/
+
+# Gradle
+/.gradle/
+backend/.gradle/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -115,87 +115,88 @@ function Routes() {
         <h1>Bus Routes</h1>
         <p>Find your South Bus route across Cebu.</p>
       </div>
-    
 
       <div className="routes-gap">
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search destination..."
-          value={search}
-          onChange={handleSearchChange}
-        />
-        <div className="filter-container">
-          <label htmlFor="busFilter" className="filter-label"> Filter: </label>
-          
-          <select
-          id="busFilter"
-          className="filter-dropdown"
-          value={filterType}
-          onChange={(e) => handleFilterChange(e.target.value)}
-          >
-            
-            <option value="All">All</option>
-            <option value="Aircon">Aircon</option>
-            <option value="Non-Aircon">Non-Aircon</option>
-          </select>
-        </div>
-          
-      </div>
-      
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search destination..."
+            value={search}
+            onChange={handleSearchChange}
+          />
+          <div className="filter-container">
+            <label htmlFor="busFilter" className="filter-label">
+              {" "}
+              Filter:{" "}
+            </label>
 
-      <p className="count">Showing {filteredRoutes.length} route(s)</p>
-
-      {currentRoutes.map((route) => (
-        <div className="route-card" key={route.id}>
-          <div className="left">
-            <div className="title">
-              <h2>{route.destination}</h2>
-            </div>
-            <div className="info">
-              <span>📍 {route.terminal}</span>
-              <span>🕒 {route.duration}</span>
-              <span>🚌 {route.schedule}</span>
-              <span>❄️ {route.type}</span>
-            </div>
-          </div>
-          <div className="right">
-            <p>
-              <strong>Distance</strong>
-            </p>
-            <h3>{route.distance}</h3>
-            <p>
-              <strong>Fare</strong>
-            </p>
-            <h3 className="fare">{route.fare}</h3>
+            <select
+              id="busFilter"
+              className="filter-dropdown"
+              value={filterType}
+              onChange={(e) => handleFilterChange(e.target.value)}
+            >
+              <option value="All">All</option>
+              <option value="Aircon">Aircon</option>
+              <option value="Non-Aircon">Non-Aircon</option>
+            </select>
           </div>
         </div>
-      ))}
 
-      {totalPages > 1 && (
-        <div className="pagination">
-          <div className="page-numbers">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                className={currentPage === page ? "active" : ""}
-                onClick={() => setCurrentPage(page)}
-              >
-                {page}
+        <p className="count">Showing {filteredRoutes.length} route(s)</p>
+
+        {currentRoutes.map((route) => (
+          <div className="route-card" key={route.id}>
+            <div className="left">
+              <div className="title">
+                <h2>{route.destination}</h2>
+              </div>
+              <div className="info">
+                <span>📍 {route.terminal}</span>
+                <span>🕒 {route.duration}</span>
+                <span>🚌 {route.schedule}</span>
+                <span>❄️ {route.type}</span>
+              </div>
+            </div>
+            <div className="right">
+              <p>
+                <strong>Distance</strong>
+              </p>
+              <h3>{route.distance}</h3>
+              <p>
+                <strong>Fare</strong>
+              </p>
+              <h3 className="fare">{route.fare}</h3>
+            </div>
+          </div>
+        ))}
+
+        {totalPages > 1 && (
+          <div className="pagination">
+            <div className="page-numbers">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    key={page}
+                    className={currentPage === page ? "active" : ""}
+                    onClick={() => setCurrentPage(page)}
+                  >
+                    {page}
+                  </button>
+                ),
+              )}
+            </div>
+
+            <div className="page-nav">
+              <button onClick={goToPrevious} disabled={currentPage === 1}>
+                Previous
               </button>
-            ))}
+              <button onClick={goToNext} disabled={currentPage === totalPages}>
+                Next
+              </button>
+            </div>
           </div>
-
-          <div className="page-nav">
-            <button onClick={goToPrevious} disabled={currentPage === 1}>
-              Previous
-            </button>
-            <button onClick={goToNext} disabled={currentPage === totalPages}>
-              Next
-            </button>
-          </div>
-        </div>
-      )}
+        )}
       </div>
     </div>
   );

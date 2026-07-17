@@ -1,6 +1,6 @@
 import "../../styles/globalstyles.css";
+import heroPhoto from "../../assets/hero_photo.jpg";
 import BusForm from "./BusForm";
-import "/src/assets/hero_photo.jpg";
 import "../../styles/hero.css";
 
 export default function Hero() {
@@ -23,11 +23,7 @@ export default function Hero() {
       </div>
 
       <div className="hero-right">
-        <img
-          src="/src/assets/hero_photo.jpg"
-          className="hero-image"
-          alt="Hero Photo"
-        />
+        <img src={heroPhoto} className="hero-image" alt="Hero Photo" />
       </div>
     </section>
   );
