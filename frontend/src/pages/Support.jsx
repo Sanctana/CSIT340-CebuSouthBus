@@ -140,14 +140,14 @@ export default function Support() {
             <div className="map-wrapper">
 
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.6702160121667!2d123.86465899999997!3d10.2881334"
-                width="100%"
-                height="320"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title="Cebu South Bus Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.6702161386174!2d123.8620840758894!3d10.288133389832526!2m3!1f0!2f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99957cb4f718f%3A0x742eae4436a7e14f!2sNatalio%20B.%20Bacalso%20Ave%2C%20Cebu!5e0!3m2!1sen!2sph!4v1784278857202!5m2!1sen!2sph"
+              width="100%"
+              height="320"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Cebu South Bus Location"
               />
 
             </div>
