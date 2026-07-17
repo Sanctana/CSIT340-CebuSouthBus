@@ -1,22 +1,33 @@
 package edu.cebu.southbus.entity;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 @Entity
 @Table(name = "tblpassenger")
-public class PassengerEntity {
+public class Passenger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "ticket_uid", nullable = false, length = 6)
+    @JoinColumn(name = "ticket_uid", nullable = false)
     @NotNull
     @Size(max = 6)
-    private String ticketUid;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Ticket ticketUid;
 
     @Column(name = "first_name", nullable = false)
     @NotNull
