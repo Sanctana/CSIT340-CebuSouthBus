@@ -213,8 +213,18 @@
 }
 
 .cardIcon {
-  font-size: 2rem;
-  margin-bottom: 12px;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardIcon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
 }
 
 .aboutusRoutes h3,

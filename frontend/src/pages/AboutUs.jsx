@@ -1,6 +1,10 @@
 import React from "react";
 import "../styles/aboutus.css";
-import heroPhoto from "../assets/hero_photo.jpg";
+import heroPhoto from "../assets/busses.png";
+import mapLogo from "../assets/map_logo.png";
+import clockLogo from "../assets/clock_logo.png";
+import ticketLogo from "../assets/ticket_logo.png";
+import shieldLogo from "../assets/shield_logo.png";
 
 function AboutUs() {
   return (
@@ -84,22 +88,22 @@ function AboutUs() {
 
             <div className="container">
               <div className="aboutusRoutes">
-                <div className="cardIcon">🗺️</div>
+                <div className="cardIcon"><img src={mapLogo} alt="mapLogo"/></div>
                 <h3>Reliable Routes</h3>
                 <p>Connecting you to over 50 destinations across Southern Cebu.</p>
               </div>
               <div className="aboutusSchedules">
-                <div className="cardIcon">🕒</div>
+                <div className="cardIcon"><img src={clockLogo} alt="clockLogo"/></div>
                 <h3>Updated Schedules</h3>
                 <p>Real-time departure information so you never miss your trip.</p>
               </div>
               <div className="aboutusBooking">
-                <div className="cardIcon">🎫</div>
+                <div className="cardIcon"><img src={ticketLogo} alt="ticketLogo"/></div>
                 <h3>Easy Booking</h3>
                 <p>Book your tickets online in just a few simple steps.</p>
               </div>
               <div className="aboutusSafe">
-                <div className="cardIcon">🛡️</div>
+                <div className="cardIcon"><img src={shieldLogo} alt="shieldLogo"/></div>
                 <h3>Safe & Comfortable</h3>
                 <p>Travel with trusted bus operators for a safe and comfortable journey.</p>
               </div>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../styles/routes.css";
+import RouteCard from "../components/RouteCard";
+import Pagination from "../components/Pagination";
 
 function Routes() {
   const routesData = [
@@ -147,54 +149,20 @@ function Routes() {
       <p className="count">Showing {filteredRoutes.length} route(s)</p>
 
       {currentRoutes.map((route) => (
-        <div className="route-card" key={route.id}>
-          <div className="left">
-            <div className="title">
-              <h2>{route.destination}</h2>
-            </div>
-            <div className="info">
-              <span>📍 {route.terminal}</span>
-              <span>🕒 {route.duration}</span>
-              <span>🚌 {route.schedule}</span>
-              <span>❄️ {route.type}</span>
-            </div>
-          </div>
-          <div className="right">
-            <p>
-              <strong>Distance</strong>
-            </p>
-            <h3>{route.distance}</h3>
-            <p>
-              <strong>Fare</strong>
-            </p>
-            <h3 className="fare">{route.fare}</h3>
-          </div>
-        </div>
+        <RouteCard
+        key={route.id}
+        route={route}
+        />
       ))}
 
       {totalPages > 1 && (
-        <div className="pagination">
-          <div className="page-numbers">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                className={currentPage === page ? "active" : ""}
-                onClick={() => setCurrentPage(page)}
-              >
-                {page}
-              </button>
-            ))}
-          </div>
-
-          <div className="page-nav">
-            <button onClick={goToPrevious} disabled={currentPage === 1}>
-              Previous
-            </button>
-            <button onClick={goToNext} disabled={currentPage === totalPages}>
-              Next
-            </button>
-          </div>
-        </div>
+        <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        goToPrevious={goToPrevious}
+        goToNext={goToNext}
+        />
       )}
       </div>
     </div>

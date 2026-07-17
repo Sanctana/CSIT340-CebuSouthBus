@@ -91,19 +91,19 @@
 }
 
 .contact-icon-box {
-  width: 36px;
-  height: 36px;
+  width: 45px;
+  height: 45px;
   border-radius: 12px;
-  background: #3450be;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #f5f7fb;
   flex-shrink: 0;
 }
 
 .contact-icon-box--lg {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 .contact-emoji {
@@ -127,6 +127,14 @@
   color: #1f2937;
   line-height: 1.4;
 }
+
+.contact-image {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
 .support-content {
   max-width: 1000px;
   margin: 0 auto;

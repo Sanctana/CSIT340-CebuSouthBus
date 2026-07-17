@@ -1,5 +1,10 @@
 import { useState } from "react";
 import "../styles/support.css";
+import pinLogo from "../assets/pin_logo.png";
+import clockLogo from "../assets/clock_logo.png";
+import emailLogo from "../assets/email_logo.png";
+import messageLogo from "../assets/message_logo.png";
+import phoneLogo from "../assets/phone_logo.png"; 
 
 const faqs = [
   {
@@ -45,25 +50,25 @@ const contactInfo = [
     id: "phone",
     label: "Hotline",
     value: "(054) 645-6557",
-    icon: "📞",
+    icon: phoneLogo,
   },
   {
     id: "email",
     label: "Email",
     value: "southbus@csbt.gov.ph",
-    icon: "✉️",
+    icon: emailLogo,
   },
   {
     id: "address",
     label: "Terminal Address",
     value: "N. Bacalso Ave., Cebu City, Philippines",
-    icon: "📍",
+    icon: pinLogo,
   },
   {
     id: "hours",
     label: "Operating Hours",
     value: "Open daily, 4:00 AM – 10:00 PM",
-    icon: "🕒",
+    icon: clockLogo,
   },
 ];
 
@@ -91,7 +96,11 @@ export default function Support() {
           {contactInfo.map((item) => (
               <div className="contact-card" key={item.id}>
                 <div className="contact-icon-box">
-                  <span className="contact-emoji">{item.icon}</span>
+                  <img 
+                  src={item.icon} 
+                  alt={item.label} 
+                  className="contact-image"
+                  />
                 </div>
                 <div>
                   <p className="contact-label">{item.label}</p>
@@ -129,8 +138,12 @@ export default function Support() {
               <div className="contact-link-list">
                 <a href="tel:+6354645655" className="contact-link-item">
                   <div className="contact-icon-box contact-icon-box--lg">
-                    <span className="contact-emoji">📞</span>
-                  </div>
+                    <img 
+                    src={phoneLogo} 
+                    alt="phoneLogo" 
+                    className="contact-image"
+                    />
+                    </div>
                   <div>
                     <p className="contact-link-label">Call our hotline</p>
                     <p className="contact-link-value">(054) 645-6557</p>
@@ -138,9 +151,14 @@ export default function Support() {
                 </a>
 
                 <a href="mailto:southbus@csbt.gov.ph" className="contact-link-item">
-                  <div className="contact-icon-box contact-icon-box--lg">
-                    <span className="contact-emoji">✉️</span>
-                  </div>
+                <div className="contact-icon-box contact-icon-box--lg">
+                  <img
+                  src={emailLogo}
+                  alt="emailLogo"
+                  className="contact-image"
+                  />
+                </div>
+
                   <div>
                     <p className="contact-link-label">Email us</p>
                     <p className="contact-link-value">southbus@csbt.gov.ph</p>
@@ -149,8 +167,13 @@ export default function Support() {
 
                 <div className="contact-link-item">
                   <div className="contact-icon-box contact-icon-box--lg">
-                    <span className="contact-emoji">💬</span>
+                    <img 
+                    src={messageLogo} 
+                    alt="messageLogo" 
+                    className="contact-image"
+                    />
                   </div>
+
                   <div>
                     <p className="contact-link-label">Information Desk</p>
                     <p className="contact-link-value">Get assistance at the terminal during operating hours.</p>
