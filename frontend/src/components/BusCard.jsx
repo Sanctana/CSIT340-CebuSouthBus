@@ -1,5 +1,5 @@
 import "../styles/busschedule.css";
-import { formatTime } from "../utils/utilities";
+import { formatTime, formatMinutes } from "../utils/utilities";
 
 export default function BusCard({ bus, onSelect }) {
   const {
@@ -9,7 +9,6 @@ export default function BusCard({ bus, onSelect }) {
     destination,
     departureTime,
     arrivalTime,
-    maxDuration,
     capacity,
     route,
   } = bus;
@@ -23,23 +22,19 @@ export default function BusCard({ bus, onSelect }) {
           <h3>{busOperator}</h3>
           <span className="bus-number">Bus {busNumber}</span>
         </div>
-        <span
-          className={`type-badge ${
-            isAircon === "Aircon" ? "aircon" : "non-aircon"
-          }`}
-        >
-          {isAircon === "Aircon" ? "❄️ Aircon" : "🌬️ Non-Aircon"}
+        <span className={`type-badge ${isAircon ? "aircon" : "non-aircon"}`}>
+          {isAircon ? "❄️ Aircon" : "🌬️ Non-Aircon"}
         </span>
       </div>
 
       <div className="bus-card-route">
         <div className="stop">
-          <p className="time">{departureTime}</p>
-          <p className="place">{origin}</p>
+          <p className="time">{formatTime(departureTime)}</p>
+          <p className="place">Cebu City</p>
         </div>
 
         <div className="route-line">
-          <span className="duration">{maxDuration}</span>
+          <span className="duration">{formatMinutes(route.maxDuration)}</span>
           <div className="line">
             <span className="dot start"></span>
             <span className="dot end"></span>
