@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 17, 2026 at 09:53 AM
+-- Host: 127.0.0.1
+-- Generation Time: Jul 18, 2026 at 08:00 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -287,18 +287,18 @@ CREATE TABLE `tblroute` (
 --
 
 INSERT INTO `tblroute` (`id`, `destination`, `distance`, `min_duration`, `max_duration`, `schedule`, `min_fare`, `max_fare`) VALUES
-(1, 'San Fernando', 0, 65, 85, 60, 42, 55),
-(2, 'Carcar', 0, 95, 125, 60, 55, 75),
-(3, 'Sibonga', 0, 115, 150, 90, 72, 95),
-(4, 'Argao', 0, 155, 180, 120, 85, 98),
-(5, 'Dalaguete', 0, 200, 255, 120, 125, 155),
-(6, 'Oslob', 0, 260, 310, 120, 182, 215),
-(7, 'Santander', 0, 315, 360, 120, 220, 255),
-(8, 'Samboan', 0, 305, 330, 120, 190, 210),
-(9, 'Badian', 0, 250, 285, 90, 158, 175),
-(10, 'Moalboal', 0, 210, 230, 60, 165, 205),
-(11, 'Aloguinsan', 0, 190, 225, 90, 125, 145),
-(12, 'Barili', 0, 170, 205, 60, 115, 135);
+(1, 'San Fernando', 29, 65, 85, 60, 42, 55),
+(2, 'Carcar', 40, 95, 125, 60, 55, 75),
+(3, 'Sibonga', 50, 115, 150, 90, 72, 95),
+(4, 'Argao', 67, 155, 180, 120, 85, 98),
+(5, 'Dalaguete', 84, 200, 255, 120, 125, 155),
+(6, 'Oslob', 117, 260, 310, 120, 182, 215),
+(7, 'Santander', 134, 315, 360, 120, 220, 255),
+(8, 'Samboan', 128, 305, 330, 120, 190, 210),
+(9, 'Badian', 98, 250, 285, 90, 158, 175),
+(10, 'Moalboal', 89, 210, 230, 60, 165, 205),
+(11, 'Aloguinsan', 72, 190, 225, 90, 125, 145),
+(12, 'Barili', 61, 170, 205, 60, 115, 135);
 
 -- --------------------------------------------------------
 
