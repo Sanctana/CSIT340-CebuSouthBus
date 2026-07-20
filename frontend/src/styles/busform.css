@@ -17,7 +17,7 @@
 
 .booking-form > p {
   margin: -10px 0 0;
-  color: #777;
+  color: #4e4d4d;
   font-size: 15px;
 }
 
@@ -138,18 +138,21 @@
   background: #f0f3ff;
 }
 
-.swap-icon {
+.oneway-icon {
   width: 45px;
   height: 45px;
   background: #3454d1;
-  color: white;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  font-size: 24px;
-  font-weight: bold;
+}
+
+.oneway-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .counter {
@@ -190,7 +193,7 @@
   padding: 16px;
   border: none;
   border-radius: 15px;
-  background: #d9d9d9;
+  background: #b8b8b8;
   color: white;
   font-size: 18px;
   font-weight: 600;
