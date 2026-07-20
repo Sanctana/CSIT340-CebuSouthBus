@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router";
-import PassengerList from "../components/PassengerList";
+import PassengerList from "../components/review/PassengerList";
 import { formatFullName } from "../utils/utilities";
 import "../styles/review.css";
 import "../styles/confirmation.css";

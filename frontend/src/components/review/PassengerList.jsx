@@ -1,4 +1,4 @@
-import { formatFullName, calculateAge } from "../utils/utilities";
+import { calculateAge, formatFullName } from "../../utils/utilities";
 
 export default function PassengerList({ passengers }) {
   return (

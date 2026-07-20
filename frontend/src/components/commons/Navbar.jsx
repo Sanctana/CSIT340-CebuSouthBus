@@ -1,5 +1,5 @@
 import "/src/assets/ic_buslogo.png";
-import "../styles/navbar.css";
+import "/src/styles/navbar.css";
 import { NavLink } from "react-router";
 
 export default function Navbar() {

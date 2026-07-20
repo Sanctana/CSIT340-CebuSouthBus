@@ -1,7 +1,7 @@
-import "../styles/globalstyles.css";
-import "../styles/footer.css";
+import "/src/styles/globalstyles.css";
+import "/src/styles/footer.css";
 import { NavLink } from "react-router";
-import busLogo from "../assets/ic_buslogo.png";
+import busLogo from "/src/assets/ic_buslogo.png";
 
 export default function Footer() {
   return (

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import BusCard from "../components/BusCard";
+import BusCard from "../components/schedule/BusCard";
 import "../styles/busschedule.css";
 import { useNavigate, useSearchParams } from "react-router";
 import { getSchedules } from "../api/schedule";

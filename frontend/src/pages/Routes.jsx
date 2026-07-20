@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "../styles/routes.css";
 import { getRoutes } from "../api/route";
-import Pagination from "../components/Pagination";
-import RouteCard from "../components/RouteCard";
+import Pagination from "../components/routes/Pagination";
+import RouteCard from "../components/routes/RouteCard";
 
 /**
  * WARNING: Since all destinations has aircon and non-aircon buses in the database,
