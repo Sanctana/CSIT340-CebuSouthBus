@@ -10,6 +10,14 @@ const emptyPassenger = () => ({
   gender: "Male",
 });
 
+const emptyContact = () => ({
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  email: "",
+  mobile: "",
+});
+
 const fallbackBus = {
   operator: "CSBT Express",
   busNumber: "#12",
@@ -31,11 +39,7 @@ export default function PassengerDetails() {
   const travelDate = location.state?.date ?? "";
   const passengerCount = location.state?.passengerCount ?? 1;
 
-  const [contact, setContact] = useState({
-    fullName: "",
-    email: "",
-    mobile: "",
-  });
+  const [contact, setContact] = useState(emptyContact());
   const [passengers, setPassengers] = useState(
     Array.from({ length: passengerCount }, emptyPassenger),
   );
@@ -58,14 +62,22 @@ export default function PassengerDetails() {
     );
   };
 
+  const updateContact = (field, value) => {
+    setContact((prev) => ({ ...prev, [field]: value }));
+  };
+
   const totalFare = bus.price * passengerCount;
 
   const validate = () => {
     const newErrors = {};
 
-    if (!contact.fullName.trim()) {
-      newErrors.contactName = "Full name is required.";
+    if (!contact.firstName.trim()) {
+      newErrors.contactFirstName = "First name is required.";
     }
+    if (!contact.lastName.trim()) {
+      newErrors.contactLastName = "Last name is required.";
+    }
+    // Contact middle name is optional — intentionally not validated.
     if (!/^\S+@\S+\.\S+$/.test(contact.email)) {
       newErrors.email = "Enter a valid email address.";
     }
@@ -81,7 +93,7 @@ export default function PassengerDetails() {
       if (!p.lastName.trim()) {
         newErrors[`p${i}LastName`] = "Last name is required.";
       }
-      // Middle name is optional — intentionally not validated.
+      // Passenger middle name is optional — intentionally not validated.
       const ageNum = Number(p.age);
       if (!p.age || ageNum <= 0 || ageNum > 120) {
         newErrors[`p${i}Age`] = "Enter a valid age.";
@@ -125,64 +137,6 @@ export default function PassengerDetails() {
         <p className="subtitle">
           Tell us who's travelling so we can prepare your tickets.
         </p>
-
-        <section className="form-card">
-          <h2>Contact Information</h2>
-          <p className="hint">
-            We'll send your e-ticket and trip updates here.
-          </p>
-
-          <div className="form-grid">
-            <div className="form-field wide">
-              <label>Full Name</label>
-              <input
-                type="text"
-                placeholder="Juan Dela Cruz"
-                value={contact.fullName}
-                onChange={(e) =>
-                  setContact({ ...contact, fullName: e.target.value })
-                }
-              />
-              {errors.contactName && (
-                <span className="error-text">{errors.contactName}</span>
-              )}
-            </div>
-
-            <div className="form-field">
-              <label>Email Address</label>
-              <input
-                type="email"
-                placeholder="juan@email.com"
-                value={contact.email}
-                onChange={(e) =>
-                  setContact({ ...contact, email: e.target.value })
-                }
-              />
-              {errors.email && (
-                <span className="error-text">{errors.email}</span>
-              )}
-            </div>
-
-            <div className="form-field">
-              <label>Mobile Number</label>
-              <input
-                type="tel"
-                placeholder="09171234567"
-                maxLength={11}
-                value={contact.mobile}
-                onChange={(e) =>
-                  setContact({
-                    ...contact,
-                    mobile: e.target.value.replace(/\D/g, ""),
-                  })
-                }
-              />
-              {errors.mobile && (
-                <span className="error-text">{errors.mobile}</span>
-              )}
-            </div>
-          </div>
-        </section>
 
         <section className="form-card">
           <h2>
@@ -273,6 +227,80 @@ export default function PassengerDetails() {
               </div>
             </div>
           ))}
+        </section>
+
+        <section className="form-card">
+          <h2>Contact Information</h2>
+          <p className="hint">
+            We'll send your e-ticket and trip updates here.
+          </p>
+
+          <div className="form-grid">
+            <div className="form-field">
+              <label>First Name</label>
+              <input
+                type="text"
+                placeholder="Juan"
+                value={contact.firstName}
+                onChange={(e) => updateContact("firstName", e.target.value)}
+              />
+              {errors.contactFirstName && (
+                <span className="error-text">{errors.contactFirstName}</span>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label>Middle Name (Optional)</label>
+              <input
+                type="text"
+                placeholder="Santos"
+                value={contact.middleName}
+                onChange={(e) => updateContact("middleName", e.target.value)}
+              />
+            </div>
+
+            <div className="form-field">
+              <label>Last Name</label>
+              <input
+                type="text"
+                placeholder="Dela Cruz"
+                value={contact.lastName}
+                onChange={(e) => updateContact("lastName", e.target.value)}
+              />
+              {errors.contactLastName && (
+                <span className="error-text">{errors.contactLastName}</span>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label>Email Address</label>
+              <input
+                type="email"
+                placeholder="juan@email.com"
+                value={contact.email}
+                onChange={(e) => updateContact("email", e.target.value)}
+              />
+              {errors.email && (
+                <span className="error-text">{errors.email}</span>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label>Mobile Number</label>
+              <input
+                type="tel"
+                placeholder="09171234567"
+                maxLength={11}
+                value={contact.mobile}
+                onChange={(e) =>
+                  updateContact("mobile", e.target.value.replace(/\D/g, ""))
+                }
+              />
+              {errors.mobile && (
+                <span className="error-text">{errors.mobile}</span>
+              )}
+            </div>
+          </div>
         </section>
 
         <label className="agree-row">

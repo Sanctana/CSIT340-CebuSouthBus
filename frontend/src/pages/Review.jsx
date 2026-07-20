@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import PassengerList from "../components/PassengerList";
+import { formatFullName } from "../utils/utilities";
 import "../styles/review.css";
 import "../styles/confirmation.css";
 
@@ -107,7 +108,7 @@ export default function Review() {
           <div className="review-grid">
             <div>
               <span className="review-label">Full Name</span>
-              <p>{contact.fullName}</p>
+              <p>{formatFullName(contact)}</p>
             </div>
             <div>
               <span className="review-label">Email</span>

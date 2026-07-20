@@ -18,3 +18,10 @@ export function formatTime(timeString) {
   const formattedHours = hours % 12 || 12;
   return `${formattedHours}:${minutes.toString().padStart(2, "0")} ${period}`;
 }
+
+export function formatFullName(person) {
+  return [person.firstName, person.middleName, person.lastName]
+    .map((part) => part?.trim())
+    .filter(Boolean)
+    .join(" ");
+}

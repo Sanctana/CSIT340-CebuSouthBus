@@ -1,9 +1,4 @@
-function formatFullName(p) {
-  return [p.firstName, p.middleName, p.lastName]
-    .map((part) => part?.trim())
-    .filter(Boolean)
-    .join(" ");
-}
+import { formatFullName } from "../utils/utilities";
 
 export default function PassengerList({ passengers }) {
   return (
