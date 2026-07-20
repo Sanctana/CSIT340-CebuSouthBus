@@ -20,8 +20,25 @@ export function formatTime(timeString) {
 }
 
 export function formatFullName(person) {
-  return [person.firstName, person.middleName, person.lastName]
+  return [person.firstName, person.middleName, person.lastName, person.suffix]
     .map((part) => part?.trim())
     .filter(Boolean)
     .join(" ");
+}
+
+export function calculateAge(dateOfBirth) {
+  if (!dateOfBirth) return null;
+
+  const dob = new Date(dateOfBirth);
+  if (Number.isNaN(dob.getTime())) return null;
+
+  const today = new Date();
+  let age = today.getFullYear() - dob.getFullYear();
+  const hasHadBirthdayThisYear =
+    today.getMonth() > dob.getMonth() ||
+    (today.getMonth() === dob.getMonth() && today.getDate() >= dob.getDate());
+
+  if (!hasHadBirthdayThisYear) age--;
+
+  return age;
 }

@@ -1,4 +1,4 @@
-import { formatFullName } from "../utils/utilities";
+import { formatFullName, calculateAge } from "../utils/utilities";
 
 export default function PassengerList({ passengers }) {
   return (
@@ -9,7 +9,7 @@ export default function PassengerList({ passengers }) {
           <div className="passenger-info">
             <p className="passenger-name">{formatFullName(p)}</p>
             <p className="passenger-meta">
-              {p.age} yrs old • {p.gender}
+              {calculateAge(p.dateOfBirth)} yrs old • {p.gender}
             </p>
           </div>
         </div>
