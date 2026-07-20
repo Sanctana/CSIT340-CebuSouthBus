@@ -2,17 +2,17 @@ import Advertisement from "../components/home/Advertise";
 import Hero from "../components/home/Hero";
 import "../styles/home.css";
 
-export default function Home() {
-  const scrollToBooking = () => {
-    const bookingSection = document.getElementById("book-ticket");
-    if (bookingSection) {
-      bookingSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
+const scrollToBooking = () => {
+  const bookingSection = document.getElementById("book-ticket");
+  if (bookingSection) {
+    bookingSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
+export default function Home() {
   return (
     <div>
       <Hero />

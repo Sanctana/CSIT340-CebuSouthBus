@@ -95,6 +95,7 @@ export default function Book() {
               <input
                 type="date"
                 value={date}
+                min={new Date().toISOString().split("T")[0]}
                 onChange={(e) => setDate(e.target.value)}
               />
             </div>

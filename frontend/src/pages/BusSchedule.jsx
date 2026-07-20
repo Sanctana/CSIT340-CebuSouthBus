@@ -29,7 +29,15 @@ export default function BusSchedule() {
     }
     const fetchSchedules = async () => {
       getSchedules(destination, date, passengerCount)
-        .then(setBusesData)
+        // .then(setBusesData)
+        .then((data) => {
+          const now = new Date();
+          const filtered = data.filter((bus) => {
+            const departure = new Date(`${date}T${bus.departureTime}`);
+            return departure > now;
+          });
+          setBusesData(filtered);
+        })
         .catch((error) => {
           console.error("Error fetching schedules:", error);
         });
