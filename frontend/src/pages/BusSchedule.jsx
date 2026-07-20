@@ -124,7 +124,7 @@ export default function BusSchedule() {
           }
           onClick={() => setFilterType("Aircon")}
         >
-          ❄️ Aircon ({airconCount})
+          Aircon ({airconCount})
         </button>
         <button
           className={
@@ -132,7 +132,7 @@ export default function BusSchedule() {
           }
           onClick={() => setFilterType("Non-Aircon")}
         >
-          🌬️ Non-Aircon ({nonAirconCount})
+          Non-Aircon ({nonAirconCount})
         </button>
       </div>
 

@@ -10,6 +10,22 @@ function RouteCard({ route }) {
       <div className="left">
         <div className="title">
           <h2>{route.destination}</h2>
+
+          <div className="route-tags">
+            {route.hasAircon && (
+                <span className="route-tag">
+                <img src={snowflakeLogo} alt="Aircon" />
+                Aircon
+                </span>
+            )}
+
+            {route.hasNonAircon && (
+                <span className="route-tag">
+                  <img src={snowflakeLogo} alt="Non-Aircon" />
+                Non-Aircon
+                </span>
+            )}
+          </div>
         </div>
 
         <div className="info">
@@ -28,19 +44,6 @@ function RouteCard({ route }) {
             <img src={busLogo} alt="bus" />
             Every {formatMinutes(route.schedule)}
           </span>
-
-          {route.hasAircon && (
-            <span>
-              <img src={snowflakeLogo} alt="type" />
-              Aircon
-            </span>
-          )}
-          {route.hasNonAircon && (
-            <span>
-              <img src={snowflakeLogo} alt="type" />
-              Non-Aircon
-            </span>
-          )}
         </div>
       </div>
 

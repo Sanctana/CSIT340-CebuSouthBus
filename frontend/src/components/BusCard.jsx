@@ -23,7 +23,7 @@ export default function BusCard({ bus, onSelect }) {
           <span className="bus-number">Bus {busNumber}</span>
         </div>
         <span className={`type-badge ${isAircon ? "aircon" : "non-aircon"}`}>
-          {isAircon ? "❄️ Aircon" : "🌬️ Non-Aircon"}
+          {isAircon ? "Aircon" : "Non-Aircon"}
         </span>
       </div>
 
@@ -50,9 +50,9 @@ export default function BusCard({ bus, onSelect }) {
       <div className="bus-card-bottom">
         <div className="details">
           <span className={isLowSeats ? "seats low" : "seats"}>
-            🪑 {capacity} seat{capacity === 1 ? "" : "s"} left
+            {capacity} seat{capacity === 1 ? "" : "s"} left
           </span>
-          <span className="terminal">📍 South Bus Terminal</span>
+          <span className="terminal"> South Bus Terminal</span>
         </div>
 
         <div className="price-book">
