@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 import { getRoutes } from "../../api/route";
+import oneway from "../../assets/ic_oneway.png";
 
 export default function Book() {
   const navigate = useNavigate();
@@ -49,7 +50,9 @@ export default function Book() {
             </div>
           </div>
 
-          <div className="swap-icon">→</div>
+          <div className="oneway-icon">
+            <img src={oneway} alt="oneway" />
+          </div>
 
           <div className="field destination-field">
             <div className="child-field">
@@ -98,7 +101,7 @@ export default function Book() {
           </div>
 
           <div className="field">
-            <img src="/src/assets/ic_buslogo.png" className="form-logo" />
+            <img src="/src/assets/passenger.png" className="form-logo" />
 
             <div className="child-field">
               <label>PASSENGER</label>
