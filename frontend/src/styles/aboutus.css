@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 .aboutusPage {
-  min-height: 100vh;
+  min-height: 100dvh;
   background: #f5f7fb;
   font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
   color: #1f2937;
+  overflow:hidden;
 }
 
 .aboutusHero {
