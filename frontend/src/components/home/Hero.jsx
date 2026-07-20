@@ -5,12 +5,12 @@ import "../../styles/hero.css";
 
 export default function Hero() {
   return (
-    <section className="hero-section">
+    <section id="book-ticket" className="hero-section">
       <div className="hero-left">
         <div className="hero-text">
           <p className="tag">SOUTHERN CEBU'S NO.1 BUS LINE</p>
 
-          <h1 className="white-header">Your Gateway to </h1>
+          <h1 className="white-header">Your Gateway to</h1>
           <h1 className="yellow-header">Southern Cebu</h1>
 
           <p className="description">
