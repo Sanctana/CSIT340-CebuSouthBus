@@ -3,91 +3,86 @@
     background: #f7f9ff;
 }
 
-.header-text{
-    max-width:650px;
+.advertisement-header {
+    position: relative;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
-.header-text h2{
-    margin:0;
-    font-size:3rem;
-    color:#1f2f6b;
+.header-text {
+    max-width: 650px;
+    margin: 0 auto;
 }
 
-.header-text p{
-    margin-top:15px;
-    color:#6b7280;
-    line-height:1.7;
-    font-size:18px;
-}
-
-.advertisement-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    margin-bottom:50px;
-}
-
-.advertisement-header h2 {
+.header-text h2 {
     margin: 0;
     font-size: 3rem;
-    color: #1f2f6b;
     font-weight: 700;
+    color: #1f2f6b;
 }
 
-.advertisement-header p {
+.header-text p {
     margin-top: 15px;
-    max-width: 650px;
     color: #6b7280;
-    font-size: 18px;
     line-height: 1.7;
+    font-size: 18px;
 }
 
-.advertisement-buttons{
-    display:flex;
-    gap:15px;
-    flex-shrink:0;
+.advertisement-buttons {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
 }
 
-.advertisement-buttons button{
-    width:55px;
-    height:55px;
-    border:none;
-    border-radius:50%;
-    background:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
-    transition:.3s;
+.advertisement-buttons button {
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
 
-.advertisement-buttons button:hover:not(:disabled){
-    background:#3454d1;
+.advertisement-buttons button:hover:not(:disabled) {
+    background: #3454d1;
 }
 
-.advertisement-buttons img{
-    width:22px;
-    height:22px;
+.advertisement-buttons button:hover img {
+    filter: brightness(0) invert(1);
 }
 
-.advertisement-buttons button:hover img{
-    filter:brightness(0) invert(1);
+.advertisement-buttons button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
-.advertisement-buttons button:disabled{
-    opacity:.4;
-    cursor:not-allowed;
+.advertisement-buttons img {
+    width: 22px;
+    height: 22px;
 }
+
+.tourist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
 .tourist-location {
     display: flex;
     align-items: center;
     gap: 8px;
-
     margin-top: 18px;
     padding-top: 18px;
     border-top: 1px solid #e5e7eb;
-
     color: #3454d1;
     font-weight: 600;
     font-size: 15px;
@@ -100,25 +95,28 @@
     flex-shrink: 0;
 }
 
-
-.tourist-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    align-items: stretch;
-}
-
 @media (max-width: 900px) {
-
-    .tourist-grid {
-        grid-template-columns: 1fr;
+    .advertisement-header {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
     }
 
-    .advertisement-header h2 {
+    .advertisement-buttons {
+        position: static;
+        transform: none;
+        justify-content: center;
+    }
+
+    .header-text h2 {
         font-size: 2.3rem;
     }
 
-    .advertisement-header p {
+    .header-text p {
         font-size: 16px;
+    }
+
+    .tourist-grid {
+        grid-template-columns: 1fr;
     }
 }
