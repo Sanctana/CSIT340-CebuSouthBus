@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
+import { calculateAge } from "../utils/utilities";
 import "../styles/passengerdetails.css";
+
+const suffixOptions = ["", "Jr.", "Sr.", "II", "III", "IV", "V"];
 
 const emptyPassenger = () => ({
   firstName: "",
   middleName: "",
   lastName: "",
-  age: "",
+  suffix: "",
+  dateOfBirth: "",
   gender: "Male",
 });
 
@@ -93,10 +97,18 @@ export default function PassengerDetails() {
       if (!p.lastName.trim()) {
         newErrors[`p${i}LastName`] = "Last name is required.";
       }
-      // Passenger middle name is optional — intentionally not validated.
-      const ageNum = Number(p.age);
-      if (!p.age || ageNum <= 0 || ageNum > 120) {
-        newErrors[`p${i}Age`] = "Enter a valid age.";
+      // Passenger middle name and suffix are optional — not validated.
+
+      if (!p.dateOfBirth) {
+        newErrors[`p${i}Dob`] = "Date of birth is required.";
+      } else {
+        const dob = new Date(p.dateOfBirth);
+        const age = calculateAge(p.dateOfBirth);
+        if (Number.isNaN(dob.getTime()) || dob > new Date()) {
+          newErrors[`p${i}Dob`] = "Date of birth can't be in the future.";
+        } else if (age > 120) {
+          newErrors[`p${i}Dob`] = "Enter a valid date of birth.";
+        }
       }
     });
 
@@ -198,16 +210,33 @@ export default function PassengerDetails() {
                 </div>
 
                 <div className="form-field">
-                  <label>Age</label>
+                  <label>Suffix (Optional)</label>
+                  <select
+                    value={p.suffix}
+                    onChange={(e) =>
+                      updatePassenger(i, "suffix", e.target.value)
+                    }
+                  >
+                    {suffixOptions.map((option) => (
+                      <option key={option || "none"} value={option}>
+                        {option === "" ? "None" : option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-field">
+                  <label>Date of Birth</label>
                   <input
-                    type="number"
-                    placeholder="Age"
-                    min="0"
-                    value={p.age}
-                    onChange={(e) => updatePassenger(i, "age", e.target.value)}
+                    type="date"
+                    value={p.dateOfBirth}
+                    max={new Date().toISOString().split("T")[0]}
+                    onChange={(e) =>
+                      updatePassenger(i, "dateOfBirth", e.target.value)
+                    }
                   />
-                  {errors[`p${i}Age`] && (
-                    <span className="error-text">{errors[`p${i}Age`]}</span>
+                  {errors[`p${i}Dob`] && (
+                    <span className="error-text">{errors[`p${i}Dob`]}</span>
                   )}
                 </div>
 
