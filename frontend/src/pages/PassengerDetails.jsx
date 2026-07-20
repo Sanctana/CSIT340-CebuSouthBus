@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import "../styles/passengerdetails.css";
 
-const emptyPassenger = () => ({ fullName: "", age: "", gender: "Male" });
+const emptyPassenger = () => ({
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  age: "",
+  gender: "Male",
+});
 
 const fallbackBus = {
   operator: "CSBT Express",
@@ -69,9 +75,13 @@ export default function PassengerDetails() {
     }
 
     passengers.forEach((p, i) => {
-      if (!p.fullName.trim()) {
-        newErrors[`p${i}Name`] = "Name is required.";
+      if (!p.firstName.trim()) {
+        newErrors[`p${i}FirstName`] = "First name is required.";
       }
+      if (!p.lastName.trim()) {
+        newErrors[`p${i}LastName`] = "Last name is required.";
+      }
+      // Middle name is optional — intentionally not validated.
       const ageNum = Number(p.age);
       if (!p.age || ageNum <= 0 || ageNum > 120) {
         newErrors[`p${i}Age`] = "Enter a valid age.";
@@ -187,18 +197,49 @@ export default function PassengerDetails() {
               <h3>Passenger {i + 1}</h3>
 
               <div className="form-grid">
-                <div className="form-field wide">
-                  <label>Full Name</label>
+                <div className="form-field">
+                  <label>First Name</label>
                   <input
                     type="text"
-                    placeholder="Full name"
-                    value={p.fullName}
+                    placeholder="Juan"
+                    value={p.firstName}
                     onChange={(e) =>
-                      updatePassenger(i, "fullName", e.target.value)
+                      updatePassenger(i, "firstName", e.target.value)
                     }
                   />
-                  {errors[`p${i}Name`] && (
-                    <span className="error-text">{errors[`p${i}Name`]}</span>
+                  {errors[`p${i}FirstName`] && (
+                    <span className="error-text">
+                      {errors[`p${i}FirstName`]}
+                    </span>
+                  )}
+                </div>
+
+                <div className="form-field">
+                  <label>Middle Name (Optional)</label>
+                  <input
+                    type="text"
+                    placeholder="Santos"
+                    value={p.middleName}
+                    onChange={(e) =>
+                      updatePassenger(i, "middleName", e.target.value)
+                    }
+                  />
+                </div>
+
+                <div className="form-field">
+                  <label>Last Name</label>
+                  <input
+                    type="text"
+                    placeholder="Dela Cruz"
+                    value={p.lastName}
+                    onChange={(e) =>
+                      updatePassenger(i, "lastName", e.target.value)
+                    }
+                  />
+                  {errors[`p${i}LastName`] && (
+                    <span className="error-text">
+                      {errors[`p${i}LastName`]}
+                    </span>
                   )}
                 </div>
 
