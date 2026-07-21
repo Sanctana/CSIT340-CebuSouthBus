@@ -13,17 +13,17 @@ function RouteCard({ route }) {
 
           <div className="route-tags">
             {route.hasAircon && (
-                <span className="route-tag">
+              <span className="route-tag">
                 <img src={snowflakeLogo} alt="Aircon" />
                 Aircon
-                </span>
+              </span>
             )}
 
             {route.hasNonAircon && (
-                <span className="route-tag">
-                  <img src={snowflakeLogo} alt="Non-Aircon" />
+              <span className="route-tag">
+                <img src={snowflakeLogo} alt="Non-Aircon" />
                 Non-Aircon
-                </span>
+              </span>
             )}
           </div>
         </div>

@@ -14,41 +14,33 @@ const emptyPassenger = () => ({
   gender: "Male",
 });
 
-const emptyContact = () => ({
-  firstName: "",
-  middleName: "",
-  lastName: "",
-  email: "",
-  mobile: "",
-});
-
-const fallbackBus = {
-  operator: "CSBT Express",
-  busNumber: "#12",
-  acType: "Aircon",
-  origin: "Cebu City",
-  destination: "Oslob",
-  departureTime: "05:00 AM",
-  arrivalTime: "08:30 AM",
-  durationLabel: "3h 30m",
-  terminal: "South Bus Terminal",
-  price: 220,
-};
-
 export default function PassengerDetails() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const bus = location.state?.bus ?? fallbackBus;
-  const travelDate = location.state?.date ?? "";
-  const passengerCount = location.state?.passengerCount ?? 1;
+  const bus = location.state?.bus;
+  const travelDate = location.state?.date;
+  const passengerCount = location.state?.passengerCount;
 
-  const [contact, setContact] = useState(emptyContact());
+  const [contact, setContact] = useState({
+    firstName: "",
+    middleName: "",
+    lastName: "",
+    email: "",
+    mobile: "",
+  });
   const [passengers, setPassengers] = useState(
     Array.from({ length: passengerCount }, emptyPassenger),
   );
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({});
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Run only once on mount.
+  useEffect(() => {
+    if (!bus || !travelDate || !passengerCount) {
+      navigate("/schedule");
+    }
+  }, []);
 
   useEffect(() => {
     setPassengers((prev) => {
@@ -70,7 +62,8 @@ export default function PassengerDetails() {
     setContact((prev) => ({ ...prev, [field]: value }));
   };
 
-  const totalFare = bus.price * passengerCount;
+  const totalFare =
+    (bus.isAircon ? bus.route.maxFare : bus.route.minFare) * passengerCount;
 
   const validate = () => {
     const newErrors = {};

@@ -7,13 +7,13 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import edu.cebu.southbus.dto.RouteDTO;
+import edu.cebu.southbus.dto.response.RouteResponse;
 import edu.cebu.southbus.entity.Route;
 
 @Repository
 public interface RouteRepository extends JpaRepository<Route, Integer> {
 
-	@Query("SELECT new edu.cebu.southbus.dto.RouteDTO(" +
+	@Query("SELECT new edu.cebu.southbus.dto.response.RouteResponse(" +
 			"  r.id, r.destination, r.distance, " +
 			"  r.minDuration, r.maxDuration, r.schedule, " +
 			"  r.minFare, r.maxFare, " +
@@ -23,5 +23,5 @@ public interface RouteRepository extends JpaRepository<Route, Integer> {
 			"FROM Route r LEFT JOIN r.buses b " +
 			"GROUP BY r.id, r.destination, r.distance, " +
 			"         r.minDuration, r.maxDuration, r.schedule, r.minFare, r.maxFare")
-	List<RouteDTO> findAllRoutes();
+	List<RouteResponse> findAllRoutes();
 }

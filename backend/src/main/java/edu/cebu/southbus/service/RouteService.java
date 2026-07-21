@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import edu.cebu.southbus.dto.response.RouteResponse;
 import edu.cebu.southbus.repository.RouteRepository;
-import edu.cebu.southbus.dto.RouteDTO;
 
 @Service
 public class RouteService {
@@ -14,7 +14,7 @@ public class RouteService {
 	@Autowired
 	private RouteRepository routeRepository;
 
-	public List<RouteDTO> getAllRoutes() {
+	public List<RouteResponse> getAllRoutes() {
 		return routeRepository.findAllRoutes();
 	}
 }

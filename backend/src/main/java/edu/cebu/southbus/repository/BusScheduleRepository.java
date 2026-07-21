@@ -14,7 +14,7 @@ public interface BusScheduleRepository extends JpaRepository<BusSchedule, Intege
 
 	@Query("SELECT b FROM BusSchedule b " +
 			"JOIN b.route r " +
-			"LEFT JOIN Ticket t ON t.bus = b " +
+			"LEFT JOIN Ticket t ON t.busSchedule = b " +
 			"WHERE r.destination = :destination " +
 			"GROUP BY b " +
 			"HAVING (b.capacity - COUNT(t)) >= :passengerCount")

@@ -4,6 +4,8 @@ import PassengerList from "../components/review/PassengerList";
 import { formatFullName } from "../utils/utilities";
 import "../styles/review.css";
 import "../styles/confirmation.css";
+import { bookTicket } from "../api/book";
+import { formatTime } from "../utils/utilities";
 
 const paymentOptions = [
   { value: "gcash", label: "GCash" },
@@ -41,21 +43,35 @@ export default function Review() {
 
   const effectivePassengerCount = passengerCount ?? passengers.length;
 
-  const handleConfirm = () => {
-    const confirmationCode =
-      "CSB" + Math.floor(100000 + Math.random() * 900000);
-
-    navigate("/confirmation", {
-      state: {
-        bus,
-        passengerCount: effectivePassengerCount,
-        contact,
-        passengers,
-        totalFare,
-        paymentMethod,
-        confirmationCode,
-      },
-    });
+  // TODO: Handle duplicated requests when user clicks "Confirm & Pay" multiple times before the first request completes. 
+  // This can be done by disabling the button after the first click and showing a loading indicator.
+  const handleConfirm = async () => {
+    bookTicket({
+      busScheduleId: bus.id,
+      passengerContact: contact,
+      passengers,
+      paymentMethod,
+    })
+      .then((data) => {
+        // TODO: When an endpoint for fetching ticket has been created,
+        // remove the redundant data being passed from `Review.jsx` to `Confirmation.jsx` 
+        // and use the endpoint to fetch the complete ticket data in `Confirmation.jsx` instead.
+        navigate("/confirmation", {
+          state: {
+            bus,
+            passengerCount: effectivePassengerCount,
+            contact,
+            passengers,
+            totalFare,
+            paymentMethod,
+            confirmationCode: data.confirmationCode,
+          },
+        });
+      })
+      .catch((error) => {
+        console.error("Error booking ticket:", error);
+        alert("An error occurred while booking the ticket. Please try again.");
+      });
   };
 
   const handleEdit = () => {
@@ -77,9 +93,7 @@ export default function Review() {
           <div className="review-grid">
             <div>
               <span className="review-label">Route</span>
-              <p>
-                {bus.origin} → {bus.destination}
-              </p>
+              <p>South Bus Terminal → {bus.route.destination}</p>
             </div>
             <div>
               <span className="review-label">Travel Date</span>
@@ -87,7 +101,7 @@ export default function Review() {
             </div>
             <div>
               <span className="review-label">Departure</span>
-              <p>{bus.departureTime}</p>
+              <p>{formatTime(bus.departureTime)}</p>
             </div>
             <div>
               <span className="review-label">Operator</span>

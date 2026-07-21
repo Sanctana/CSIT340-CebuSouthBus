@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 18, 2026 at 08:00 PM
+-- Host: localhost
+-- Generation Time: Jul 21, 2026 at 10:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -260,10 +260,15 @@ CREATE TABLE `tblpassenger` (
   `suffix` tinytext DEFAULT NULL,
   `date_of_birth` date NOT NULL,
   `is_female` tinyint(1) NOT NULL,
-  `phone_number` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblpassenger`
+--
+
+INSERT INTO `tblpassenger` (`ticket_uid`, `first_name`, `middle_name`, `last_name`, `suffix`, `date_of_birth`, `is_female`, `id`) VALUES
+('k9AWKI', 'Jani', 'Bl', 'Tor', 'Sr.', '2019-07-09', 0, 9);
 
 -- --------------------------------------------------------
 
@@ -308,8 +313,21 @@ INSERT INTO `tblroute` (`id`, `destination`, `distance`, `min_duration`, `max_du
 
 CREATE TABLE `tblticket` (
   `uid` varchar(6) NOT NULL,
-  `bus_id` int(11) NOT NULL
+  `bus_id` int(11) NOT NULL,
+  `first_name` text NOT NULL,
+  `middle_name` text DEFAULT NULL,
+  `last_name` text NOT NULL,
+  `email_address` text NOT NULL,
+  `mobile_number` text NOT NULL,
+  `payment_method` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblticket`
+--
+
+INSERT INTO `tblticket` (`uid`, `bus_id`, `first_name`, `middle_name`, `last_name`, `email_address`, `mobile_number`, `payment_method`) VALUES
+('k9AWKI', 4, 'Juan', '', 'Dela Cruz', 'juan@gmail.com', '09345678912', 'GCash');
 
 --
 -- Indexes for dumped tables
@@ -356,7 +374,7 @@ ALTER TABLE `tblbus`
 -- AUTO_INCREMENT for table `tblpassenger`
 --
 ALTER TABLE `tblpassenger`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tblroute`

@@ -3,6 +3,7 @@ import PassengerList from "../components/review/PassengerList";
 import { formatFullName } from "../utils/utilities";
 import "../styles/review.css";
 import "../styles/confirmation.css";
+import { formatTime } from "../utils/utilities";
 
 const paymentLabels = {
   gcash: "GCash",
@@ -65,19 +66,15 @@ export default function Confirmation() {
           <div className="review-grid">
             <div>
               <span className="review-label">Route</span>
-              <p>
-                {bus.origin} → {bus.destination}
-              </p>
+              <p>South Bus Terminal → {bus.route.destination}</p>
             </div>
             <div>
               <span className="review-label">Departure</span>
-              <p>{bus.departureTime}</p>
+              <p>{formatTime(bus.departureTime)}</p>
             </div>
             <div>
               <span className="review-label">Operator</span>
-              <p>
-                {bus.operator} {bus.busNumber}
-              </p>
+              <p>{bus.busOperator}</p>
             </div>
           </div>
           <p className="payment-summary">

@@ -1,9 +1,9 @@
-package edu.cebu.southbus.dto;
+package edu.cebu.southbus.dto.response;
 
 import java.time.LocalTime;
 
 import edu.cebu.southbus.entity.Route;
 
-public record BusScheduleDTO(Integer id, Integer capacity, Boolean isAircon,
+public record BusScheduleResponse(Integer id, Integer capacity, Boolean isAircon,
 		String busOperator, LocalTime departureTime, Route route) {
 }

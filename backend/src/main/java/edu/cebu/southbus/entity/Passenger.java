@@ -12,21 +12,21 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tblpassenger")
+@Setter
 public class Passenger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @JoinColumn(name = "ticket_uid", nullable = false)
-    @NotNull
-    @Size(max = 6)
     @ManyToOne(fetch = FetchType.LAZY)
-    private Ticket ticketUid;
+    @JoinColumn(name = "ticket_uid", nullable = false)
+    @Setter
+    private Ticket ticket;
 
     @Column(name = "first_name", nullable = false)
     @NotNull
@@ -49,15 +49,4 @@ public class Passenger {
     @Column(name = "is_female", nullable = false)
     @NotNull
     private Boolean isFemale;
-
-    @Column(name = "phone_number", nullable = false, length = 20)
-    @NotNull
-    @Size(max = 20)
-    private String phoneNumber;
-
-    @Column(nullable = false, length = 50)
-    @NotNull
-    @Size(max = 50)
-    private String email;
-
 }
