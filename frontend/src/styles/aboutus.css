@@ -1,19 +1,27 @@
+/* Optimized About Us CSS */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 .aboutusPage {
   min-height: 100dvh;
   background: #f5f7fb;
-  font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   color: #1f2937;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .aboutusHero {
-  position: relative;
-  padding: 112px 24px 72px;
-  background: linear-gradient(135deg, #1a2a8a 0%, #3450be 50%, #2540a8 100%);
-  overflow: hidden;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 220px;
+    padding: 24px;
+
+    background: linear-gradient(135deg,#1a2a8a 0%,#3450be 50%,#2540a8 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .aboutusHero::before {
@@ -26,79 +34,58 @@
   pointer-events: none;
 }
 
-.aboutusBadge {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 225, 30, 0.15);
-  border: 1px solid rgba(255, 225, 30, 0.3);
-  border-radius: 999px;
-  padding: 6px 16px;
-  margin-bottom: 16px;
-}
-
-.aboutusBadge span {
-  color: #ffe11e;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-}
-
 .aboutusHero h1 {
+  margin: 0 0 10px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
   position: relative;
   z-index: 1;
-  color: #ffffff;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  margin: 0 0 12px;
-  line-height: 1.15;
 }
 
 .aboutusHero p {
+  margin: 0;
+  max-width: 560px;
+  color: #dbe4ff;
+  font-size: .95rem;
+  line-height: 1.6;
   position: relative;
   z-index: 1;
-  color: #bfcfff;
-  font-size: 0.9rem;
-  max-width: 480px;
-  margin: 0 auto;
-  line-height: 1.6;
 }
 
 .aboutusContent {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 56px 24px 48px;
+  max-width: 1050px;
+  margin: auto;
+  padding: 36px 24px;
 }
 
 .aboutTop {
   display: flex;
-  gap: 48px;
   align-items: center;
-  margin-bottom: 56px;
+  gap: 34px;
+  margin-bottom: 36px;
 }
 
-.aboutusTextCol {
+.aboutusTextCol,
+.aboutRight {
   flex: 1;
 }
 
 .aboutusBody {
-  font-size: 0.9rem;
-  line-height: 1.75;
-  margin: 0 0 16px;
+  font-size: .88rem;
+  line-height: 1.65;
+  margin: 0 0 12px;
 }
 
 .aboutusStats {
   display: flex;
   align-items: center;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  background: #fff;
+  border: 1px solid #dfe5f2;
   border-radius: 16px;
-  padding: 20px 24px;
-  margin-top: 28px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px 22px;
+  margin-top: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
 }
 
 .aboutusStat {
@@ -106,93 +93,84 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
 }
 
 .aboutusStatValue {
-  color: #3450be;
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-weight: 800;
-  line-height: 1;
+  color: #3450be;
 }
 
 .aboutusStatLabel {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   text-align: center;
 }
 
 .aboutusStatDivider {
   width: 1px;
-  height: 36px;
-}
-
-.aboutRight {
-  flex: 1;
+  height: 34px;
+  background: #e5e7eb;
 }
 
 .aboutusPhoto {
   width: 100%;
-  height: 360px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 12px 40px rgba(52, 80, 190, 0.15);
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .14);
 }
 
 .aboutBottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 56px;
+  gap: 18px;
+  margin-bottom: 36px;
 }
 
 .mission,
 .vision {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  background: #fff;
+  border: 1px solid #dfe5f2;
   border-radius: 16px;
-  padding: 24px 24px 28px;
+  padding: 20px 22px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
 }
 
 .mvLabel {
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: .18em;
   margin: 0 0 8px;
 }
 
 .mvTitle {
-  color: #3450be;
   font-size: 1rem;
   font-weight: 800;
-  margin: 0 0 10px;
+  color: #3450be;
+  margin: 0 0 8px;
 }
 
 .pMission,
 .pVision {
-  font-size: 0.875rem;
-  line-height: 1.7;
-  margin: 0;
+  font-size: .85rem;
+  line-height: 1.65;
 }
 
 .whySection {
   text-align: center;
-  margin-bottom: 16px;
 }
 
 .whySection h2 {
-  color: #0d1033;
-  font-size: 1.75rem;
-  font-weight: 800;
+  font-size: 1.6rem;
   margin: 0 0 8px;
 }
 
 .whySub {
-  font-size: 0.875rem;
-  margin: 0 0 36px;
+  font-size: .85rem;
+  margin: 0 0 24px;
 }
 
 .container {
@@ -205,78 +183,110 @@
 .aboutusSchedules,
 .aboutusBooking,
 .aboutusSafe {
-  background: #ffffff;
-  border: 1px solid #f0f0f0;
-  border-radius: 20px;
-  padding: 28px 20px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: #fff;
+  border: 1px solid #dfe5f2;
+  border-radius: 18px;
+  padding: 22px 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+  transition: .25s;
+}
+
+.aboutusRoutes:hover,
+.aboutusSchedules:hover,
+.aboutusBooking:hover,
+.aboutusSafe:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, .18);
 }
 
 .cardIcon {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 12px;
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .cardIcon img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  display: block;
+  width: 42px;
+  height: 42px;
 }
 
 .aboutusRoutes h3,
 .aboutusSchedules h3,
 .aboutusBooking h3,
 .aboutusSafe h3 {
-  color: #0d1033;
-  font-size: 0.95rem;
+  font-size: .92rem;
+  margin: 0 0 6px;
   font-weight: 800;
-  margin: 0 0 8px;
 }
 
 .aboutusRoutes p,
 .aboutusSchedules p,
 .aboutusBooking p,
 .aboutusSafe p {
-  font-size: 0.8rem;
-  line-height: 1.6;
+  font-size: .78rem;
+  line-height: 1.5;
   margin: 0;
 }
 
-@media (max-width: 900px) {
+@media(max-width: 900px) {
   .aboutTop {
     flex-direction: column;
   }
-
-  .aboutusPhoto {
-    height: 260px;
-  }
-
   .aboutBottom {
     grid-template-columns: 1fr;
   }
-
   .container {
     grid-template-columns: 1fr 1fr;
   }
+  .aboutusPhoto {
+    height: 250px;
+  }
 }
 
-@media (max-width: 540px) {
+@media(max-width: 540px) {
   .container {
     grid-template-columns: 1fr;
   }
-
   .aboutusStats {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
-
   .aboutusStatDivider {
     width: 40px;
     height: 1px;
   }
+}
+
+.aboutusRoutes,
+.aboutusSchedules,
+.aboutusBooking,
+.aboutusSafe{
+  transition: all 0.25s ease;
+}
+
+.aboutusRoutes:hover,
+.aboutusSchedules:hover,
+.aboutusBooking:hover,
+.aboutusSafe:hover{
+  transform: translateY(-4px);
+
+  box-shadow:
+          0 15px 35px rgba(0, 0, 0, 0.20);
+
+  border: 1px solid #d9e1f2;
+}
+
+.aboutusStats {
+  background: #fff;
+  border: 1px solid #e8ebf5;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-top: 28px;
+
+  box-shadow:
+          0 10px 25px rgba(0, 0, 0, 0.12),
+          0 4px 10px rgba(0, 0, 0, 0.08);
 }

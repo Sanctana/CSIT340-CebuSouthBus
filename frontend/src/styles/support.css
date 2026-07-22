@@ -10,12 +10,22 @@
 
   color: #1f2937;
 }
-.support-hero {
+
+.support-hero{
   position: relative;
-  padding: 112px 24px 72px;
-  background: linear-gradient(135deg, #1a2a8a 0%, #3450be 50%, #2540a8 100%);
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
+
+  background: linear-gradient(135deg, #1a2a8a 0%, #3450be 50%, #2540a8 100%);
+
+  min-height: 220px;
+  padding: 24px;
 }
 
 .support-hero::before {
@@ -28,46 +38,29 @@
   pointer-events: none;
 }
 
-.support-hero-badge {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 225, 30, 0.15);
-  border: 1px solid rgba(255, 225, 30, 0.3);
-  border-radius: 999px;
-  padding: 6px 16px;
-  margin-bottom: 16px;
-}
-
-.support-hero-badge span {
-  color: #ffe11e;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-}
-
 .support-hero h1 {
   position: relative;
   z-index: 1;
-  color: #ffffff;
-  font-size: clamp(2rem, 5vw, 3rem);
+
+  margin: 0 0 10px;
+
+  color: #fff;
+  font-size: 2.4rem;
   font-weight: 800;
-  margin: 0 0 12px;
-  line-height: 1.15;
 }
 
 .support-hero p {
   position: relative;
   z-index: 1;
-  color: #bfcfff;
-  font-size: 0.9rem;
-  max-width: 440px;
-  margin: 0 auto;
+
+  margin: 0;
+  max-width: 560px;
+
+  color: #dbe4ff;
+  font-size: .95rem;
   line-height: 1.6;
 }
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -80,14 +73,19 @@
 }
 
 .contact-card {
-  background: #ffffff;
-  border: 1px solid #f0f0f0;
+  background: #fff;
+  border: 1px solid #e8ebf5;
   border-radius: 16px;
   padding: 16px 18px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+
+  box-shadow:
+          0 10px 25px rgba(0, 0, 0, 0.12),
+          0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.25s ease;
 }
 
 .contact-icon-box {
@@ -212,13 +210,21 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+
+  background: #fff;
+  border: 1px solid #e8ebf5;
   border-radius: 16px;
   padding: 16px 20px;
+
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+
+  box-shadow:
+          0 10px 25px rgba(0, 0, 0, 0.12),
+          0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.25s ease;
 }
 
 .contact-link-label {
@@ -247,11 +253,16 @@
 }
 
 .faq-item {
-  background: #ffffff;
-  border: 1px solid #f0f0f0;
+  background: #fff;
+  border: 1px solid #e8ebf5;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  box-shadow:
+          0 10px 25px rgba(0, 0, 0, 0.12),
+          0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.25s ease;
 }
 
 .faq-question {

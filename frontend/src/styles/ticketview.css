@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+    --brand-blue: #3454d1;
+    --brand-navy: #23398f;
+    --brand-gold: #ffc72c;
+
+    --bg: #f5f7ff;
+    --white: #ffffff;
+
+    --text: #1d2d5a;
+    --muted: #74809c;
+
+    --border: #e7ecff;
+}
+
+.ticket-page,
+.ticket-page * {
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+
+.ticket-page {
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+.ticket-hero {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 220px;
+    padding: 30px 24px;
+
+    background: linear-gradient(
+            135deg,
+            #1a2a8a 0%,
+            #3450be 50%,
+            #2540a8 100%
+    );
+
+    color: white;
+}
+
+.ticket-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: .06;
+
+    background-image:
+            radial-gradient(circle, #ffffff 1px, transparent 1px);
+
+    background-size: 28px 28px;
+
+    pointer-events: none;
+}
+
+.ticket-hero-content {
+
+    position: relative;
+    z-index: 1;
+
+    width: min(1050px, 92%);
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+
+.ticket-hero-left {
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.back-button-ticket{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    margin-bottom: 0.7rem;
+}
+
+.back-button-ticket img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.ticket-hero-left h1 {
+    margin: 0 0 6px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffe11e;
+}
+
+
+.ticket-hero-left p {
+    margin: 0;
+    color: #dbe4ff;
+    font-size: .9rem;
+}
+
+.ticket-hero-right {
+    text-align: right;
+}
+
+
+.ticket-hero-right span {
+
+    display: block;
+
+    color: #dbe4ff;
+
+    font-size: .8rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+}
+
+
+.ticket-hero-right h2 {
+
+    margin: 6px 0;
+
+    color: #ffe11e;
+
+    font-size: 2.7rem;
+
+    font-weight: 800;
+
+}
+
+
+.ticket-hero-right p {
+
+    margin: 0;
+
+    color: #dbe4ff;
+
+    font-size: .9rem;
+
+}
+
+
+
+/* MAIN CONTENT */
+.ticket-content {
+
+    width: min(1050px,90%);
+
+    margin: -35px auto 70px;
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+
+.summary-card {
+    background: white;
+
+    border-radius: 26px;
+
+    padding: 15px 25px;
+
+    display: grid;
+
+    grid-template-columns: repeat(6, max-content);
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 70px;
+
+    box-shadow:
+            0 12px 30px rgba(35,57,143,.15),
+            0 4px 10px rgba(0,0,0,.05);
+
+    border: 1px solid var(--border);
+
+    margin-bottom: 42px;
+}
+
+
+
+.summary-card span {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: .75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.summary-card h3 {
+
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 0.8rem;
+
+}
+
+
+
+.summary-arrow {
+
+    font-size: 2rem;
+
+    color: var(--brand-blue);
+
+    font-weight: bold;
+
+}
+
+
+
+/* PASSENGERS */
+
+.passenger-section {
+
+    margin-top: 40px;
+
+}
+
+
+
+.passenger-header {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:24px;
+
+}
+
+
+
+.passenger-header h2 {
+
+    margin:0;
+
+    color:var(--text);
+
+    font-size:1.3rem;
+    margin-top: -2rem;
+}
+
+
+
+.passenger-header p {
+
+    margin-top:8px;
+
+    color:var(--muted);
+    font-size:1rem;
+    margin-bottom: -2rem;
+}
+
+
+
+.passenger-count {
+
+    background:white;
+
+    border-radius:999px;
+
+    padding:12px 22px;
+
+    font-weight:700;
+
+    color:var(--brand-blue);
+
+    box-shadow:
+            0 8px 20px rgba(52,84,209,.08);
+
+    border:1px solid var(--border);
+
+}
+
+
+
+.passenger-list {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+@media(max-width:1000px){
+
+
+    .summary-card{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .ticket-hero-content{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+    .ticket-hero-right{
+
+        text-align:left;
+
+    }
+
+}
+
+
+
+/* MOBILE */
+@media(max-width:700px){
+
+
+    .ticket-hero{
+
+        padding:40px 20px 90px;
+
+    }
+
+
+    .ticket-content{
+
+        margin-top:-50px;
+
+    }
+
+
+    .ticket-hero-left h1{
+
+        font-size:1.8rem;
+
+    }
+
+
+    .ticket-hero-right h2{
+
+        font-size:2.5rem;
+
+    }
+
+
+    .summary-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .passenger-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+
+    .passenger-count{
+
+        align-self:flex-start;
+
+    }
+
+}

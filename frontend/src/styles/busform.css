@@ -1,24 +1,25 @@
 .booking-form {
-  width: 600px;
+  width:560px;
   background: white;
   border-radius: 20px;
-  padding: 30px;
+  padding:22px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+  border:1px solid #e8ebf5;
 }
 
 .booking-form h3 {
   margin: 0;
-  font-size: 28px;
+  font-size:20px;
   font-weight: 700;
 }
 
 .booking-form > p {
   margin: -10px 0 0;
   color: #4e4d4d;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .tabs {
@@ -30,7 +31,7 @@
 
 .tabs button {
   flex: 1;
-  padding: 14px;
+  padding: 10px;
   border: none;
   background: transparent;
   font-weight: 600;
@@ -49,7 +50,8 @@
 
 .trip-type {
   width: fit-content;
-  padding: 8px 18px;
+  padding:6px 16px;
+  font-size:.85rem;
   background: #254cd7;
   color: white;
   border-radius: 30px;
@@ -59,7 +61,7 @@
 .form-fields {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap:10px;
 }
 
 .inline-input {
@@ -76,7 +78,7 @@
   background: white;
   border: 1px solid #d9d9d9;
   border-radius: 15px;
-  padding: 18px;
+  padding:14px 16px;
 }
 
 .form-logo {
@@ -93,7 +95,7 @@
 
 .child-field label {
   margin-bottom: 5px;
-  font-size: 12px;
+  font-size:11px;
   font-weight: 700;
   color: #3454d1;
   letter-spacing: 1px;
@@ -139,7 +141,7 @@
 }
 
 .oneway-icon {
-  width: 45px;
+  width: 40px;
   height: 45px;
   background: #3454d1;
   border-radius: 50%;
@@ -150,20 +152,20 @@
 }
 
 .oneway-icon img {
-  width: 20px;
-  height: 20px;
+  width:18px;
+  height:18px;
   object-fit: contain;
 }
 
 .counter {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .counter button {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border: none;
   border-radius: 50%;
   background: #3454d1;
@@ -174,14 +176,17 @@
 
 .search-button {
   width: 100%;
-  padding: 16px;
   border: none;
-  border-radius: 15px;
   background: #3454d1;
   color: white;
-  font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
+  padding:14px;
+  font-size:18px !important;
+  border-radius:14px;
+
+  box-shadow:
+          0 10px 20px rgba(52,84,209,.22);
 }
 
 .search-button:hover {
@@ -190,13 +195,13 @@
 
 .ticket-button {
   width: 100%;
-  padding: 16px;
   border: none;
-  border-radius: 15px;
   background: #b8b8b8;
   color: white;
-  font-size: 18px;
   font-weight: 600;
+  padding:14px;
+  font-size:17px;
+  border-radius:14px;
 }
 
 .ticket-button.active {
@@ -205,16 +210,98 @@
   cursor: pointer;
 }
 
+.input-error {
+  border: 2px solid #ef4444 !important;
+  background: #fff5f5;
+  animation: shake .35s ease;
+}
+
+
+.input-error {
+  border: 2px solid #ef4444 !important;
+  background: #fff5f5;
+}
+
+
+.shake {
+  animation: shake .35s ease;
+}
+
+
+@keyframes shake {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-6px);
+  }
+
+  40% {
+    transform: translateX(6px);
+  }
+
+  60% {
+    transform: translateX(-6px);
+  }
+
+  80% {
+    transform: translateX(6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
 .booking-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
+  font-size:13px;
 }
 
-.booking-footer button {
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0;
   border: none;
-  background: none;
-  color: #3454d1;
+  background: transparent;
+
+  color: #3454d1 !important;
+  font-size: 14px;
+  font-weight: 600;
+
   cursor: pointer;
+  transition: all 0.25s ease;
 }
+
+.back-button img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.back-button:hover {
+  color: #2945b8 !important;
+  background: transparent;
+}
+
+.back-button:hover .back-icon {
+  transform: translateX(-3px);
+}
+
+.back-button:focus {
+  outline: none;
+}
+
+.back-button:active {
+  transform: scale(0.98);
+}
+

@@ -1,7 +1,9 @@
 import "../../styles/busform.css";
+import leftArrow from "../../assets/ic_arrow_left.png";
 import Book from "./Book";
 import ManageBooking from "./ManageBooking.jsx";
 import "/src/assets/ic_buslogo.png";
+
 import { useState } from "react";
 
 export default function BusForm() {
@@ -31,9 +33,10 @@ export default function BusForm() {
 
       <footer className="booking-footer">
         {activeTab === "manage" && (
-          <button onClick={() => setActiveTab("book")}>
-            ← Back to Book a Ticket
-          </button>
+            <button className="back-button" onClick={() => setActiveTab("book")}>
+                <img src={leftArrow} alt="Back" />
+                <span>Back to Book a Ticket</span>
+            </button>
         )}
 
         <span>Need help? 0917-123-4567</span>

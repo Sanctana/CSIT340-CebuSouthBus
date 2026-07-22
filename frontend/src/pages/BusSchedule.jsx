@@ -29,7 +29,6 @@ export default function BusSchedule() {
     }
     const fetchSchedules = async () => {
       getSchedules(destination, date, passengerCount)
-        // .then(setBusesData)
         .then((data) => {
           const now = new Date();
           const filtered = data.filter((bus) => {

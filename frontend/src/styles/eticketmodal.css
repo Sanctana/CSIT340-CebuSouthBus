@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+
+.modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    z-index:99999;
+
+}
+
+
+
+.ticket-modal {
+
+    width:90%;
+
+    max-width:430px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:#ffffff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:
+            0 25px 60px rgba(0,0,0,.18);
+
+    position:relative;
+
+    animation:modalAppear .25s ease;
+
+}
+
+
+
+@keyframes modalAppear {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(20px) scale(.97);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+
+
+/* HEADER */
+
+.ticket-header {
+
+    background:
+            linear-gradient(135deg,#3454d1,#203fbb);
+
+    color:white;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+.ticket-brand {
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+}
+
+
+
+.ticket-title {
+
+    background:#ffc72c;
+
+    color:#1f2f6b;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    font-size:.75rem;
+
+    letter-spacing:1px;
+
+}
+
+
+
+
+
+/* ROUTE */
+
+.route-section {
+
+    padding:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    border-bottom:1px solid #edf1ff;
+
+}
+
+
+
+.route-item {
+
+    flex:1;
+
+}
+
+
+
+.route-item h3 {
+
+    margin:5px 0 0;
+
+    color:#1f2f6b;
+
+    font-size:.95rem;
+
+}
+
+
+
+.label {
+
+    color:#7b869d;
+
+    font-size:.65rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.route-line {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+
+
+.circle {
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#3454d1;
+
+}
+
+
+
+.destination {
+
+    background:#ffc72c;
+
+}
+
+
+
+.line {
+
+    width:25px;
+
+    height:2px;
+
+    background:#d8e2ff;
+
+}
+
+
+
+.bus {
+
+    font-size:16px;
+
+}
+
+
+
+
+
+/* DETAILS */
+
+.ticket-body {
+
+    padding:20px;
+
+}
+
+
+
+.ticket-row {
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    margin-bottom:18px;
+
+}
+
+
+
+.ticket-row:last-child {
+
+    margin-bottom:0;
+
+}
+
+
+
+.ticket-row h4 {
+
+    margin-top:5px;
+
+    color:#1f2f6b;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+}
+
+
+
+.fare {
+
+    color:#3454d1;
+
+}
+
+
+
+
+
+/* QR */
+
+.qr-section {
+
+    border-top:1px dashed #cfd8ea;
+
+    padding:20px;
+
+    text-align:center;
+
+    background:#fafbff;
+
+}
+
+
+
+.qr-section img {
+
+    width:120px;
+
+    height:120px;
+
+    border:6px solid white;
+
+    border-radius:14px;
+
+    box-shadow:
+            0 8px 20px rgba(52,84,209,.08);
+
+}
+
+
+
+.qr-section p {
+
+    margin-top:12px;
+
+    color:#6b7280;
+
+    font-size:.8rem;
+
+    line-height:1.5;
+
+}
+
+
+
+.booking-id {
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    background:#eef2ff;
+
+    color:#3454d1;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+
+    .ticket-modal {
+
+        width:95%;
+
+    }
+
+
+    .ticket-header {
+
+        flex-direction:column;
+
+        gap:12px;
+
+        text-align:center;
+
+    }
+
+
+
+    .route-section {
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+
+    .route-line {
+
+        transform:rotate(90deg);
+
+        margin:15px 0;
+
+    }
+
+
+
+    .ticket-row {
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+    }
+
+
+
+    .qr-section img {
+
+        width:100px;
+
+        height:100px;
+
+    }
+
+}

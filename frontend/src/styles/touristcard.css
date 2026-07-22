@@ -1,23 +1,30 @@
 .tourist-card {
-  background: white;
-  border-radius: 24px;
+  background: #fff;
+
+  border-radius: 18px;
   overflow: hidden;
 
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8ebf5;
 
-  transition: 0.3s;
+  box-shadow:
+          0 10px 25px rgba(0, 0, 0, 0.12),
+          0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition: all .25s ease;
 }
 
 .tourist-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
 
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+  border-color: #d9e1f2;
+
+  box-shadow:
+          0 15px 35px rgba(0, 0, 0, 0.20);
 }
 
 .tourist-image {
   position: relative;
-
-  height: 340px;
+  height: 250px;
 }
 
 .tourist-image img {
@@ -28,49 +35,34 @@
 
 .category {
   position: absolute;
+  top: 14px;
+  left: 14px;
 
-  top: 18px;
-  left: 18px;
-
-  padding: 10px 18px;
+  padding: 7px 14px;
 
   border-radius: 999px;
 
   background: #3454d1;
-
   color: white;
 
-  font-size: 0.85rem;
-
+  font-size: .72rem;
   font-weight: 700;
 }
 
 .tourist-content {
-  padding: 28px;
+  padding: 20px;
 }
 
 .tourist-content h3 {
   margin: 0;
-
-  font-size: 2rem;
-
+  font-size: 1.4rem;
+  font-weight: 800;
   color: #1f2f6b;
 }
 
 .tourist-content p {
-  margin: 16px 0;
-
+  margin: 10px 0;
+  font-size: .9rem;
+  line-height: 1.6;
   color: #6b7280;
-
-  line-height: 1.7;
-}
-
-.tourist-location {
-  border-top: 1px solid #ececec;
-
-  padding-top: 18px;
-
-  color: #3454d1;
-
-  font-weight: 600;
 }

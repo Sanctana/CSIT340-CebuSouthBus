@@ -5,20 +5,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 130px;
+  padding: 1px 130px;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   font-weight: bold;
 }
+
+
 
 .navbar a {
   padding: 10px 12px;
   text-decoration: none;
   color: #666666;
+
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 .navbar a:hover {
@@ -29,6 +36,6 @@
 }
 
 .logo {
-  height: 45px !important;
-  width: 110px !important;
+  height: 30px !important;
+  width: 100px !important;
 }
