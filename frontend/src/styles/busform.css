@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   border: 1px solid #e8ebf5;
 }
 
@@ -16,7 +16,7 @@
   font-weight: 700;
 }
 
-.booking-form>p {
+.booking-form > p {
   margin: -10px 0 0;
   color: #4e4d4d;
   font-size: 13px;
@@ -51,7 +51,7 @@
 .trip-type {
   width: fit-content;
   padding: 6px 16px;
-  font-size: .85rem;
+  font-size: 0.85rem;
   background: #254cd7;
   color: white;
   border-radius: 30px;
@@ -185,8 +185,7 @@
   font-size: 18px !important;
   border-radius: 14px;
 
-  box-shadow:
-    0 10px 20px rgba(52, 84, 209, .22);
+  box-shadow: 0 10px 20px rgba(52, 84, 209, 0.22);
 }
 
 .search-button:hover {
@@ -213,23 +212,19 @@
 .input-error {
   border: 2px solid #ef4444 !important;
   background: #fff5f5;
-  animation: shake .35s ease;
+  animation: shake 0.35s ease;
 }
-
 
 .input-error {
   border: 2px solid #ef4444 !important;
   background: #fff5f5;
 }
 
-
 .shake {
-  animation: shake .35s ease;
+  animation: shake 0.35s ease;
 }
 
-
 @keyframes shake {
-
   0% {
     transform: translateX(0);
   }
@@ -253,7 +248,6 @@
   100% {
     transform: translateX(0);
   }
-
 }
 
 .booking-footer {
@@ -306,7 +300,6 @@
 }
 
 @keyframes shake {
-
   0%,
   100% {
     transform: translateX(0);

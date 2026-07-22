@@ -1,33 +1,29 @@
 .eticket-button {
-    background: #3454d1;
-    color: #ffffff;
-    border: none;
-    border-radius: 14px;
-    padding: 14px 24px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all .3s ease;
-    white-space: nowrap;
-    box-shadow: 0 8px 20px rgba(52,84,209,.18);
+  background: #3454d1;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(52, 84, 209, 0.18);
 }
 
 .eticket-button:hover {
-    background: #ffc72c;
-    color: #1f2f6b;
-    transform: translateY(-2px);
+  background: #ffc72c;
+  color: #1f2f6b;
+  transform: translateY(-2px);
 }
 
 .eticket-button:active {
-    transform: scale(.98);
+  transform: scale(0.98);
 }
 
-@media (max-width:768px){
-
-    .eticket-button{
-
-        width:100%;
-
-    }
-
+@media (max-width: 768px) {
+  .eticket-button {
+    width: 100%;
+  }
 }

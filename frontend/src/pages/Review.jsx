@@ -5,10 +5,9 @@ import { formatFullName } from "../utils/utilities";
 import "../styles/review.css";
 import "../styles/confirmation.css";
 import { bookTicket } from "../api/book";
-import { formatTime } from "../utils/utilities";
 import leftArrow from "../assets/ic_arrow_left.png";
 import rightArrow from "../assets/ic_arrow_right_white.png";
-
+import { formatTime } from "../utils/utilities";
 
 const paymentOptions = [
   { value: "gcash", label: "GCash" },
@@ -64,7 +63,7 @@ export default function Review() {
 
   const effectivePassengerCount = passengerCount ?? passengers.length;
 
-  // TODO: Handle duplicated requests when user clicks "Confirm & Pay" multiple times before the first request completes. 
+  // TODO: Handle duplicated requests when user clicks "Confirm & Pay" multiple times before the first request completes.
   // This can be done by disabling the button after the first click and showing a loading indicator.
   const submitBooking = async () => {
     bookTicket({
@@ -75,7 +74,7 @@ export default function Review() {
     })
       .then((data) => {
         // TODO: When an endpoint for fetching ticket has been created,
-        // remove the redundant data being passed from `Review.jsx` to `Confirmation.jsx` 
+        // remove the redundant data being passed from `Review.jsx` to `Confirmation.jsx`
         // and use the endpoint to fetch the complete ticket data in `Confirmation.jsx` instead.
         navigate("/confirmation", {
           state: {
@@ -146,7 +145,8 @@ export default function Review() {
             <div>
               <span className="review-label">Amount</span>
               <p>
-                ₱{bus.isAircon ? bus.route.maxFare : bus.route.minFare} / passenger
+                ₱{bus.isAircon ? bus.route.maxFare : bus.route.minFare} /
+                passenger
               </p>
             </div>
             <div>
@@ -282,14 +282,19 @@ export default function Review() {
             )}
 
             <div className="payment-modal-actions">
-              <button className="payment-modal-cancel" onClick={closePaymentModal}>
+              <button
+                className="payment-modal-cancel"
+                onClick={closePaymentModal}
+              >
                 Cancel
               </button>
               <button
                 className="payment-modal-confirm"
                 onClick={handlePaymentConfirm}
               >
-                {paymentMethod === "cash" ? "Got It, Continue →" : "Confirm & Pay"}
+                {paymentMethod === "cash"
+                  ? "Got It, Continue →"
+                  : "Confirm & Pay"}
               </button>
             </div>
           </div>

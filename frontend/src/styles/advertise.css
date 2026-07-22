@@ -56,7 +56,6 @@
   cursor: pointer;
 }
 
-
 .advertisement-buttons img {
   width: 18px;
   height: 18px;
@@ -81,7 +80,7 @@
 
   color: #3454d1;
   font-weight: 600;
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 
 .location-icon {
@@ -92,7 +91,6 @@
 }
 
 @media (max-width: 900px) {
-
   .advertisement-header {
     display: flex;
     flex-direction: column;
@@ -110,17 +108,15 @@
   }
 
   .header-text p {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .tourist-grid {
     grid-template-columns: 1fr;
   }
-
 }
 
 @media (max-width: 600px) {
-
   .advertisement-section {
     padding: 48px 20px;
   }
@@ -128,5 +124,4 @@
   .header-text h2 {
     font-size: 1.8rem;
   }
-
 }

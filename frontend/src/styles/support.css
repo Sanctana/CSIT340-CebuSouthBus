@@ -11,7 +11,7 @@
   color: #1f2937;
 }
 
-.support-hero{
+.support-hero {
   position: relative;
   overflow: hidden;
 
@@ -57,7 +57,7 @@
   max-width: 560px;
 
   color: #dbe4ff;
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
@@ -82,8 +82,8 @@
   gap: 12px;
 
   box-shadow:
-          0 10px 25px rgba(0, 0, 0, 0.12),
-          0 4px 10px rgba(0, 0, 0, 0.08);
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
 
   transition: all 0.25s ease;
 }
@@ -221,8 +221,8 @@
   cursor: pointer;
 
   box-shadow:
-          0 10px 25px rgba(0, 0, 0, 0.12),
-          0 4px 10px rgba(0, 0, 0, 0.08);
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
 
   transition: all 0.25s ease;
 }
@@ -259,8 +259,8 @@
   overflow: hidden;
 
   box-shadow:
-          0 10px 25px rgba(0, 0, 0, 0.12),
-          0 4px 10px rgba(0, 0, 0, 0.08);
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
 
   transition: all 0.25s ease;
 }
