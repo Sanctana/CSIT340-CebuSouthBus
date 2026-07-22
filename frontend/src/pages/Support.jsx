@@ -6,6 +6,8 @@ import emailLogo from "../assets/email_logo.png";
 import messageLogo from "../assets/message_logo.png";
 import phoneLogo from "../assets/phone_logo.png";
 import pinLogo from "../assets/pin_logo.png";
+import arrowUp from "../assets/arrowUp_logo.png"; 
+import arrowDown from "../assets/arrowDown_logo.png"; 
 
 const faqs = [
   {
@@ -212,7 +214,11 @@ export default function Support() {
 
                         <div className="faq-chevron">
                       <span className="faq-chevron-icon">
-                        {isOpen ? "▲" : "▼"}
+                        {isOpen ? (
+                          <img src={arrowUp} alt="Collapse" />
+                        ) : (
+                        <img src={arrowDown} alt="Expand" />
+                        )}
                       </span>
                         </div>
                       </button>
