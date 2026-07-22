@@ -1,6 +1,7 @@
 .passenger-page {
-  --navy: #16233f;
-  --gold: #f4b400;
+  --primary: #3b4cca;
+  --primary-dark: #2b3a8f;
+  --accent: #f2c94c;
 
   max-width: 1140px;
   margin: 0 auto;
@@ -22,6 +23,9 @@
   border-radius: 999px;
   background: #f3f4f6;
 }
+.step{
+  border:none;
+}
 
 .passenger-steps .step.done {
   color: #16a34a;
@@ -30,7 +34,7 @@
 
 .passenger-steps .step.active {
   color: #fff;
-  background: var(--navy);
+  background: var(--primary);
 }
 
 .passenger-main {
@@ -39,7 +43,7 @@
 
 .passenger-main h1 {
   margin: 0 0 6px;
-  color: var(--navy);
+  color: var(--primary-dark);
   font-size: 1.9rem;
 }
 
@@ -59,7 +63,7 @@
 
 .form-card h2 {
   margin: 0 0 4px;
-  color: var(--navy);
+  color: var(--primary-dark);
   font-size: 1.1rem;
 }
 
@@ -97,13 +101,13 @@
   border: 1.5px solid #e5e7eb;
   border-radius: 10px;
   font-size: 0.95rem;
-  color: var(--navy);
+  color: var(--primary-dark);
   outline: none;
 }
 
 .form-field input:focus,
 .form-field select:focus {
-  border-color: var(--navy);
+  border-color: var(--primary);
 }
 
 .passenger-block {
@@ -120,7 +124,7 @@
 
 .passenger-block h3 {
   margin: 0 0 14px;
-  color: var(--navy);
+  color: var(--primary-dark);
   font-size: 1rem;
 }
 
@@ -129,7 +133,7 @@
   align-items: center;
   gap: 10px;
   font-size: 0.9rem;
-  color: var(--navy);
+  color: var(--primary-dark);
   margin-bottom: 6px;
 }
 
@@ -152,7 +156,7 @@
   border: 1.5px solid #e5e7eb;
   border-radius: 10px;
   background: #fff;
-  color: var(--navy);
+  color: var(--primary-dark);
   font-weight: 600;
   cursor: pointer;
 }
@@ -165,14 +169,14 @@
   padding: 12px 28px;
   border: none;
   border-radius: 10px;
-  background: var(--navy);
+  background: var(--primary);
   color: #fff;
   font-weight: 600;
   cursor: pointer;
 }
 
 .continue-btn:hover {
-  background: #0f1a30;
+  background: var(--primary-dark);
 }
 
 @media (max-width: 640px) {

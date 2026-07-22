@@ -131,10 +131,10 @@ export default function PassengerDetails() {
   return (
     <div className="passenger-page">
       <div className="passenger-steps">
-        <span className="step done">1. Select Bus</span>
-        <span className="step active">2. Passenger Details</span>
-        <span className="step">3. Review</span>
-        <span className="step">4. Confirmation</span>
+        <button className="step done">1. Select Bus</button>
+        <button className="step active">2. Passenger Details</button>
+        <button className="step">3. Review</button>
+        <button className="step">4. Confirmation</button>
       </div>
 
       <div className="passenger-main">
@@ -243,7 +243,6 @@ export default function PassengerDetails() {
                   >
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Other">Other</option>
                   </select>
                 </div>
               </div>

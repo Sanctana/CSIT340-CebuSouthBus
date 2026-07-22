@@ -13,6 +13,20 @@ const paymentOptions = [
   { value: "cash", label: "Cash at Terminal" },
 ];
 
+const paymentLabels = {
+  gcash: "GCash",
+  maya: "Maya",
+  cash: "Cash at Terminal",
+};
+
+const randomDigits = (length) => {
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += Math.floor(Math.random() * 10);
+  }
+  return result;
+};
+
 export default function Review() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -21,6 +35,10 @@ export default function Review() {
     location.state ?? {};
 
   const [paymentMethod, setPaymentMethod] = useState("gcash");
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [paymentPhone, setPaymentPhone] = useState("");
+  const [priorityNumber, setPriorityNumber] = useState("");
+  const [cashierNumber, setCashierNumber] = useState("");
 
   // Arrived here directly (e.g. refresh, back button gone too far) with no
   // booking in progress — nothing to review.
@@ -45,7 +63,7 @@ export default function Review() {
 
   // TODO: Handle duplicated requests when user clicks "Confirm & Pay" multiple times before the first request completes. 
   // This can be done by disabling the button after the first click and showing a loading indicator.
-  const handleConfirm = async () => {
+  const submitBooking = async () => {
     bookTicket({
       busScheduleId: bus.id,
       passengerContact: contact,
@@ -72,6 +90,25 @@ export default function Review() {
         console.error("Error booking ticket:", error);
         alert("An error occurred while booking the ticket. Please try again.");
       });
+  };
+
+  const openPaymentModal = () => {
+    if (paymentMethod === "cash") {
+      setPriorityNumber(`P-${randomDigits(3)}`);
+      setCashierNumber(`Cashier ${Math.floor(Math.random() * 6) + 1}`);
+    } else {
+      setPaymentPhone("");
+    }
+    setShowPaymentModal(true);
+  };
+
+  const closePaymentModal = () => {
+    setShowPaymentModal(false);
+  };
+
+  const handlePaymentConfirm = () => {
+    setShowPaymentModal(false);
+    submitBooking();
   };
 
   const handleEdit = () => {
@@ -104,10 +141,20 @@ export default function Review() {
               <p>{formatTime(bus.departureTime)}</p>
             </div>
             <div>
+              <span className="review-label">Amount</span>
+              <p>
+                ₱{bus.isAircon ? bus.route.maxFare : bus.route.minFare} / passenger
+              </p>
+            </div>
+            <div>
               <span className="review-label">Operator</span>
               <p>
-                {bus.operator} {bus.busNumber}
+                {bus.busOperator} {bus.busNumber}
               </p>
+            </div>
+            <div>
+              <span className="review-label">Bus Type</span>
+              <p>{bus.isAircon ? "Aircon" : "Non-Aircon"}</p>
             </div>
           </div>
           <p className="payment-summary">
@@ -164,11 +211,85 @@ export default function Review() {
           <button className="back-btn" onClick={handleEdit}>
             ← Edit Details
           </button>
-          <button className="continue-btn" onClick={handleConfirm}>
+          <button className="continue-btn" onClick={openPaymentModal}>
             Confirm &amp; Pay →
           </button>
         </div>
       </div>
+
+      {showPaymentModal && (
+        <div
+          className="payment-modal-overlay"
+          onClick={closePaymentModal}
+          role="presentation"
+        >
+          <div
+            className="payment-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="payment-modal-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {paymentMethod === "cash" ? (
+              <>
+                <h2 id="payment-modal-title">Pay at the Terminal</h2>
+                <p className="payment-modal-note">
+                  Proceed to the cashier below and give them your priority
+                  number to pay for this booking.
+                </p>
+
+                <div className="payment-modal-details">
+                  <div>
+                    <span className="review-label">Priority Number</span>
+                    <p className="payment-modal-number">{priorityNumber}</p>
+                  </div>
+                  <div>
+                    <span className="review-label">Proceed To</span>
+                    <p className="payment-modal-number">{cashierNumber}</p>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 id="payment-modal-title">
+                  Confirm {paymentLabels[paymentMethod] ?? paymentMethod} Number
+                </h2>
+                <p className="payment-modal-note">
+                  Enter the mobile number linked to your{" "}
+                  {paymentLabels[paymentMethod] ?? paymentMethod} account. A
+                  payment request will be sent there.
+                </p>
+
+                <div className="payment-modal-field">
+                  <label htmlFor="payment-phone">Mobile Number</label>
+                  <input
+                    id="payment-phone"
+                    type="tel"
+                    placeholder="09171234567"
+                    maxLength={11}
+                    value={paymentPhone}
+                    onChange={(e) =>
+                      setPaymentPhone(e.target.value.replace(/\D/g, ""))
+                    }
+                  />
+                </div>
+              </>
+            )}
+
+            <div className="payment-modal-actions">
+              <button className="payment-modal-cancel" onClick={closePaymentModal}>
+                Cancel
+              </button>
+              <button
+                className="payment-modal-confirm"
+                onClick={handlePaymentConfirm}
+              >
+                {paymentMethod === "cash" ? "Got It, Continue →" : "Confirm & Pay →"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
