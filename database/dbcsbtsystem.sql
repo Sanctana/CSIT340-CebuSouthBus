@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 21, 2026 at 10:34 PM
+-- Generation Time: Jul 22, 2026 at 05:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -263,13 +263,6 @@ CREATE TABLE `tblpassenger` (
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tblpassenger`
---
-
-INSERT INTO `tblpassenger` (`ticket_uid`, `first_name`, `middle_name`, `last_name`, `suffix`, `date_of_birth`, `is_female`, `id`) VALUES
-('k9AWKI', 'Jani', 'Bl', 'Tor', 'Sr.', '2019-07-09', 0, 9);
-
 -- --------------------------------------------------------
 
 --
@@ -319,15 +312,9 @@ CREATE TABLE `tblticket` (
   `last_name` text NOT NULL,
   `email_address` text NOT NULL,
   `mobile_number` text NOT NULL,
-  `payment_method` text NOT NULL
+  `payment_method` text NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tblticket`
---
-
-INSERT INTO `tblticket` (`uid`, `bus_id`, `first_name`, `middle_name`, `last_name`, `email_address`, `mobile_number`, `payment_method`) VALUES
-('k9AWKI', 4, 'Juan', '', 'Dela Cruz', 'juan@gmail.com', '09345678912', 'GCash');
 
 --
 -- Indexes for dumped tables
