@@ -6,6 +6,8 @@ import "../styles/review.css";
 import "../styles/confirmation.css";
 import { bookTicket } from "../api/book";
 import { formatTime } from "../utils/utilities";
+import leftArrow from "../assets/ic_arrow_left.png";
+import rightArrow from "../assets/ic_arrow_right_white.png";
 
 const paymentOptions = [
   { value: "gcash", label: "GCash" },
@@ -161,11 +163,13 @@ export default function Review() {
         </section>
 
         <div className="confirmation-actions">
-          <button className="back-btn" onClick={handleEdit}>
-            ← Edit Details
+          <button className="back-button-pd" onClick={handleEdit}>
+            <img src={leftArrow} alt="Back" />
+            Back
           </button>
           <button className="continue-btn" onClick={handleConfirm}>
-            Confirm &amp; Pay →
+            Confirm &amp; Pay
+            <img src={rightArrow} alt="" />
           </button>
         </div>
       </div>

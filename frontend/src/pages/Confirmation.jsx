@@ -25,7 +25,7 @@ export default function Confirmation() {
     confirmationCode,
   } = location.state ?? {};
 
-  // Visited directly with no booking behind it.
+    // Visited directly with no booking behind it.
   if (!bus || !confirmationCode) {
     return (
       <div className="confirmation-page">

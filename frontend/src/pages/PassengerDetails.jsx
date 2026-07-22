@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { calculateAge } from "../utils/utilities";
 import "../styles/passengerdetails.css";
+import leftArrow from "../assets/ic_arrow_left.png";
+import rightArrow from "../assets/ic_arrow_right_white.png";
 
 const suffixOptions = ["", "Jr.", "Sr.", "II", "III", "IV", "V"];
 
@@ -337,11 +339,13 @@ export default function PassengerDetails() {
         {errors.agree && <span className="error-text">{errors.agree}</span>}
 
         <div className="passenger-actions">
-          <button className="back-btn" onClick={() => navigate(-1)}>
-            ← Back
+          <button className="back-button-pd" onClick={() => navigate(-1)}>
+            <img src={leftArrow} alt="Back" />
+            Back
           </button>
           <button className="continue-btn" onClick={handleContinue}>
-            Continue to Review →
+            Continue to Review
+            <img src={rightArrow} alt="" />
           </button>
         </div>
       </div>
