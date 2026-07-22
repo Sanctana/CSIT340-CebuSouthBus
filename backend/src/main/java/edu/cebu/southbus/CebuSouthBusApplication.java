@@ -10,3 +10,4 @@ public class CebuSouthBusApplication {
 		SpringApplication.run(CebuSouthBusApplication.class, args);
 	}
 }
+

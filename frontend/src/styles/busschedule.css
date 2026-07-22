@@ -29,7 +29,7 @@
 .schedule-heading h1 {
   margin: 0 0 6px 0;
   font-size: 2rem;
-  font-weight:800; 
+  font-weight:800;
   color:#2b3a8f;
 }
 
@@ -54,11 +54,11 @@
   padding: 10px 14px;
   border-radius: 10px;
   border:1px solid #e2e5f1;
-  background:#fff; 
+  background:#fff;
 }
 
 .sort-container select:focus{
-  border-color:#3b4cca; 
+  border-color:#3b4cca;
 }
 
 .sort-container select:focus-visible {
@@ -390,7 +390,7 @@
   z-index: 1000;
   padding: 16px;
 }
- 
+
 .confirm-modal {
   background: #fff;
   border-radius: 12px;
@@ -401,37 +401,37 @@
   overflow-y: auto;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 }
- 
+
 .confirm-modal h2 {
   margin: 0 0 16px;
   font-size: 1.25rem;
 }
- 
+
 .confirm-modal-details {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 16px;
 }
- 
+
 .confirm-modal-details .review-label {
   font-size: 0.75rem;
   color: #6b7280;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
- 
+
 .confirm-modal-details p {
   margin: 2px 0 0;
   font-weight: 500;
 }
- 
+
 .confirm-modal-note {
   font-size: 0.9rem;
   color: #374151;
   margin-bottom: 20px;
 }
- 
+
 .confirm-modal-actions {
   display: flex;
   justify-content: flex-end;

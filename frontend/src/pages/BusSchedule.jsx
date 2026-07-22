@@ -3,6 +3,7 @@ import BusCard from "../components/schedule/BusCard";
 import "../styles/busschedule.css";
 import { useNavigate, useSearchParams } from "react-router";
 import { getSchedules } from "../api/schedule";
+import rightArrow from "../assets/ic_arrow_right_white.png";
 import { formatTime } from "../utils/utilities";
 
 const sortOptions = [
@@ -226,7 +227,7 @@ export default function BusSchedule() {
                 Cancel
               </button>
               <button className="confirm-btn-confirm" onClick={confirmSelectBus}>
-                Confirm →
+                Confirm
               </button>
             </div>
           </div>
