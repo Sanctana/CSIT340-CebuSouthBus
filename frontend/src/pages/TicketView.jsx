@@ -1,51 +1,58 @@
-import { useState } from "react";
-import { useNavigate } from "react-router";
-
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 import "../styles/ticketview.css";
-
+import { getTicket } from "../api/ticket";
 import leftArrow from "../assets/ic_arrow_left.png";
 import ETicketModal from "../components/ticket/ETicketModal";
 import PassengerBookingCard from "../components/ticket/PassengerBookingCard";
+import { formatTime } from "../utils/utilities";
 
 export default function TicketView() {
   const navigate = useNavigate();
-
+  const location = useLocation();
   const [selectedPassenger, setSelectedPassenger] = useState(null);
+  const [ticket, setTicket] = useState();
 
-  const passengers = [
-    {
-      id: 1,
-      name: "Saint Tria Tangpos",
-      fare: 200,
-      destination: "Oslob",
-      departure: "6:00 AM",
-      date: "July 25, 2026",
-      bus: "Bus 204 - Aircon Express",
-      bookingId: "CSB-8A72F1",
-    },
-    {
-      id: 2,
-      name: "Irish Jean Manubag",
-      fare: 200,
-      destination: "Oslob",
-      departure: "6:00 AM",
-      date: "July 25, 2026",
-      bus: "Bus 204 - Aircon Express",
-      bookingId: "CSB-8A72F2",
-    },
-    {
-      id: 3,
-      name: "Andrew Sangasina",
-      fare: 100,
-      destination: "Oslob",
-      departure: "6:00 AM",
-      date: "July 25, 2026",
-      bus: "Bus 204 - Aircon Express",
-      bookingId: "CSB-8A72F3",
-    },
-  ];
+  const confirmationCode = location.state?.confirmation;
 
-  const totalFare = passengers.reduce((sum, p) => sum + p.fare, 0);
+  useEffect(() => {
+    if (!confirmationCode) return;
+
+    getTicket(confirmationCode)
+      .then(setTicket)
+      .catch((error) => {
+        console.error("Error fetching ticket:", error);
+        navigate("/"); // Redirect to home if there's an error
+      });
+  }, [confirmationCode, navigate]);
+
+  if (!confirmationCode) {
+    return (
+      <div className="ticket-page">
+        <h2>No confirmation code provided.</h2>
+        <button className="back-button-ticket" onClick={() => navigate("/")}>
+          <img src={leftArrow} alt="Back" />
+          Back to Manage Booking
+        </button>
+      </div>
+    );
+  }
+
+  if (!ticket) {
+    return (
+      <div className="ticket-page">
+        <h2>Loading ticket details...</h2>
+      </div>
+    );
+  }
+
+  const totalFare = ticket.passengers.reduce((sum, p) => {
+    const fare = ticket.busSchedule.isAircon
+      ? ticket.busSchedule.route.maxFare
+      : ticket.busSchedule.route.minFare;
+
+    return sum + fare;
+  }, 0);
 
   const handleViewTicket = (passenger) => {
     setSelectedPassenger(passenger);
@@ -68,7 +75,7 @@ export default function TicketView() {
               Back to Manage Booking
             </button>
 
-            <h1>MSK2S4</h1>
+            <h1>{confirmationCode}</h1>
 
             <p>Booking Reference</p>
           </div>
@@ -76,7 +83,10 @@ export default function TicketView() {
           <div className="ticket-hero-right">
             <span>Total Fare</span>
             <h2>₱{totalFare}</h2>
-            <p>{passengers.length} Passengers</p>
+            <p>
+              {ticket.passengers.length} Passenger
+              {ticket.passengers.length !== 1 ? "s" : ""}
+            </p>
           </div>
         </div>
       </section>
@@ -92,22 +102,24 @@ export default function TicketView() {
 
           <div>
             <span>TO</span>
-            <h3>Oslob</h3>
+            <h3>{ticket.busSchedule.route.destination}</h3>
           </div>
 
           <div>
             <span>DATE</span>
-            <h3>July 25, 2026</h3>
+            <h3>{ticket.date}</h3>
           </div>
 
           <div>
             <span>DEPARTURE</span>
-            <h3>6:00 AM</h3>
+            <h3>{formatTime(ticket.busSchedule.departureTime)}</h3>
           </div>
 
           <div>
             <span>BUS</span>
-            <h3>{passengers[0].bus}</h3>
+            <h3>
+              Bus {ticket.busSchedule.id} - {ticket.busSchedule.busOperator}
+            </h3>
           </div>
         </section>
 
@@ -119,18 +131,19 @@ export default function TicketView() {
             </div>
 
             <span className="passenger-count">
-              {passengers.length} Passenger
-              {passengers.length > 1 ? "s" : ""}
+              {ticket.passengers.length} Passenger
+              {ticket.passengers.length !== 1 ? "s" : ""}
             </span>
           </div>
 
           <div className="passenger-list">
-            {passengers.map((passenger, index) => (
+            {ticket.passengers.map((passenger, index) => (
               <PassengerBookingCard
                 key={passenger.id}
                 passenger={passenger}
                 number={index + 1}
                 onViewTicket={handleViewTicket}
+                ticket={ticket}
               />
             ))}
           </div>
@@ -138,7 +151,11 @@ export default function TicketView() {
       </main>
 
       {selectedPassenger && (
-        <ETicketModal passenger={selectedPassenger} onClose={closeTicket} />
+        <ETicketModal
+          passenger={selectedPassenger}
+          onClose={closeTicket}
+          ticket={ticket}
+        />
       )}
     </div>
   );

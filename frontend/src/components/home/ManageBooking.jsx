@@ -31,7 +31,7 @@ export default function ManageBooking() {
           confirmation.length === 6 ? "ticket-button active" : "ticket-button"
         }
         disabled={confirmation.length !== 6}
-        onClick={() => navigate("/ticket")}
+        onClick={() => navigate("/ticket", { state: { confirmation } })}
       >
         View My Ticket
       </button>

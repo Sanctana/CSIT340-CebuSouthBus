@@ -22,6 +22,7 @@ import lombok.experimental.Accessors;
 @Entity
 @Table(name = "tblticket")
 @Setter
+@Getter
 public class Ticket {
 
     @Column(nullable = false, length = 6)

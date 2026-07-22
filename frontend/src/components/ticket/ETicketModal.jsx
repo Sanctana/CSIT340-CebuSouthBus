@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import "../../styles/eticketmodal.css";
 import QrCode from "../../assets/ic_qr.png";
+import { formatTime } from "../../utils/utilities";
 
-export default function ETicketModal({ passenger, onClose }) {
+export default function ETicketModal({ passenger, onClose, ticket }) {
   useEffect(() => {
     const scrollbarWidth =
       window.innerWidth - document.documentElement.clientWidth;
@@ -41,7 +42,7 @@ export default function ETicketModal({ passenger, onClose }) {
           <div className="route-item">
             <span className="label">TO</span>
 
-            <h3>{passenger.destination}</h3>
+            <h3>{ticket.busSchedule.route.destination}</h3>
           </div>
         </div>
 
@@ -50,7 +51,11 @@ export default function ETicketModal({ passenger, onClose }) {
             <div>
               <span className="label">Passenger</span>
 
-              <h4>{passenger.name}</h4>
+              <h4>
+                {passenger.firstName}{" "}
+                {passenger.middleName ? `${passenger.middleName} ` : ""}{" "}
+                {passenger.lastName}
+              </h4>
             </div>
           </div>
 
@@ -58,13 +63,13 @@ export default function ETicketModal({ passenger, onClose }) {
             <div>
               <span className="label">Date</span>
 
-              <h4>{passenger.date}</h4>
+              <h4>{ticket.date}</h4>
             </div>
 
             <div>
               <span className="label">Departure</span>
 
-              <h4>{passenger.departure}</h4>
+              <h4>{formatTime(ticket.busSchedule.departureTime)}</h4>
             </div>
           </div>
 
@@ -72,13 +77,20 @@ export default function ETicketModal({ passenger, onClose }) {
             <div>
               <span className="label">Bus</span>
 
-              <h4>{passenger.bus}</h4>
+              <h4>
+                Bus {ticket.busSchedule.id} - {ticket.busSchedule.busOperator}
+              </h4>
             </div>
 
             <div>
               <span className="label">Fare</span>
 
-              <h4 className="fare">₱{passenger.fare}</h4>
+              <h4 className="fare">
+                ₱
+                {ticket.busSchedule.isAircon
+                  ? ticket.busSchedule.route.maxFare
+                  : ticket.busSchedule.route.minFare}
+              </h4>
             </div>
           </div>
         </div>
@@ -88,7 +100,7 @@ export default function ETicketModal({ passenger, onClose }) {
 
           <p>Present this QR code upon boarding.</p>
 
-          <span className="booking-id">{passenger.bookingId}</span>
+          <span className="booking-id">{ticket.uid}</span>
         </div>
       </div>
     </div>

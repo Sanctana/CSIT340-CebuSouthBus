@@ -5,6 +5,7 @@ export default function PassengerBookingCard({
   passenger,
   number,
   onViewTicket,
+  ticket,
 }) {
   return (
     <div className="passenger-card">
@@ -12,10 +13,19 @@ export default function PassengerBookingCard({
         <div className="passenger-number">{number}</div>
 
         <div className="passenger-info">
-          <h3>{passenger.name}</h3>
+          <h3>
+            {passenger.firstName}{" "}
+            {passenger.middleName ? `${passenger.middleName} ` : ""}
+            {passenger.lastName}
+          </h3>
 
           <div className="passenger-meta">
-            <span className="fare">₱{passenger.fare}</span>
+            <span className="fare">
+              ₱
+              {ticket.busSchedule.isAircon
+                ? ticket.busSchedule.route.maxFare
+                : ticket.busSchedule.route.minFare}
+            </span>
           </div>
         </div>
       </div>
