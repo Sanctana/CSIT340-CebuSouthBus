@@ -44,7 +44,7 @@ export default function Review() {
 
   // Arrived here directly (e.g. refresh, back button gone too far) with no
   // booking in progress — nothing to review.
-  if (!bus || !contact || !passengers) {
+  if (!bus || !contact || !passengers || !date) {
     return (
       <div className="confirmation-page">
         <div className="confirmation-empty">
@@ -71,6 +71,7 @@ export default function Review() {
       passengerContact: contact,
       passengers,
       paymentMethod,
+      date,
     })
       .then((data) => {
         // TODO: When an endpoint for fetching ticket has been created,

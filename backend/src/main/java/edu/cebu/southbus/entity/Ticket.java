@@ -1,5 +1,6 @@
 package edu.cebu.southbus.entity;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import edu.cebu.southbus.util.ShortIdGenerator;
@@ -52,6 +53,9 @@ public class Ticket {
 
     @Column(name = "payment_method", nullable = false)
     private String paymentMethod;
+
+    @Column(name = "date", nullable = false)
+    private LocalDate date;
 
     @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
     @Getter
