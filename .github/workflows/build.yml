@@ -34,4 +34,4 @@ jobs:
 
       - name: Build
         working-directory: ./frontend
-        run: nub run build --if-present
+        run: nub run build
