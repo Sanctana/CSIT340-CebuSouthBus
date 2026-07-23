@@ -10,41 +10,6 @@ import simala from "../../assets/simala.jpg";
 import TouristCard from "./TouristCard";
 
 export default function Advertise() {
-  // const destinations = [
-  //   {
-  //     category: "MARINE LIFE",
-  //     title: "Oslob Whale Sharks",
-  //     description:
-  //       "Swim alongside the world's largest fish in their natural habitat.",
-  //     location: "Oslob, Cebu",
-  //     image: whaleShark,
-  //   },
-  //   {
-  //     category: "WATERFALL",
-  //     title: "Kawasan Falls",
-  //     description:
-  //       "Experience turquoise waterfalls surrounded by lush tropical forests.",
-  //     location: "Alegria, Cebu",
-  //     image: kawasan,
-  //   },
-  //   {
-  //     category: "PILGRIMAGE",
-  //     title: "Simala Shrine",
-  //     description:
-  //       "One of Cebu's most visited churches known for miraculous stories.",
-  //     location: "Sibonga, Cebu",
-  //     image: simala,
-  //   },
-  //   {
-  //     category: "BEACH",
-  //     title: "Moalboal Sardine Run",
-  //     description:
-  //       "Witness millions of sardines swimming just meters from the shore.",
-  //     location: "Moalboal, Cebu",
-  //     image: moalboal,
-  //   },
-  // ];
-
   const images = [whaleShark, kawasan, simala, moalboal];
   const [destinations, setDestinations] = useState([]);
 

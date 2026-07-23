@@ -9,7 +9,7 @@ export default function PassengerList({ passengers }) {
           <div className="passenger-info">
             <p className="passenger-name">{formatFullName(p)}</p>
             <p className="passenger-meta">
-              {calculateAge(p.dateOfBirth)} yrs old • {p.gender}
+              {calculateAge(p.dateOfBirth)} yrs old - {p.gender}
             </p>
           </div>
         </div>

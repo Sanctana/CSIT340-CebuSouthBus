@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { useNavigate } from "react-router";
 import { formatTime } from "../../utils/utilities";
+import ModalCloseButton from "../../components/commons/ModalCloseButton";
 
 export default function BusSelectionConfirmation({
   destination,
@@ -35,8 +35,16 @@ export default function BusSelectionConfirmation({
         aria-labelledby="confirm-modal-title"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 id="confirm-modal-title">Confirm Your Selection</h2>
+        <div className="confirm-modal-header">
+          <div className="confirm-header-text">
+            <h2 id="confirm-modal-title">Confirm Your Selection</h2>
+            <p>Please review your selected bus before continuing.</p>
+          </div>
 
+          <ModalCloseButton onClick={closeConfirm} />
+        </div>
+
+        <div className="confirm-modal-body">
         <div className="confirm-modal-details">
           <div>
             <span className="review-label">Route</span>
@@ -66,16 +74,18 @@ export default function BusSelectionConfirmation({
           </div>
         </div>
 
-        <p className="confirm-modal-note">
-          You're about to book this bus for {passengerCount} passenger
-          {passengerCount === 1 ? "" : "s"}. Continue to passenger details?
-        </p>
+          <p className="confirm-modal-note">
+            You're about to book this bus for {passengerCount} passenger
+            {passengerCount === 1 ? "" : "s"}. Continue to passenger details?
+          </p>
+
+        </div>
 
         <div className="confirm-modal-actions">
-          <button className="confirm-btn-cancel" onClick={closeConfirm}>
-            Cancel
-          </button>
-          <button className="confirm-btn-confirm" onClick={confirmSelectBus}>
+          <button
+              className="confirm-btn-confirm"
+              onClick={confirmSelectBus}
+          >
             Confirm
           </button>
         </div>

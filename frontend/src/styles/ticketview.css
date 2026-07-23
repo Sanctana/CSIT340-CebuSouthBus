@@ -152,7 +152,6 @@
   font-size: 0.9rem;
 }
 
-/* MAIN CONTENT */
 .ticket-content {
   width: min(1050px, 90%);
 
@@ -218,8 +217,6 @@
   font-weight: bold;
 }
 
-/* PASSENGERS */
-
 .passenger-section {
   margin-top: 40px;
 }
@@ -230,8 +227,8 @@
   justify-content: space-between;
 
   align-items: center;
-
-  margin-bottom: 24px;
+  margin-top: -13px;
+  margin-bottom: 10px;
 }
 
 .passenger-header h2 {
@@ -267,31 +264,141 @@
   border: 1px solid var(--border);
 }
 
+.passenger-card-container {
+  background: white;
+  border-radius: 24px;
+  padding: 10px;
+  padding-top: 2px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 30px rgba(35, 57, 143, 0.08);
+}
+
 .passenger-list {
   display: flex;
-
   flex-direction: column;
-
-  gap: 22px;
+  gap: 18px;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 8px;
 }
 
-@media (max-width: 1000px) {
-  .summary-card {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ticket-hero-content {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .ticket-hero-right {
-    text-align: left;
-  }
+.passenger-list::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* MOBILE */
+.passenger-list::-webkit-scrollbar-track {
+  background: #edf1ff;
+  border-radius: 999px;
+}
+
+.passenger-list::-webkit-scrollbar-thumb {
+  background: #3454d1;
+  border-radius: 999px;
+}
+
+.passenger-list::-webkit-scrollbar-thumb:hover {
+  background: #23398f;
+}
+
+.contact-section {
+  margin-top: 10px;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -7px;
+}
+
+.contact-header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.contact-header p {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.update-contact-btn {
+  background: var(--brand-gold);
+  color: #1f2f6b;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  padding: 10px 35px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow:
+          0 12px 30px rgba(35,57,143,.08),
+          0 4px 12px rgba(0,0,0,.05);
+}
+
+.contact-item {
+  flex: 1;
+}
+
+.contact-item span {
+  display: block;
+  color: var(--muted);
+  font-size: .75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.contact-item h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.contact-divider {
+  width: 1px;
+  height: 60px;
+  background: var(--border);
+  margin: 0 30px;
+}
+
+@media(max-width:700px){
+
+  .contact-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
+
+  .contact-card{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:25px;
+  }
+
+  .contact-divider{
+    display:none;
+  }
+
+  .update-contact-btn{
+    width:100%;
+  }
+
+}
+
 @media (max-width: 700px) {
   .ticket-hero {
     padding: 40px 20px 90px;
@@ -323,5 +430,21 @@
 
   .passenger-count {
     align-self: flex-start;
+  }
+}
+
+@media (max-width: 1000px) {
+  .summary-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ticket-hero-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .ticket-hero-right {
+    text-align: left;
   }
 }
