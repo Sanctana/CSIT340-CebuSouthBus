@@ -93,7 +93,6 @@ export default function Support() {
         </p>
       </div>
 
-      {/* Contact Cards */}
       <div className="contact-grid">
         {contactInfo.map((item) => (
           <div className="contact-card" key={item.id}>
@@ -103,7 +102,6 @@ export default function Support() {
 
             <div>
               <p className="contact-label">{item.label}</p>
-
               <p className="contact-value">{item.value}</p>
             </div>
           </div>
@@ -112,7 +110,6 @@ export default function Support() {
 
       <div className="support-content">
         <div className="support-two-col">
-          {/* MAP */}
           <div>
             <h2 className="section-title">Terminal Location</h2>
 
@@ -130,7 +127,6 @@ export default function Support() {
             </div>
           </div>
 
-          {/* CONTACT LINKS */}
           <div>
             <h2 className="section-title">Still have questions?</h2>
 
@@ -147,7 +143,6 @@ export default function Support() {
 
                 <div>
                   <p className="contact-link-label">Call our hotline</p>
-
                   <p className="contact-link-value">(054) 645-6557</p>
                 </div>
               </a>
@@ -162,7 +157,6 @@ export default function Support() {
 
                 <div>
                   <p className="contact-link-label">Email us</p>
-
                   <p className="contact-link-value">southbus@csbt.gov.ph</p>
                 </div>
               </a>
@@ -178,7 +172,6 @@ export default function Support() {
 
                 <div>
                   <p className="contact-link-label">Information Desk</p>
-
                   <p className="contact-link-value">
                     Get assistance at the terminal during operating hours.
                   </p>
@@ -188,7 +181,6 @@ export default function Support() {
           </div>
         </div>
 
-        {/* FAQ */}
         <div className="faq-section">
           <h2 className="section-title">Frequently Asked Questions</h2>
 
@@ -208,7 +200,6 @@ export default function Support() {
                   >
                     <div className="faq-question-inner">
                       <span className="faq-dot"></span>
-
                       <span>{faq.question}</span>
                     </div>
 
