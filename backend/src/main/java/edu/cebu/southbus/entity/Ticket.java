@@ -13,8 +13,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -26,15 +24,12 @@ import lombok.experimental.Accessors;
 public class Ticket {
 
     @Column(nullable = false, length = 6)
-    @NotNull
-    @Size(max = 6)
     @Id
     @Getter
     private String uid;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bus_id", nullable = false)
-    @NotNull
     private BusSchedule busSchedule;
 
     @Column(name = "first_name", nullable = false)

@@ -8,7 +8,6 @@ import { formatTime } from "../utils/utilities";
 const paymentLabels = {
   gcash: "GCash",
   maya: "Maya",
-  cash: "Cash at Terminal",
 };
 
 export default function Confirmation() {
