@@ -4,6 +4,10 @@ import {
   formatMinutes,
   formatTime,
 } from "../../utils/utilities";
+import snowflakeLogo from "../../assets/snowflake_logo.png";
+import fanLogo from "../../assets/non-aircon_logo.png";
+import pinLogo from "../../assets/pin_logo.png";
+import seatLogo from "../../assets/seat_logo.png";
 
 export default function BusCard({ bus, onSelect }) {
   const {
@@ -26,8 +30,13 @@ export default function BusCard({ bus, onSelect }) {
           <span className="bus-number">Bus {busNumber}</span>
         </div>
         <span className={`type-badge ${isAircon ? "aircon" : "non-aircon"}`}>
-          {isAircon ? "️Aircon" : "Non-Aircon"}
-        </span>
+        <img
+        src={isAircon ? snowflakeLogo : fanLogo}
+        alt={isAircon ? "Aircon" : "Non-Aircon"}
+        className="type-icon"
+        />
+      {isAircon ? "Aircon" : "Non-Aircon"}
+      </span>
       </div>
 
       <div className="bus-card-route">
@@ -55,9 +64,13 @@ export default function BusCard({ bus, onSelect }) {
       <div className="bus-card-bottom">
         <div className="details">
           <span className={isLowSeats ? "seats low" : "seats"}>
+            <img src={seatLogo} alt="Seats" className="detail-icon" />
             {availableSeats} seat{availableSeats === 1 ? "" : "s"} left
           </span>
-          <span className="terminal">South Bus Terminal</span>
+          <span className="terminal">
+            <img src={pinLogo} alt="Terminal" className="detail-icon" />
+            South Bus Terminal
+          </span>
         </div>
 
         <div className="price-book">
