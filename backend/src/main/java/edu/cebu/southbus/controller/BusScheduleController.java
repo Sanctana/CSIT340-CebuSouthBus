@@ -23,6 +23,6 @@ public class BusScheduleController {
 	public List<BusScheduleResponse> getBusSchedule(@RequestParam String destination,
 			@RequestParam Integer passengerCount,
 			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
-		return busScheduleService.getBusSchedules(destination, passengerCount);
+		return busScheduleService.getBusSchedules(destination, passengerCount, date);
 	}
 }

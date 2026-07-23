@@ -1,7 +1,7 @@
 .confirmation-page {
   --navy: #16233f;
   --gold: #f4b400;
-
+  --primary: #3b4cca;
   max-width: 900px;
   margin: 0 auto;
   padding: 32px 24px 64px;
@@ -126,4 +126,14 @@
   .confirmation-actions {
     display: none;
   }
+}
+
+.back-home-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
 }

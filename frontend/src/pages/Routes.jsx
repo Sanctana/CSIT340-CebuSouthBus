@@ -31,7 +31,7 @@ function Routes() {
     fetchRoutes();
   }, []);
 
-  const routesPerPage = 3;
+  const routesPerPage = 4;
 
   const filteredRoutes = routesData.filter((route) => {
     return (

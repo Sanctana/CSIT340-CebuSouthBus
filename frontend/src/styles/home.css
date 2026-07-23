@@ -32,7 +32,7 @@
   max-width: 620px;
   margin: 0;
 
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   color: #2d2d2d;
 }
@@ -51,21 +51,19 @@
   background: #3454d1;
   color: #fff;
 
-  font-size: .95rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
   box-shadow:
-          0 10px 25px rgba(0,0,0,.12),  0 4px 10px rgba(0,0,0,.08);
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
 }
-
-
 
 .cta-button:active {
   transform: translateY(-1px);
 }
 
 @media (max-width: 900px) {
-
   .cta-section {
     padding: 60px 24px;
   }
@@ -82,7 +80,7 @@
 
   .cta-text p {
     max-width: 100%;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .cta-button {
@@ -92,7 +90,6 @@
 }
 
 @media (max-width: 540px) {
-
   .cta-section {
     padding: 50px 20px;
   }
@@ -103,6 +100,6 @@
 
   .cta-button {
     padding: 15px 24px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }

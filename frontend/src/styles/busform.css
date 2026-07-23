@@ -1,18 +1,18 @@
 .booking-form {
-  width:560px;
+  width: 560px;
   background: white;
   border-radius: 20px;
-  padding:22px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
-  border:1px solid #e8ebf5;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e8ebf5;
 }
 
 .booking-form h3 {
   margin: 0;
-  font-size:20px;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -50,8 +50,8 @@
 
 .trip-type {
   width: fit-content;
-  padding:6px 16px;
-  font-size:.85rem;
+  padding: 6px 16px;
+  font-size: 0.85rem;
   background: #254cd7;
   color: white;
   border-radius: 30px;
@@ -61,7 +61,7 @@
 .form-fields {
   display: flex;
   flex-direction: column;
-  gap:10px;
+  gap: 10px;
 }
 
 .inline-input {
@@ -78,7 +78,7 @@
   background: white;
   border: 1px solid #d9d9d9;
   border-radius: 15px;
-  padding:14px 16px;
+  padding: 14px 16px;
 }
 
 .form-logo {
@@ -95,7 +95,7 @@
 
 .child-field label {
   margin-bottom: 5px;
-  font-size:11px;
+  font-size: 11px;
   font-weight: 700;
   color: #3454d1;
   letter-spacing: 1px;
@@ -152,8 +152,8 @@
 }
 
 .oneway-icon img {
-  width:18px;
-  height:18px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
 }
 
@@ -181,12 +181,11 @@
   color: white;
   font-weight: 400;
   cursor: pointer;
-  padding:14px;
-  font-size:18px !important;
-  border-radius:14px;
+  padding: 14px;
+  font-size: 18px !important;
+  border-radius: 14px;
 
-  box-shadow:
-          0 10px 20px rgba(52,84,209,.22);
+  box-shadow: 0 10px 20px rgba(52, 84, 209, 0.22);
 }
 
 .search-button:hover {
@@ -199,9 +198,9 @@
   background: #b8b8b8;
   color: white;
   font-weight: 600;
-  padding:14px;
-  font-size:17px;
-  border-radius:14px;
+  padding: 14px;
+  font-size: 17px;
+  border-radius: 14px;
 }
 
 .ticket-button.active {
@@ -213,23 +212,19 @@
 .input-error {
   border: 2px solid #ef4444 !important;
   background: #fff5f5;
-  animation: shake .35s ease;
+  animation: shake 0.35s ease;
 }
-
 
 .input-error {
   border: 2px solid #ef4444 !important;
   background: #fff5f5;
 }
 
-
 .shake {
-  animation: shake .35s ease;
+  animation: shake 0.35s ease;
 }
 
-
 @keyframes shake {
-
   0% {
     transform: translateX(0);
   }
@@ -253,14 +248,13 @@
   100% {
     transform: translateX(0);
   }
-
 }
 
 .booking-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size:13px;
+  font-size: 13px;
 }
 
 .back-button {
@@ -305,3 +299,25 @@
   transform: scale(0.98);
 }
 
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}

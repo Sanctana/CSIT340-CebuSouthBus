@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { calculateAge } from "../utils/utilities";
 import "../styles/passengerdetails.css";
+import leftArrow from "../assets/ic_arrow_left.png";
+import rightArrow from "../assets/ic_arrow_right_white.png";
 
 const suffixOptions = ["", "Jr.", "Sr.", "II", "III", "IV", "V"];
 
@@ -131,10 +133,10 @@ export default function PassengerDetails() {
   return (
     <div className="passenger-page">
       <div className="passenger-steps">
-        <span className="step done">1. Select Bus</span>
-        <span className="step active">2. Passenger Details</span>
-        <span className="step">3. Review</span>
-        <span className="step">4. Confirmation</span>
+        <button className="step done">1. Select Bus</button>
+        <button className="step active">2. Passenger Details</button>
+        <button className="step">3. Review</button>
+        <button className="step">4. Confirmation</button>
       </div>
 
       <div className="passenger-main">
@@ -243,7 +245,6 @@ export default function PassengerDetails() {
                   >
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Other">Other</option>
                   </select>
                 </div>
               </div>
@@ -337,11 +338,13 @@ export default function PassengerDetails() {
         {errors.agree && <span className="error-text">{errors.agree}</span>}
 
         <div className="passenger-actions">
-          <button className="back-btn" onClick={() => navigate(-1)}>
-            ← Back
+          <button className="back-button-pd" onClick={() => navigate(-1)}>
+            <img src={leftArrow} alt="Back" />
+            Back
           </button>
           <button className="continue-btn" onClick={handleContinue}>
-            Continue to Review →
+            Continue to Review
+            <img src={rightArrow} alt="" />
           </button>
         </div>
       </div>

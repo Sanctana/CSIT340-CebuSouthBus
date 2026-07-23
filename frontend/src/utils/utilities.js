@@ -42,3 +42,14 @@ export function calculateAge(dateOfBirth) {
 
   return age;
 }
+
+export function addMinutesToTime(time1, minutesToAdd) {
+  const [hours, minutes] = time1.split(":").map(Number);
+  let totalMinutes = hours * 60 + minutes + minutesToAdd;
+  let totalHours = Math.floor(totalMinutes / 60);
+  totalMinutes %= 60;
+  const period = totalHours >= 12 ? "PM" : "AM";
+  totalHours = totalHours % 12 || 12;
+
+  return `${totalHours.toString().padStart(2, "0")}:${totalMinutes.toString().padStart(2, "0")} ${period}`;
+}

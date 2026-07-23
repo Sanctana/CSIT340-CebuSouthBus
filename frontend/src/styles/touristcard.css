@@ -7,10 +7,10 @@
   border: 1px solid #e8ebf5;
 
   box-shadow:
-          0 10px 25px rgba(0, 0, 0, 0.12),
-          0 4px 10px rgba(0, 0, 0, 0.08);
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
 
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 
 .tourist-card:hover {
@@ -18,8 +18,7 @@
 
   border-color: #d9e1f2;
 
-  box-shadow:
-          0 15px 35px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .tourist-image {
@@ -45,7 +44,7 @@
   background: #3454d1;
   color: white;
 
-  font-size: .72rem;
+  font-size: 0.72rem;
   font-weight: 700;
 }
 
@@ -62,7 +61,7 @@
 
 .tourist-content p {
   margin: 10px 0;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   color: #6b7280;
 }

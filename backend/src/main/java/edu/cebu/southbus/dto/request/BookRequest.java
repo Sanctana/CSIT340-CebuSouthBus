@@ -117,9 +117,11 @@ public class BookRequest {
 	private Contact passengerContact;
 
 	@NotNull(message = "Passenger/s are required")
-	@Valid
-	private Passenger[] passengers;
+	private Passenger @Valid [] passengers;
 
 	@NotNull(message = "Payment method is required")
 	private PaymentMethod paymentMethod;
+
+	@NotNull(message = "Date is required")
+	private LocalDate date;
 }

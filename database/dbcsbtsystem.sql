@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 21, 2026 at 10:34 PM
+-- Generation Time: Jul 23, 2026 at 07:05 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `dbcsbtsystem`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbladvertise`
+--
+
+CREATE TABLE `tbladvertise` (
+  `title` text NOT NULL,
+  `description` text NOT NULL,
+  `location` text NOT NULL,
+  `id` int(11) NOT NULL,
+  `category` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tbladvertise`
+--
+
+INSERT INTO `tbladvertise` (`title`, `description`, `location`, `id`, `category`) VALUES
+('Oslob Whale Sharks', 'Swim alongside the world\'s largest fish in their natural habitat.', 'Oslob, Cebu', 1, 'MARINE LIFE'),
+('Kawasan Falls', 'Experience turquoise waterfalls surrounded by lush tropical forests.', 'Alegria, Cebu', 2, 'WATERFALL'),
+('Simala Shrine', 'One of Cebu\'s most visited churches known for miraculous stories.', 'Sibonga, Cebu', 3, 'PILGRIMAGE'),
+('Moalboal Sardine Run', 'Witness millions of sardines swimming just meters from the shore.', 'Moalboal, Cebu', 4, 'BEACH');
 
 -- --------------------------------------------------------
 
@@ -268,7 +292,7 @@ CREATE TABLE `tblpassenger` (
 --
 
 INSERT INTO `tblpassenger` (`ticket_uid`, `first_name`, `middle_name`, `last_name`, `suffix`, `date_of_birth`, `is_female`, `id`) VALUES
-('k9AWKI', 'Jani', 'Bl', 'Tor', 'Sr.', '2019-07-09', 0, 9);
+('M8uOFn', 'Juan', 'San', 'Mor', '', '1968-07-23', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -319,19 +343,26 @@ CREATE TABLE `tblticket` (
   `last_name` text NOT NULL,
   `email_address` text NOT NULL,
   `mobile_number` text NOT NULL,
-  `payment_method` text NOT NULL
+  `payment_method` text NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblticket`
 --
 
-INSERT INTO `tblticket` (`uid`, `bus_id`, `first_name`, `middle_name`, `last_name`, `email_address`, `mobile_number`, `payment_method`) VALUES
-('k9AWKI', 4, 'Juan', '', 'Dela Cruz', 'juan@gmail.com', '09345678912', 'GCash');
+INSERT INTO `tblticket` (`uid`, `bus_id`, `first_name`, `middle_name`, `last_name`, `email_address`, `mobile_number`, `payment_method`, `date`) VALUES
+('M8uOFn', 1, 'Jan', '', 'S', 'juan@gmail.com', '09123456789', 'GCash', '2026-07-24');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbladvertise`
+--
+ALTER TABLE `tbladvertise`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tblbus`
@@ -365,6 +396,12 @@ ALTER TABLE `tblticket`
 --
 
 --
+-- AUTO_INCREMENT for table `tbladvertise`
+--
+ALTER TABLE `tbladvertise`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `tblbus`
 --
 ALTER TABLE `tblbus`
@@ -374,7 +411,7 @@ ALTER TABLE `tblbus`
 -- AUTO_INCREMENT for table `tblpassenger`
 --
 ALTER TABLE `tblpassenger`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tblroute`

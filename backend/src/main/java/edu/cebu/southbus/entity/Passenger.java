@@ -2,6 +2,8 @@ package edu.cebu.southbus.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -12,11 +14,13 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name = "tblpassenger")
 @Setter
+@Getter
 public class Passenger {
 
     @Id
@@ -25,7 +29,7 @@ public class Passenger {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ticket_uid", nullable = false)
-    @Setter
+    @JsonIgnore
     private Ticket ticket;
 
     @Column(name = "first_name", nullable = false)

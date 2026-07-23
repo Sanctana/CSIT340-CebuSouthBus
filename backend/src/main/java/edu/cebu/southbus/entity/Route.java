@@ -12,14 +12,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
 import lombok.Setter;
 import lombok.AccessLevel;
+import lombok.Getter;
 
 @Entity
 @Table(name = "tblroute")
-@Getter
 @Setter
+@Getter
 public class Route {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

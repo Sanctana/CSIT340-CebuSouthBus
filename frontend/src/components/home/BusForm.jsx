@@ -33,10 +33,10 @@ export default function BusForm() {
 
       <footer className="booking-footer">
         {activeTab === "manage" && (
-            <button className="back-button" onClick={() => setActiveTab("book")}>
-                <img src={leftArrow} alt="Back" />
-                <span>Back to Book a Ticket</span>
-            </button>
+          <button className="back-button" onClick={() => setActiveTab("book")}>
+            <img src={leftArrow} alt="Back" />
+            <span>Back to Book a Ticket</span>
+          </button>
         )}
 
         <span>Need help? 0917-123-4567</span>

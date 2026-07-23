@@ -15,6 +15,7 @@ public class TicketMapper {
 		ticket.setEmailAddress(contact.getEmail());
 		ticket.setMobileNumber(contact.getMobile());
 		ticket.setPaymentMethod(bookRequest.getPaymentMethod().getLabel());
+		ticket.setDate(bookRequest.getDate());
 
 		return ticket;
 	}

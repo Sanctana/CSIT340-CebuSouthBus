@@ -43,8 +43,7 @@ public class BookService {
 	}
 
 	private Ticket saveTicketWithRetry(Ticket ticket, Integer busScheduleId) {
-		ticket.setBusSchedule(busScheduleRepository.findById(busScheduleId)
-				.orElseThrow(() -> new RuntimeException("Bus schedule not found")));
+		ticket.setBusSchedule(busScheduleRepository.getReferenceById(busScheduleId));
 
 		for (int attempts = 0; attempts < MAX_RETRIES; attempts++) {
 			try {

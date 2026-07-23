@@ -3,6 +3,9 @@ import BusCard from "../components/schedule/BusCard";
 import "../styles/busschedule.css";
 import { useNavigate, useSearchParams } from "react-router";
 import { getSchedules } from "../api/schedule";
+import rightArrow from "../assets/ic_arrow_right_white.png";
+import BusSelectionConfirmation from "../components/schedule/BusSelectionConfirmation";
+import { formatTime } from "../utils/utilities";
 
 const sortOptions = [
   { value: "relevance", label: "Relevance" },
@@ -15,9 +18,9 @@ const sortOptions = [
 export default function BusSchedule() {
   const [searchParams] = useSearchParams();
   const [busesData, setBusesData] = useState([]);
-  const navigate = useNavigate();
   const [sortBy, setSortBy] = useState("relevance");
   const [filterType, setFilterType] = useState("all");
+  const [pendingBus, setPendingBus] = useState(null);
 
   const destination = searchParams.get("destination");
   const date = searchParams.get("date");
@@ -44,10 +47,9 @@ export default function BusSchedule() {
 
     fetchSchedules();
   }, [destination, date, passengerCount]);
+
   const handleSelectBus = (bus) => {
-    navigate("/passenger-details", {
-      state: { bus, date, passengerCount },
-    });
+    setPendingBus(bus);
   };
 
   const filteredBuses = useMemo(() => {
@@ -160,6 +162,16 @@ export default function BusSchedule() {
           </div>
         )}
       </div>
+
+      {pendingBus && (
+        <BusSelectionConfirmation
+          destination={destination}
+          passengerCount={passengerCount}
+          pendingBus={pendingBus}
+          date={date}
+          setPendingBus={setPendingBus}
+        />
+      )}
     </div>
   );
 }

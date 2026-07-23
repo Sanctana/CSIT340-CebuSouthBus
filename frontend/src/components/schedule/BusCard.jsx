@@ -1,5 +1,9 @@
 import "../../styles/busschedule.css";
-import { formatMinutes, formatTime } from "../../utils/utilities";
+import {
+  addMinutesToTime,
+  formatMinutes,
+  formatTime,
+} from "../../utils/utilities";
 
 export default function BusCard({ bus, onSelect }) {
   const {
@@ -8,12 +12,11 @@ export default function BusCard({ bus, onSelect }) {
     isAircon,
     destination,
     departureTime,
-    arrivalTime,
-    capacity,
+    availableSeats,
     route,
   } = bus;
 
-  const isLowSeats = capacity <= 10;
+  const isLowSeats = availableSeats <= 10;
 
   return (
     <div className="bus-card">
@@ -42,7 +45,9 @@ export default function BusCard({ bus, onSelect }) {
         </div>
 
         <div className="stop align-end">
-          <p className="time">{arrivalTime}</p>
+          <p className="time">
+            {addMinutesToTime(departureTime, route.maxDuration)}
+          </p>
           <p className="place">{destination}</p>
         </div>
       </div>
@@ -50,7 +55,7 @@ export default function BusCard({ bus, onSelect }) {
       <div className="bus-card-bottom">
         <div className="details">
           <span className={isLowSeats ? "seats low" : "seats"}>
-            {capacity} seat{capacity === 1 ? "" : "s"} left
+            {availableSeats} seat{availableSeats === 1 ? "" : "s"} left
           </span>
           <span className="terminal">South Bus Terminal</span>
         </div>

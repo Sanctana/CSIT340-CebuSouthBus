@@ -1,5 +1,6 @@
 package edu.cebu.southbus.entity;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import edu.cebu.southbus.util.ShortIdGenerator;
@@ -12,8 +13,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -21,18 +20,16 @@ import lombok.experimental.Accessors;
 @Entity
 @Table(name = "tblticket")
 @Setter
+@Getter
 public class Ticket {
 
     @Column(nullable = false, length = 6)
-    @NotNull
-    @Size(max = 6)
     @Id
     @Getter
     private String uid;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bus_id", nullable = false)
-    @NotNull
     private BusSchedule busSchedule;
 
     @Column(name = "first_name", nullable = false)
@@ -52,6 +49,9 @@ public class Ticket {
 
     @Column(name = "payment_method", nullable = false)
     private String paymentMethod;
+
+    @Column(name = "date", nullable = false)
+    private LocalDate date;
 
     @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
     @Getter
