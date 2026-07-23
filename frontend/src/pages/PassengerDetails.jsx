@@ -142,17 +142,10 @@ export default function PassengerDetails() {
       <div className="passenger-main">
         <h1>Passenger Details</h1>
         <p className="subtitle">
-          Tell us who's travelling so we can prepare your tickets.
+          Enter each passenger’s details exactly as shown on a valid ID to ensure accurate ticket preparation.
         </p>
 
         <section className="form-card">
-          <h2>
-            Passenger{passengerCount > 1 ? "s" : ""} ({passengerCount})
-          </h2>
-          <p className="hint">
-            Enter each passenger's details exactly as shown on a valid ID.
-          </p>
-
           {passengers.map((p, i) => (
             <div className="passenger-block" key={i}>
               <h3>Passenger {i + 1}</h3>

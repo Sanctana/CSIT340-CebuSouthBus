@@ -3,7 +3,7 @@ package edu.cebu.southbus.util;
 import java.security.SecureRandom;
 
 public class ShortIdGenerator {
-	private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	private static final SecureRandom RANDOM = new SecureRandom();
 
 	public static String generate(int length) {

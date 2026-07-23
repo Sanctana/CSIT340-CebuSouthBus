@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 23, 2026 at 07:05 AM
+-- Host: 127.0.0.1
+-- Generation Time: Jul 23, 2026 at 06:40 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,13 +66,9 @@ CREATE TABLE `tblbus` (
 
 INSERT INTO `tblbus` (`bus_id`, `capacity`, `is_aircon`, `route_id`, `bus_operator`, `departure_time`) VALUES
 (1, 40, 0, 1, 'Ceres Bus Liner', '00:00:00'),
-(2, 45, 1, 1, 'Metro Shuttle', '01:00:00'),
 (3, 45, 0, 1, 'Sunrays Transit', '02:00:00'),
-(4, 40, 1, 2, 'Ceres Bus Liner', '00:00:00'),
 (5, 45, 0, 2, 'Metro Shuttle', '01:00:00'),
-(6, 45, 1, 2, 'Metro Shuttle', '02:00:00'),
 (7, 45, 0, 2, 'Sunrays Transit', '03:00:00'),
-(8, 45, 1, 2, 'Sunrays Transit', '04:00:00'),
 (9, 30, 0, 3, 'V-Hire Operators', '00:00:00'),
 (10, 40, 1, 3, 'Ceres Bus Liner', '01:30:00'),
 (11, 45, 0, 3, 'Metro Shuttle', '03:00:00'),
@@ -106,45 +102,25 @@ INSERT INTO `tblbus` (`bus_id`, `capacity`, `is_aircon`, `route_id`, `bus_operat
 (39, 40, 0, 12, 'Ceres Bus Liner', '00:00:00'),
 (40, 45, 1, 12, 'Metro Shuttle', '01:00:00'),
 (41, 45, 0, 12, 'Sunrays Transit', '02:00:00'),
-(42, 45, 1, 1, 'Sunrays Transit', '03:00:00'),
 (43, 45, 0, 1, 'V-Hire Operators', '04:00:00'),
-(44, 45, 1, 1, 'Ceres Bus Liner', '05:00:00'),
 (45, 45, 0, 1, 'Metro Shuttle', '06:00:00'),
-(46, 45, 1, 1, 'Sunrays Transit', '07:00:00'),
 (47, 45, 0, 1, 'V-Hire Operators', '08:00:00'),
-(48, 45, 1, 1, 'Ceres Bus Liner', '09:00:00'),
 (49, 45, 0, 1, 'Metro Shuttle', '10:00:00'),
-(50, 45, 1, 1, 'Sunrays Transit', '11:00:00'),
 (51, 45, 0, 1, 'V-Hire Operators', '12:00:00'),
-(52, 45, 1, 1, 'Ceres Bus Liner', '13:00:00'),
 (53, 45, 0, 1, 'Metro Shuttle', '14:00:00'),
-(54, 45, 1, 1, 'Sunrays Transit', '15:00:00'),
 (55, 45, 0, 1, 'V-Hire Operators', '16:00:00'),
-(56, 45, 1, 1, 'Ceres Bus Liner', '17:00:00'),
 (57, 45, 0, 1, 'Metro Shuttle', '18:00:00'),
-(58, 45, 1, 1, 'Sunrays Transit', '19:00:00'),
 (59, 45, 0, 1, 'V-Hire Operators', '20:00:00'),
-(60, 45, 1, 1, 'Ceres Bus Liner', '21:00:00'),
 (61, 45, 0, 1, 'Metro Shuttle', '22:00:00'),
-(62, 45, 1, 1, 'Sunrays Transit', '23:00:00'),
 (63, 45, 0, 2, 'V-Hire Operators', '05:00:00'),
-(64, 45, 1, 2, 'Ceres Bus Liner', '06:00:00'),
 (65, 45, 0, 2, 'Metro Shuttle', '07:00:00'),
-(66, 45, 1, 2, 'Sunrays Transit', '08:00:00'),
 (67, 45, 0, 2, 'V-Hire Operators', '09:00:00'),
-(68, 45, 1, 2, 'Ceres Bus Liner', '10:00:00'),
 (69, 45, 0, 2, 'Metro Shuttle', '11:00:00'),
-(70, 45, 1, 2, 'Sunrays Transit', '12:00:00'),
 (71, 45, 0, 2, 'V-Hire Operators', '13:00:00'),
-(72, 45, 1, 2, 'Ceres Bus Liner', '14:00:00'),
 (73, 45, 0, 2, 'Metro Shuttle', '15:00:00'),
-(74, 45, 1, 2, 'Sunrays Transit', '16:00:00'),
 (75, 45, 0, 2, 'V-Hire Operators', '17:00:00'),
-(76, 45, 1, 2, 'Ceres Bus Liner', '18:00:00'),
 (77, 45, 0, 2, 'Metro Shuttle', '19:00:00'),
-(78, 45, 1, 2, 'Sunrays Transit', '20:00:00'),
 (79, 45, 0, 2, 'V-Hire Operators', '21:00:00'),
-(80, 45, 1, 2, 'Ceres Bus Liner', '22:00:00'),
 (81, 45, 0, 2, 'Metro Shuttle', '23:00:00'),
 (82, 45, 1, 3, 'Sunrays Transit', '06:00:00'),
 (83, 45, 0, 3, 'V-Hire Operators', '07:30:00'),
@@ -287,13 +263,6 @@ CREATE TABLE `tblpassenger` (
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tblpassenger`
---
-
-INSERT INTO `tblpassenger` (`ticket_uid`, `first_name`, `middle_name`, `last_name`, `suffix`, `date_of_birth`, `is_female`, `id`) VALUES
-('M8uOFn', 'Juan', 'San', 'Mor', '', '1968-07-23', 1, 10);
-
 -- --------------------------------------------------------
 
 --
@@ -346,13 +315,6 @@ CREATE TABLE `tblticket` (
   `payment_method` text NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tblticket`
---
-
-INSERT INTO `tblticket` (`uid`, `bus_id`, `first_name`, `middle_name`, `last_name`, `email_address`, `mobile_number`, `payment_method`, `date`) VALUES
-('M8uOFn', 1, 'Jan', '', 'S', 'juan@gmail.com', '09123456789', 'GCash', '2026-07-24');
 
 --
 -- Indexes for dumped tables
@@ -411,7 +373,7 @@ ALTER TABLE `tblbus`
 -- AUTO_INCREMENT for table `tblpassenger`
 --
 ALTER TABLE `tblpassenger`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tblroute`

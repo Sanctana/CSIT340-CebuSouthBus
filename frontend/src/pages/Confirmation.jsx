@@ -61,43 +61,43 @@ export default function Confirmation() {
 
       <div className="confirmation-main">
         <section className="review-card">
-          <h2>Trip Details</h2>
+
+          <h2>Trip Summary</h2>
+
           <div className="review-grid">
+
             <div>
               <span className="review-label">Route</span>
               <p>South Bus Terminal → {bus.route.destination}</p>
             </div>
+
             <div>
               <span className="review-label">Departure</span>
               <p>{formatTime(bus.departureTime)}</p>
             </div>
+
             <div>
               <span className="review-label">Operator</span>
               <p>{bus.busOperator}</p>
             </div>
-          </div>
-          <p className="payment-summary">
-            Total for {passengerCount} passenger
-            {passengerCount === 1 ? "" : "s"}: <strong>₱{totalFare}</strong>
-          </p>
-        </section>
 
-        <section className="review-card">
-          <h2>Contact Information</h2>
-          <div className="review-grid">
             <div>
-              <span className="review-label">Full Name</span>
-              <p>{formatFullName(contact)}</p>
+              <span className="review-label">Passengers</span>
+              <p>{passengerCount}</p>
             </div>
+
             <div>
-              <span className="review-label">Email</span>
-              <p>{contact.email}</p>
+              <span className="review-label">Payment</span>
+              <p>{paymentLabels[paymentMethod]}</p>
             </div>
+
             <div>
-              <span className="review-label">Mobile Number</span>
-              <p>{contact.mobile}</p>
+              <span className="review-label">Total Paid</span>
+              <p>₱{totalFare}</p>
             </div>
+
           </div>
+
         </section>
 
         <section className="review-card">
@@ -107,22 +107,14 @@ export default function Confirmation() {
           <PassengerList passengers={passengers} />
         </section>
 
-        <section className="review-card">
-          <h2>Payment</h2>
-          <p className="payment-summary">
-            Paid via{" "}
-            <strong>{paymentLabels[paymentMethod] ?? paymentMethod}</strong>
-          </p>
-        </section>
-
-        <div className="confirmation-notes">
+        <section className="review-card confirmation-notes">
           <h3>Before you travel</h3>
           <ul>
             <li>Arrive at least 30 minutes before departure.</li>
             <li>Bring a valid ID matching the passenger names above.</li>
             <li>Show this confirmation code at the terminal counter.</li>
           </ul>
-        </div>
+        </section>
 
         <div className="confirmation-actions">
           <button className="back-btn" onClick={() => window.print()}>

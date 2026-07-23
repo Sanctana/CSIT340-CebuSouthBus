@@ -54,20 +54,19 @@
   }
 }
 
-/* HEADER */
+.ticket-header{
+  background:linear-gradient(135deg,#3454d1,#203fbb);
+  color:#fff;
+  padding:18px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-.ticket-header {
-  background: linear-gradient(135deg, #3454d1, #203fbb);
-
-  color: white;
-
-  padding: 18px 22px;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
+.ticket-header-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
 .ticket-brand {
@@ -292,4 +291,8 @@
 
     height: 100px;
   }
+}
+
+.ticket-modal{
+  position:relative;
 }

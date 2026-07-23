@@ -11,8 +11,7 @@ import { formatTime } from "../utils/utilities";
 
 const paymentOptions = [
   { value: "gcash", label: "GCash" },
-  { value: "maya", label: "Maya" },
-  { value: "cash", label: "Cash at Terminal" },
+  { value: "maya", label: "Maya" }
 ];
 
 const paymentLabels = {
@@ -236,27 +235,6 @@ export default function Review() {
             aria-labelledby="payment-modal-title"
             onClick={(e) => e.stopPropagation()}
           >
-            {paymentMethod === "cash" ? (
-              <>
-                <h2 id="payment-modal-title">Pay at the Terminal</h2>
-                <p className="payment-modal-note">
-                  Proceed to the cashier below and give them your priority
-                  number to pay for this booking.
-                </p>
-
-                <div className="payment-modal-details">
-                  <div>
-                    <span className="review-label">Priority Number</span>
-                    <p className="payment-modal-number">{priorityNumber}</p>
-                  </div>
-                  <div>
-                    <span className="review-label">Proceed To</span>
-                    <p className="payment-modal-number">{cashierNumber}</p>
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
                 <h2 id="payment-modal-title">
                   Confirm {paymentLabels[paymentMethod] ?? paymentMethod} Number
                 </h2>
@@ -279,8 +257,6 @@ export default function Review() {
                     }
                   />
                 </div>
-              </>
-            )}
 
             <div className="payment-modal-actions">
               <button
