@@ -100,7 +100,7 @@ export default function ETicketModal({ passenger, onClose, ticket }) {
 
           <p>Present this QR code upon boarding.</p>
 
-          <span className="booking-id">{ticket.confirmationCode}</span>
+          <span className="booking-id">{ticket.uid}</span>
         </div>
       </div>
     </div>
