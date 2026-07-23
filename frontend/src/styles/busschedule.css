@@ -198,6 +198,10 @@
 }
 
 .type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
   font-size: 0.8rem;
   font-weight: 600;
   padding: 6px 12px;
@@ -212,6 +216,12 @@
 .type-badge.non-aircon {
   background: #fff7d6;
   color: #9c6a00;
+}
+
+.type-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
 }
 
 .bus-card-route {
@@ -296,6 +306,19 @@
   flex-wrap: wrap;
   font-size: 0.85rem;
   color: var(--sch-muted);
+}
+
+.details .seats,
+.details .terminal {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detail-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
 }
 
 .details .seats.low {
