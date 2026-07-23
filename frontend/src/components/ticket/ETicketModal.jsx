@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import "../../styles/eticketmodal.css";
 import QrCode from "../../assets/ic_qr.png";
-import { formatTime } from "../../utils/utilities";
 import ModalCloseButton from "../../components/commons/ModalCloseButton";
+import { formatTime } from "../../utils/utilities";
 
 export default function ETicketModal({ passenger, onClose, ticket }) {
   useEffect(() => {
@@ -19,7 +19,6 @@ export default function ETicketModal({ passenger, onClose, ticket }) {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="ticket-modal" onClick={(e) => e.stopPropagation()}>
-
         <div className="ticket-header">
           <div className="ticket-header-left">
             <div className="ticket-brand">Cebu South Bus</div>
@@ -27,7 +26,6 @@ export default function ETicketModal({ passenger, onClose, ticket }) {
           </div>
 
           <ModalCloseButton onClick={onClose} />
-
         </div>
 
         <div className="route-section">

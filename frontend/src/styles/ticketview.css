@@ -331,7 +331,7 @@
   font-size: 0.85rem;
   cursor: pointer;
   font-weight: 700;
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .contact-card {
@@ -345,8 +345,8 @@
   align-items: center;
 
   box-shadow:
-          0 12px 30px rgba(35,57,143,.08),
-          0 4px 12px rgba(0,0,0,.05);
+    0 12px 30px rgba(35, 57, 143, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .contact-item {
@@ -356,7 +356,7 @@
 .contact-item span {
   display: block;
   color: var(--muted);
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 700;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -375,28 +375,26 @@
   margin: 0 30px;
 }
 
-@media(max-width:700px){
-
-  .contact-header{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:15px;
+@media (max-width: 700px) {
+  .contact-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
   }
 
-  .contact-card{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:25px;
+  .contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
   }
 
-  .contact-divider{
-    display:none;
+  .contact-divider {
+    display: none;
   }
 
-  .update-contact-btn{
-    width:100%;
+  .update-contact-btn {
+    width: 100%;
   }
-
 }
 
 @media (max-width: 700px) {

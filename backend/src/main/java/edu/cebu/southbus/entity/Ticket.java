@@ -3,6 +3,7 @@ package edu.cebu.southbus.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import edu.cebu.southbus.dto.request.BookRequest.Contact;
 import edu.cebu.southbus.util.ShortIdGenerator;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -61,5 +62,14 @@ public class Ticket {
     @PrePersist
     private void generateUid() {
         this.uid = ShortIdGenerator.generate(6);
+    }
+
+    public Ticket updateContactInfo(Contact contact) {
+        this.emailAddress = contact.getEmail();
+        this.mobileNumber = contact.getMobile();
+        this.firstName = contact.getFirstName();
+        this.lastName = contact.getLastName();
+        this.middleName = contact.getMiddleName();
+        return this;
     }
 }

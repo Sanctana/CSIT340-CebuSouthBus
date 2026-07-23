@@ -1,8 +1,8 @@
 import busLogo from "../../assets/bus_logo.png";
 import clockLogo from "../../assets/clock_logo.png";
+import fanLogo from "../../assets/non-aircon_logo.png";
 import pinLogo from "../../assets/pin_logo.png";
 import snowflakeLogo from "../../assets/snowflake_logo.png";
-import fanLogo from "../../assets/non-aircon_logo.png";
 import { formatMinutes } from "../../utils/utilities";
 
 function RouteCard({ route }) {

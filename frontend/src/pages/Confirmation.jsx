@@ -61,11 +61,9 @@ export default function Confirmation() {
 
       <div className="confirmation-main">
         <section className="review-card">
-
           <h2>Trip Summary</h2>
 
           <div className="review-grid">
-
             <div>
               <span className="review-label">Route</span>
               <p>South Bus Terminal → {bus.route.destination}</p>
@@ -95,9 +93,7 @@ export default function Confirmation() {
               <span className="review-label">Total Paid</span>
               <p>₱{totalFare}</p>
             </div>
-
           </div>
-
         </section>
 
         <section className="review-card">

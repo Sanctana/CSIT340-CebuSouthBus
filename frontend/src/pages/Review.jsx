@@ -11,7 +11,7 @@ import { formatTime } from "../utils/utilities";
 
 const paymentOptions = [
   { value: "gcash", label: "GCash" },
-  { value: "maya", label: "Maya" }
+  { value: "maya", label: "Maya" },
 ];
 
 const paymentLabels = {
@@ -235,28 +235,28 @@ export default function Review() {
             aria-labelledby="payment-modal-title"
             onClick={(e) => e.stopPropagation()}
           >
-                <h2 id="payment-modal-title">
-                  Confirm {paymentLabels[paymentMethod] ?? paymentMethod} Number
-                </h2>
-                <p className="payment-modal-note">
-                  Enter the mobile number linked to your{" "}
-                  {paymentLabels[paymentMethod] ?? paymentMethod} account. A
-                  payment request will be sent there.
-                </p>
+            <h2 id="payment-modal-title">
+              Confirm {paymentLabels[paymentMethod] ?? paymentMethod} Number
+            </h2>
+            <p className="payment-modal-note">
+              Enter the mobile number linked to your{" "}
+              {paymentLabels[paymentMethod] ?? paymentMethod} account. A payment
+              request will be sent there.
+            </p>
 
-                <div className="payment-modal-field">
-                  <label htmlFor="payment-phone">Mobile Number</label>
-                  <input
-                    id="payment-phone"
-                    type="tel"
-                    placeholder="09171234567"
-                    maxLength={11}
-                    value={paymentPhone}
-                    onChange={(e) =>
-                      setPaymentPhone(e.target.value.replace(/\D/g, ""))
-                    }
-                  />
-                </div>
+            <div className="payment-modal-field">
+              <label htmlFor="payment-phone">Mobile Number</label>
+              <input
+                id="payment-phone"
+                type="tel"
+                placeholder="09171234567"
+                maxLength={11}
+                value={paymentPhone}
+                onChange={(e) =>
+                  setPaymentPhone(e.target.value.replace(/\D/g, ""))
+                }
+              />
+            </div>
 
             <div className="payment-modal-actions">
               <button

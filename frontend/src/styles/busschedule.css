@@ -432,11 +432,7 @@
 }
 
 .confirm-modal-header {
-  background: linear-gradient(
-          135deg,
-          #3454d1,
-          #23398f
-  );
+  background: linear-gradient(135deg, #3454d1, #23398f);
 
   color: white;
 
@@ -460,7 +456,7 @@
 
   color: #dbe4ff;
 
-  font-size: .9rem;
+  font-size: 0.9rem;
 
   line-height: 1.5;
 }
@@ -490,13 +486,13 @@
 
   color: #6b7280;
 
-  font-size: .82rem;
+  font-size: 0.82rem;
 
   font-weight: 700;
 
   text-transform: uppercase;
 
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 
 .confirm-modal-details p {
@@ -515,7 +511,7 @@
 
   color: #1d2d5a;
 
-  font-size: .9rem;
+  font-size: 0.9rem;
 
   font-weight: 500;
 }
@@ -533,7 +529,7 @@
 
   color: #8a6500;
 
-  font-size: .88rem;
+  font-size: 0.88rem;
 
   line-height: 1.5;
 }
@@ -558,15 +554,15 @@
 
   padding: 12px 26px;
 
-  font-size: .9rem;
+  font-size: 0.9rem;
 
   font-weight: 700;
 
   cursor: pointer;
 
-  transition: .25s;
+  transition: 0.25s;
 
-  box-shadow: 0 10px 20px rgba(52, 84, 209, .18);
+  box-shadow: 0 10px 20px rgba(52, 84, 209, 0.18);
 }
 
 .confirm-btn-confirm:hover {
@@ -575,16 +571,14 @@
   color: #23398f;
 }
 
-.confirm-btn-confirm:focus-visible{
+.confirm-btn-confirm:focus-visible {
   outline: 2px solid #3454d1;
   outline-offset: 2px;
 }
 
-
 .confirm-modal {
   position: relative;
 }
-
 
 @media (max-width: 600px) {
   .confirm-modal {

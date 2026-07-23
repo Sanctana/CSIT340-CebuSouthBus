@@ -15,6 +15,7 @@ import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 public class BookRequest {

@@ -142,7 +142,8 @@ export default function PassengerDetails() {
       <div className="passenger-main">
         <h1>Passenger Details</h1>
         <p className="subtitle">
-          Enter each passenger’s details exactly as shown on a valid ID to ensure accurate ticket preparation.
+          Enter each passenger’s details exactly as shown on a valid ID to
+          ensure accurate ticket preparation.
         </p>
 
         <section className="form-card">

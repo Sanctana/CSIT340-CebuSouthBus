@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import edu.cebu.southbus.entity.Ticket;
 
 @Repository
-public interface ViewTicketRepository extends JpaRepository<Ticket, String> {
+public interface TicketRepository extends JpaRepository<Ticket, String> {
 
 	@Query("SELECT t FROM Ticket t " +
 			"JOIN FETCH t.busSchedule bs " +

@@ -1,13 +1,13 @@
 import "../../styles/busschedule.css";
+import fanLogo from "../../assets/non-aircon_logo.png";
+import pinLogo from "../../assets/pin_logo.png";
+import seatLogo from "../../assets/seat_logo.png";
+import snowflakeLogo from "../../assets/snowflake_logo.png";
 import {
   addMinutesToTime,
   formatMinutes,
   formatTime,
 } from "../../utils/utilities";
-import snowflakeLogo from "../../assets/snowflake_logo.png";
-import fanLogo from "../../assets/non-aircon_logo.png";
-import pinLogo from "../../assets/pin_logo.png";
-import seatLogo from "../../assets/seat_logo.png";
 
 export default function BusCard({ bus, onSelect }) {
   const {
@@ -30,13 +30,13 @@ export default function BusCard({ bus, onSelect }) {
           <span className="bus-number">Bus {busNumber}</span>
         </div>
         <span className={`type-badge ${isAircon ? "aircon" : "non-aircon"}`}>
-        <img
-        src={isAircon ? snowflakeLogo : fanLogo}
-        alt={isAircon ? "Aircon" : "Non-Aircon"}
-        className="type-icon"
-        />
-      {isAircon ? "Aircon" : "Non-Aircon"}
-      </span>
+          <img
+            src={isAircon ? snowflakeLogo : fanLogo}
+            alt={isAircon ? "Aircon" : "Non-Aircon"}
+            className="type-icon"
+          />
+          {isAircon ? "Aircon" : "Non-Aircon"}
+        </span>
       </div>
 
       <div className="bus-card-route">

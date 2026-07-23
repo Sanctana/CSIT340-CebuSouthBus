@@ -4,8 +4,8 @@ import "../styles/ticketview.css";
 import { getTicket } from "../api/ticket";
 import leftArrow from "../assets/ic_arrow_left_white.png";
 import ETicketModal from "../components/ticket/ETicketModal";
-import UpdateModal from "../components/ticket/UpdateModal";
 import PassengerBookingCard from "../components/ticket/PassengerBookingCard";
+import UpdateModal from "../components/ticket/UpdateModal";
 import { formatTime } from "../utils/utilities";
 
 export default function TicketView() {
@@ -133,23 +133,23 @@ export default function TicketView() {
             </div>
 
             <span className="passenger-count">
-        {ticket.passengers.length} Passenger
+              {ticket.passengers.length} Passenger
               {ticket.passengers.length !== 1 ? "s" : ""}
-      </span>
+            </span>
           </div>
 
           <div className="passenger-card-container">
-          <div className="passenger-list">
-            {ticket.passengers.map((passenger, index) => (
+            <div className="passenger-list">
+              {ticket.passengers.map((passenger, index) => (
                 <PassengerBookingCard
-                    key={passenger.id}
-                    passenger={passenger}
-                    number={index + 1}
-                    ticket={ticket}
-                    onViewTicket={handleViewTicket}
+                  key={passenger.id}
+                  passenger={passenger}
+                  number={index + 1}
+                  ticket={ticket}
+                  onViewTicket={handleViewTicket}
                 />
-            ))}
-          </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -163,8 +163,8 @@ export default function TicketView() {
             </div>
 
             <button
-                className="update-contact-btn"
-                onClick={() => setShowUpdateModal(true)}
+              className="update-contact-btn"
+              onClick={() => setShowUpdateModal(true)}
             >
               Update
             </button>
@@ -173,20 +173,24 @@ export default function TicketView() {
           <div className="contact-card">
             <div className="contact-item">
               <span>Contact Person</span>
-              <h3>{ticket.name || "James Kenneth Acabal"}</h3>
+              <h3>
+                {ticket.firstName}{" "}
+                {ticket.middleName ? `${ticket.middleName} ` : ""}
+                {ticket.lastName}
+              </h3>
             </div>
             <div className="contact-divider"></div>
 
             <div className="contact-item">
               <span>Email Address</span>
-              <h3>{ticket.email || "jameskenneth@email.com"}</h3>
+              <h3>{ticket.emailAddress}</h3>
             </div>
 
             <div className="contact-divider"></div>
 
             <div className="contact-item">
               <span>Phone Number</span>
-              <h3>{ticket.contactNumber || "09123456789"}</h3>
+              <h3>{ticket.mobileNumber}</h3>
             </div>
           </div>
         </section>
@@ -194,18 +198,18 @@ export default function TicketView() {
 
       <>
         {selectedPassenger && (
-            <ETicketModal
-                passenger={selectedPassenger}
-                onClose={closeTicket}
-                ticket={ticket}
-            />
+          <ETicketModal
+            passenger={selectedPassenger}
+            onClose={closeTicket}
+            ticket={ticket}
+          />
         )}
 
         {showUpdateModal && (
-            <UpdateModal
-                ticket={ticket}
-                onClose={() => setShowUpdateModal(false)}
-            />
+          <UpdateModal
+            ticket={ticket}
+            onClose={() => setShowUpdateModal(false)}
+          />
         )}
       </>
     </div>

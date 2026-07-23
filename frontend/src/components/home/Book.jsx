@@ -166,10 +166,7 @@ export default function Book() {
         </div>
       </div>
 
-      <button
-        className={`search-button && ${error && shake ? "shake" : ""}`}
-        onClick={searchAvailableBuses}
-      >
+      <button className={"search-button"} onClick={searchAvailableBuses}>
         Search Available Buses
       </button>
     </>
