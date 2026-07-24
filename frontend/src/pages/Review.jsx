@@ -20,14 +20,6 @@ const paymentLabels = {
   cash: "Cash at Terminal",
 };
 
-const randomDigits = (length) => {
-  let result = "";
-  for (let i = 0; i < length; i++) {
-    result += Math.floor(Math.random() * 10);
-  }
-  return result;
-};
-
 export default function Review() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -38,8 +30,6 @@ export default function Review() {
   const [paymentMethod, setPaymentMethod] = useState("gcash");
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [paymentPhone, setPaymentPhone] = useState("");
-  const [priorityNumber, setPriorityNumber] = useState("");
-  const [cashierNumber, setCashierNumber] = useState("");
 
   // Arrived here directly (e.g. refresh, back button gone too far) with no
   // booking in progress — nothing to review.
@@ -95,12 +85,10 @@ export default function Review() {
   };
 
   const openPaymentModal = () => {
-    if (paymentMethod === "cash") {
-      setPriorityNumber(`P-${randomDigits(3)}`);
-      setCashierNumber(`Cashier ${Math.floor(Math.random() * 6) + 1}`);
-    } else {
+    if (paymentMethod !== "cash") {
       setPaymentPhone("");
     }
+
     setShowPaymentModal(true);
   };
 

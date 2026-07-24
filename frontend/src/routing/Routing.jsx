@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router";
-import ScrollToTop from "../components/commons/ScrollToTop.jsx";
 import MainContent from "./MainContent";
+import ScrollToTop from "./ScrollToTop";
 
 export default function Routing() {
   return (

@@ -73,7 +73,7 @@ export default function Advertise() {
             title={place.title}
             description={place.description}
             location={place.location}
-            image={images.at(index * cardsPerPage + index)}
+            image={images.at(page * cardsPerPage + index) || ""}
           />
         ))}
       </div>
